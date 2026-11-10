@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource-variable/inter';
+
+/*
+ * Theme tokens (colors, radius, text styles) are added after the owner
+ * approves the shadcn-to-Figma mapping table (PLAN.md, Stop 1).
+ */
