@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Field" />
+
+# Field: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Field** (React) and **Angular / Field**.
+
+## React
+
+```tsx
+import { Field, FieldLabel, FieldDescription, Input } from '@bounteous/ui'
+```
+
+```tsx
+<Field>
+  <FieldLabel htmlFor="name" required>Name</FieldLabel>
+  <Input id="name" placeholder="Ada Lovelace" />
+  <FieldDescription>As it appears on your ID.</FieldDescription>
+</Field>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardFieldImports, ZardInputComponent]  // from '@/shared/components/field/field.imports'
+```
+
+```html
+<z-field>
+  <label z-field-label for="name">Name</label>
+  <input z-input id="name" placeholder="Ada Lovelace" />
+  <p z-field-description>As it appears on your ID.</p>
+</z-field>
+```
