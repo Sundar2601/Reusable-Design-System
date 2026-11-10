@@ -76,3 +76,5 @@ Not done yet:
 
 ## 2026-11-10: rebuilt from scratch
 The owner asked for a clean rebuild. A new file, `shadcn/ui Design System` (key `3oPS6ulqkQV9MNwzekG0rp`, https://www.figma.com/design/3oPS6ulqkQV9MNwzekG0rp), has foundations (6 collections, Color with 7 base-color themes), 32 text styles, 7 effect styles, 2,048 Lucide icons, shadcn components as real variant sets built from instances, 20 AI Elements, 68 chart examples and the dashboard, sidebar, login and signup blocks. The older file `R1fwFPPMBLnVhMLWumxCkw` is kept as a backup. Code Connect templates and `figma.config.json` still point at the old file and must be re-pointed before publishing. Not rebuilt in the new file yet: States sheets, More variants sections, Illustrations and Motion (not shadcn).
+
+Later the same day, in the new file: only Light and Dark modes (the six base-color themes and the Typeset collection and pages were removed), page headers removed, and pages grouped under category dividers (Foundations, Actions, Forms, Data display, Charts, Feedback, Navigation, Overlays, Layout and utilities, Chat, AI Elements, Blocks).
