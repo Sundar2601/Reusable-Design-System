@@ -16,7 +16,7 @@ Turn the Figma file **"shadcn/ui components with variables - Tailwind classes"**
 | Default theme | Light. Dark applies with the `.dark` class on a parent element |
 | Icons | Lucide (`lucide-react`) |
 | Package name | `@bounteous/ui` (private; cannot be published to npm by accident) |
-| Repo name | `design-system`, private on GitHub |
+| Repo | `Sundar2601/Reusable-Design-System` on GitHub (https://github.com/Sundar2601/Reusable-Design-System). Meant to be private: confirm in GitHub Settings. |
 | Build order | Button, Input, Checkbox, Radio, Card, Avatar |
 | Prop names | Figma property names become React prop names, in camelCase |
 | Code Connect | One `.figma.ts` template file per Figma component, pointing at the shadcn file |
@@ -46,12 +46,12 @@ Most important for **agents**: 1, 2. Most important for **code**: 3, 4, 5.
 | 3 Button (Stop 2 approved) | Done |
 | 4 Input, Field, Checkbox, Radio, Card, Avatar | Done, measured against Figma values in light and dark |
 | 5 Agent readiness | CLAUDE.md, `llms.txt`, README written; 54 tests pass |
-| 6 Ship (Stop 3) | **Not done.** Nothing has been pushed or published. Push is waiting on the owner's GitHub sign-in. |
+| 6 Ship (Stop 3) | **Pushed to GitHub** (commit `d8b0784`, 2026-11-10, approved by the owner). **Code Connect is not published.** |
 
 Verified: `npm test` (54 tests), `npm run typecheck`, `npm run build`, `npm run build-storybook`, and `npx figma connect parse` (9 template files).
 
 Not done yet:
-- Pushing to GitHub (needs the owner's `gh auth login`).
+- Confirming the GitHub repo is private (the owner checks Settings → General → Danger Zone).
 - Publishing Code Connect (owner runs it; needs the file published as a library and a Figma token with Code Connect write access).
 - Icon Button and the other 60+ components in the file.
 - Visual side-by-side images for components other than Button (the others were checked by measured values).
