@@ -1,18 +1,16 @@
-// url=https://www.figma.com/design/R1fwFPPMBLnVhMLWumxCkw/shadcn-ui-Design-System-agent-ready?node-id=7-273
+// url=https://www.figma.com/design/AngMCoShsZnEBQ4B1xMObF/Reusable-Design-System?node-id=7-120
 // source=src/components/Checkbox.tsx
 // component=Checkbox
 //
-// The bare 16px control. Invalid becomes aria-invalid, Disabled becomes disabled.
-// Focus is a CSS state. For the control with a label see CheckboxField.figma.ts.
+// Checked=indeterminate has no prop in code yet and maps to checked. focus is a CSS state.
 import figma from 'figma'
 const instance = figma.selectedInstance
 
-const checked = instance.getEnum('Checked', { false: '', true: ' defaultChecked', indeterminate: ' defaultChecked="indeterminate"' })
-const invalid = instance.getEnum('Invalid', { false: false, true: true })
-const disabled = instance.getEnum('Disabled', { false: false, true: true })
+const checked = instance.getEnum('Checked', { unchecked: false, checked: true, indeterminate: true })
+const disabled = instance.getEnum('State', { default: false, focus: false, disabled: true })
 
 export default {
-  example: figma.code`<Checkbox aria-label="Checkbox"${checked}${invalid ? ' aria-invalid' : ''}${disabled ? ' disabled' : ''} />`,
+  example: figma.code`<Checkbox${checked ? ' defaultChecked' : ''}${disabled ? ' disabled' : ''} />`,
   imports: ['import { Checkbox } from "@bounteous/ui"'],
   id: 'checkbox',
   metadata: { nestable: true },

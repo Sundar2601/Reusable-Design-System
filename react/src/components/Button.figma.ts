@@ -1,24 +1,22 @@
-// url=https://www.figma.com/design/R1fwFPPMBLnVhMLWumxCkw/shadcn-ui-Design-System-agent-ready?node-id=5-391
+// url=https://www.figma.com/design/AngMCoShsZnEBQ4B1xMObF/Reusable-Design-System?node-id=5-267
 // source=src/components/Button.tsx
 // component=Button
 //
-// Hover and focus are CSS states in code, so they are not Figma variants.
-// The Icon left / Icon right toggles and their Left icon / Right icon swaps are not mapped:
-// they need Code Connect templates for the icon components first. In code use leftIcon and rightIcon.
-// Rounded buttons are a separate Figma set: see ButtonRounded.figma.ts.
+// Figma Size=icon has no matching size in code yet, so it maps to the default size.
+// Figma State hover and focus are CSS states in code, so only State=disabled maps to a prop.
 import figma from 'figma'
 const instance = figma.selectedInstance
 
 const variant = instance.getEnum('Variant', {
   default: 'default',
+  destructive: 'destructive',
   outline: 'outline',
   secondary: 'secondary',
   ghost: 'ghost',
-  destructive: 'destructive',
   link: 'link',
 })
-const size = instance.getEnum('Size', { xs: 'xs', sm: 'sm', default: 'default', lg: 'lg' })
-const disabled = instance.getEnum('Disabled', { false: false, true: true })
+const size = instance.getEnum('Size', { default: 'default', sm: 'sm', lg: 'lg', icon: 'default' })
+const disabled = instance.getEnum('State', { default: false, hover: false, focus: false, disabled: true })
 const label = instance.getString('Label')
 
 export default {

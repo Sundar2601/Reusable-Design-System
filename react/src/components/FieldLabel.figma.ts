@@ -1,15 +1,12 @@
-// url=https://www.figma.com/design/R1fwFPPMBLnVhMLWumxCkw/shadcn-ui-Design-System-agent-ready?node-id=8-2855
+// url=https://www.figma.com/design/AngMCoShsZnEBQ4B1xMObF/Reusable-Design-System?node-id=6-54
 // source=src/components/Field.tsx
 // component=FieldLabel
+//
+// The Figma Label is a single component without variants. Use required / disabled in code as needed.
 import figma from 'figma'
-const instance = figma.selectedInstance
-
-const required = instance.getEnum('Required', { false: false, true: true })
-const disabled = instance.getEnum('Disabled', { false: false, true: true })
-const text = instance.getString('Text')
 
 export default {
-  example: figma.code`<FieldLabel${required ? ' required' : ''}${disabled ? ' disabled' : ''}>${text}</FieldLabel>`,
+  example: figma.code`<FieldLabel htmlFor="id">Label</FieldLabel>`,
   imports: ['import { FieldLabel } from "@bounteous/ui"'],
   id: 'field-label',
   metadata: { nestable: true },
