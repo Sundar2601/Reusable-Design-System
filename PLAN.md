@@ -49,10 +49,12 @@ Token values are saved in `tokens/figma-tokens.json`.
 | 2 Tokens, theme (Stop 1 approved) | Done |
 | 3 Button (Stop 2 approved) | Done |
 | 4 Input, Checkbox, Radio, Card, Avatar | Done, each checked against Figma values in light and dark |
-| 5 Agent readiness | CLAUDE.md, `llms.txt`, README written |
+| 5 Agent readiness | CLAUDE.md, `llms.txt`, README written; 34 tests passing |
 | 6 Ship (Stop 3) | Not started. Nothing has left this computer. |
 
-Not done yet: automated tests, publishing Code Connect (needs the library file key in each `.figma.ts` file), pushing to GitHub, npm package name.
+Tests: 34 automated tests (`npm test`) cover props, accessibility, disabled behavior and class merging for all six components.
+
+Not done yet: publishing Code Connect (needs the library file key in each `.figma.ts` file), pushing to GitHub, npm package name.
 
 ## Phases and checkpoints
 1. **Setup**: scaffold the project, write this file and CLAUDE.md, commit.
@@ -73,4 +75,4 @@ Not done yet: automated tests, publishing Code Connect (needs the library file k
 - The git repo lives in this folder (separate from the home-folder repo).
 
 ## Verification
-`npm run build`, `npm run typecheck`, Storybook builds, light/dark checked against Figma screenshots, `figma connect parse` for Code Connect files.
+`npm test`, `npm run build`, `npm run typecheck`, Storybook builds, light/dark checked against Figma screenshots, `figma connect parse` for Code Connect files.

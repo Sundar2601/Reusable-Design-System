@@ -8,6 +8,8 @@ import { extendTailwindMerge } from 'tailwind-merge'
  */
 const twMerge = extendTailwindMerge({
   extend: {
+    // Our spacing scale (Figma space/*) so px-md, gap-xl, etc. merge like p-4 does.
+    theme: { spacing: ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] },
     classGroups: {
       'font-size': [
         {

@@ -26,8 +26,13 @@ Vite, React, TypeScript, Tailwind, shadcn/ui (restyled to our tokens), Storybook
 1. Read the Figma component (properties, variants, description) with the Figma tools.
 2. Map Figma properties to props (see rule 6). Reuse the shadcn base, restyled with token classes.
 3. Write stories for every variant, in light and dark.
-4. Write the Code Connect file next to the component.
-5. Export it from `src/index.ts`, add it to the component index below, and commit.
+4. Write a test file next to the component (`Name.test.tsx`) and run `npm test`.
+5. Write the Code Connect file next to the component (`Name.figma.ts`, a template file, not `.tsx`).
+6. Export it from `src/index.ts`, add it to the component index below, and commit.
+
+Before committing: `npm test`, `npm run typecheck`, `npm run build`.
+
+When adding a new text style or spacing name to the theme, also add it to `src/lib/utils.ts` so `cn()` merges it correctly.
 
 ## Component index
 | Component | Props (Figma name -> React prop) | Notes |
