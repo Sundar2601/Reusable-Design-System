@@ -55,6 +55,9 @@ Also in the Figma file (added 2026-11-10, no React code yet):
 - **Blocks** pages: `dashboard-01`, `sidebar-01` to `sidebar-16`, `login-01` to `login-05`, `signup-01` to `signup-05`. They are token-bound frames, not instances of Button or Input.
 - **Illustrations** page: 12 original spot illustrations (`Illustration/<name>`) in token colors. The official shadcn/ui has no illustration set.
 - **Motion** page and `Motion` variable collection: durations (150/200/300/500 ms), easings and the enter/exit patterns shadcn components use (fade, zoom, slide, sheet, accordion, spin, pulse). The official docs have no motion page.
+- **Themes** page: the 7 shadcn base colors (Neutral, Zinc, Stone, Mauve, Olive, Mist, Taupe) in light and dark. They are modes of the `Color` collection (`Light`/`Dark` = Neutral; the others are named `Zinc / Light` and so on). Values come from ui.shadcn.com/r/colors.
+- **Typeset** page and `Typeset` variable collection: the six presets (base, docs, chat, reading, compact, large) with size, leading and flow. Heading scale is an approximation.
+- **Scroll Fade** page: the scroll-fade utility (edges, axis, size) drawn as static examples.
 - **Icons** page: 2,049 Lucide icons as components named `Icon/<name>` (the lucide-react name in kebab-case).
 
 ## Boundaries for agents
