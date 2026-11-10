@@ -5,7 +5,7 @@ const meta = {
   title: 'Components/Radio',
   component: Radio,
   tags: ['autodocs'],
-  args: { label: 'Label', value: 'a' },
+  args: { value: 'a' },
 } satisfies Meta<typeof Radio>
 
 export default meta
@@ -15,7 +15,7 @@ export const Group: Story = {
   render: () => (
     <RadioGroup defaultValue="b">
       <Radio value="a" label="Option A" />
-      <Radio value="b" label="Option B" />
+      <Radio value="b" label="Option B" description="This one is selected." />
       <Radio value="c" label="Option C" disabled />
     </RadioGroup>
   ),
@@ -23,7 +23,7 @@ export const Group: Story = {
 
 export const AllStates: Story = {
   render: () => (
-    <div className="flex flex-col gap-lg">
+    <div className="flex flex-col gap-4">
       <RadioGroup defaultValue="">
         <Radio value="a" label="Unselected" />
       </RadioGroup>
@@ -31,10 +31,13 @@ export const AllStates: Story = {
         <Radio value="a" label="Selected" />
       </RadioGroup>
       <RadioGroup defaultValue="">
+        <Radio value="a" label="Invalid" aria-invalid />
+      </RadioGroup>
+      <RadioGroup defaultValue="">
         <Radio value="a" label="Disabled" disabled />
       </RadioGroup>
       <RadioGroup defaultValue="a">
-        <Radio value="a" label="Disabled selected" disabled />
+        <Radio value="a" label="Disabled, selected" disabled />
       </RadioGroup>
     </div>
   ),

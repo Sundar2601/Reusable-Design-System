@@ -1,23 +1,26 @@
 # @bounteous/ui
 
-React component library for the Figma "Design System". Vite, React, TypeScript, Tailwind, shadcn/ui restyled to Figma tokens.
-Read CLAUDE.md first. Figma values are in tokens/figma-tokens.json. Storybook is the catalog (`npm run storybook`).
+React component library for the Figma file "shadcn/ui components with variables - Tailwind classes" (key dcJKQOcHWk6gbH7lcMwicU). Vite, React, TypeScript, Tailwind v4, Radix, shadcn patterns restyled to the Figma tokens.
+Read CLAUDE.md first. Token values: tokens/figma-tokens.json. Catalog: `npm run storybook`. Tests: `npm test`.
 
 ## Rules
-- Use components from src/components before writing markup. Import from the package root.
-- No hard-coded colors, sizes or fonts. Use token classes: bg-primary, text-muted-foreground, border-border, rounded-md, gap-md, text-body-medium.
+- Use components from the package root before writing markup.
+- No hard-coded colors or font sizes. Use token classes: bg-primary text-primary-foreground bg-card text-muted-foreground border-border rounded-lg gap-4 text-sm.
 - Dark mode: add class "dark" to an ancestor. Light is the default.
-- Hover, focus and active are CSS states, not props. Disabled, error are props.
+- Hover, focus, active are CSS. Disabled is the `disabled` prop. Invalid/destructive/error is `aria-invalid`.
+- Strokes are drawn inside the box (inset-ring), matching Figma sizes.
 
-## Components (Figma name -> React prop)
-- Button: Type->variant (primary|secondary|ghost), Size->size (lg|md|sm), State=Disabled->disabled, Label->children
-- Input: Label->label, Placeholder->placeholder, Helper text->helperText, State=Error->error, State=Disabled->disabled
-- Checkbox: Checked->checked/defaultChecked, State=Disabled->disabled, Label->label
-- Radio (inside RadioGroup): Selected->RadioGroup value equals Radio value, State=Disabled->disabled, Label->label
-- Card: Style->variant (outlined|elevated), Title->title, Description->description, slots: media, action
-- Avatar: Size->size (sm|md|lg), Initials->initials
+## Components (Figma -> React)
+- Button: Variant->variant (default|outline|secondary|ghost|destructive|link); Size->size (xs 24px|sm 28|default 32|lg 36); State=Disabled->disabled; Roudness=Rounded->rounded; Left icon/Right icon->leftIcon/rightIcon; Kbd->kbd; label=children
+- Input: State=Destructive->aria-invalid; State=Disabled->disabled; Roudness=Rounded->rounded; placeholder/value native. 320x32.
+- Field, FieldLabel (required, disabled), FieldDescription (align=left|right)
+- Checkbox: checked/defaultChecked/onCheckedChange; aria-invalid; disabled; optional label, description. 16px.
+- Radio inside RadioGroup: group value equals Radio value means selected; aria-invalid; disabled; optional label, description.
+- Card (size default|sm) with CardImage, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter. 384px wide.
+- Avatar (size sm 24|default 32|lg 40) with AvatarImage, AvatarFallback, AvatarBadge; AvatarGroup, AvatarGroupCount.
 
 ## Tokens
-Colors (light/dark): bg/page bg/surface bg/subtle bg/disabled; text/primary secondary tertiary disabled inverse link; border/default strong focus; brand/default hover pressed subtle on-brand; danger|success|warning default subtle text.
-Radius: sm 4, md 8, lg 12, xl 16, full. Spacing: xs 4, sm 8, md 12, lg 16, xl 24, 2xl 32, 3xl 48, 4xl 64.
-Text styles: text-heading-h1..h4, text-body-large|medium|small, text-button-large|medium|small, text-label, text-caption.
+Colors (light/dark): background foreground card card-foreground popover popover-foreground primary primary-foreground secondary secondary-foreground muted muted-foreground accent accent-foreground destructive destructive-subtle text-destructive border input ring chart-1..5 sidebar-*.
+Radius: xs 2, sm 6, md 8, lg 10, xl 14, 2xl 18, 3xl 22, 4xl 26, full.
+Shadows: shadow-2xs, shadow-xs, shadow-sm, shadow-md, shadow-lg, shadow-focus-ring, shadow-destructive-ring.
+Text: Tailwind scale in Inter. text-xs 12/16, text-sm 14/20, text-base 16/24, text-lg 18/28, text-xl 20/28; weights font-normal/medium/semibold.

@@ -1,44 +1,89 @@
 import * as React from 'react'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { Avatar as AvatarPrimitive } from 'radix-ui'
 import { cn } from '@/lib/utils'
 
 /**
- * Avatar. Figma component "Avatar" (Size / Initials).
- * - Figma `Size`     -> `size` (`sm` 32px, `md` 40px, `lg` 56px)
- * - Figma `Initials` -> `initials`
+ * Avatar. Figma components "Avatar" (image), "Avatar" (fallback), "AvatarBadge", "AvatarGroup".
+ * - Figma `Size` sm 24 / default 32 / lg 40 -> `size`
+ * - Image avatar   -> <AvatarImage src=... />
+ * - Fallback avatar (Type=Icon or Count) -> <AvatarFallback>+3</AvatarFallback>
+ * - Figma `Badge` toggle -> <AvatarBadge /> (status dot, green)
+ * - AvatarGroup -> <AvatarGroup> with avatars inside; <AvatarGroupCount>+3</AvatarGroupCount>
  */
-const avatarVariants = cva(
-  'inline-flex shrink-0 select-none items-center justify-center rounded-full bg-accent text-primary',
-  {
-    variants: {
-      size: {
-        sm: 'size-8 text-button-small',
-        md: 'size-10 text-label',
-        lg: 'size-14 text-heading-h4',
-      },
-    },
-    defaultVariants: { size: 'sm' },
-  },
-)
-
-export interface AvatarProps extends React.ComponentProps<'span'>, VariantProps<typeof avatarVariants> {
-  /** One or two letters, for example "AB". */
-  initials: string
-}
-
-function Avatar({ className, size, initials, ...props }: AvatarProps) {
+function Avatar({
+  className,
+  size = 'default',
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Root> & { size?: 'sm' | 'default' | 'lg' }) {
   return (
-    <span
+    <AvatarPrimitive.Root
       data-slot="avatar"
-      data-size={size ?? 'sm'}
-      role="img"
-      aria-label={initials}
-      className={cn(avatarVariants({ size }), className)}
+      data-size={size}
+      className={cn(
+        'group/avatar relative flex shrink-0 rounded-full select-none',
+        'data-[size=sm]:size-6 data-[size=default]:size-8 data-[size=lg]:size-10',
+        className,
+      )}
       {...props}
-    >
-      <span aria-hidden="true">{initials}</span>
-    </span>
+    />
   )
 }
 
-export { Avatar, avatarVariants }
+function AvatarImage({ className, ...props }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+  return (
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
+      className={cn('aspect-square size-full rounded-full object-cover', className)}
+      {...props}
+    />
+  )
+}
+
+function AvatarFallback({ className, ...props }: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
+  return (
+    <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
+      className={cn(
+        'flex size-full items-center justify-center rounded-full bg-muted text-sm text-muted-foreground',
+        'group-data-[size=sm]/avatar:text-xs',
+        "[&>svg]:size-4 group-data-[size=sm]/avatar:[&>svg]:size-3.5 group-data-[size=lg]/avatar:[&>svg]:size-[18px]",
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
+function AvatarBadge({ className, ...props }: React.ComponentProps<'span'>) {
+  return (
+    <span
+      data-slot="avatar-badge"
+      className={cn(
+        // Figma: 8 / 10 / 12px green dot with a 1px white ring, bottom right
+        'absolute right-0 bottom-0 z-10 flex items-center justify-center rounded-full bg-green-600 inset-ring-1 inset-ring-white select-none',
+        'group-data-[size=sm]/avatar:size-2 group-data-[size=default]/avatar:size-2.5 group-data-[size=lg]/avatar:size-3',
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
+function AvatarGroup({ className, ...props }: React.ComponentProps<'div'>) {
+  return <div data-slot="avatar-group" className={cn('flex -space-x-2', className)} {...props} />
+}
+
+function AvatarGroupCount({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      data-slot="avatar-group-count"
+      className={cn(
+        'relative flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm text-muted-foreground ring-1 ring-background',
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Avatar, AvatarImage, AvatarFallback, AvatarBadge, AvatarGroup, AvatarGroupCount }

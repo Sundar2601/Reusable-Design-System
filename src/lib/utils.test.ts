@@ -2,29 +2,37 @@ import { describe, expect, it } from 'vitest'
 import { cn } from './utils'
 
 describe('cn', () => {
-  it('keeps a text color next to a text style (regression: primary Button text went dark)', () => {
-    const out = cn('text-brand-on-brand', 'text-button-large')
-    expect(out).toContain('text-brand-on-brand')
-    expect(out).toContain('text-button-large')
+  it('keeps a text size next to a text color (primary Button text stayed white earlier)', () => {
+    const out = cn('text-primary-foreground', 'text-sm')
+    expect(out).toContain('text-primary-foreground')
+    expect(out).toContain('text-sm')
   })
 
-  it('keeps every text style we define next to a color', () => {
-    for (const style of [
-      'heading-h1', 'heading-h2', 'heading-h3', 'heading-h4',
-      'body-large', 'body-medium', 'body-small',
-      'button-large', 'button-medium', 'button-small', 'label', 'caption',
-    ]) {
-      expect(cn(`text-${style}`, 'text-muted-foreground')).toContain(`text-${style}`)
-    }
+  it('keeps our custom destructive text color next to a text size', () => {
+    const out = cn('text-text-destructive', 'text-xs')
+    expect(out).toContain('text-text-destructive')
+    expect(out).toContain('text-xs')
   })
 
-  it('still lets a later class override an earlier conflicting one', () => {
-    expect(cn('px-md', 'px-xl')).toBe('px-xl')
+  it('keeps the inside outline width and color together', () => {
+    const out = cn('inset-ring-1', 'inset-ring-border')
+    expect(out).toContain('inset-ring-1')
+    expect(out).toContain('inset-ring-border')
   })
-})
 
-describe('cn with our spacing names', () => {
-  it('lets a consumer override padding and gap by name', () => {
-    expect(cn('gap-sm px-lg', 'gap-xl px-xs')).toBe('gap-xl px-xs')
+  it('keeps our focus ring shadow next to the inside outline', () => {
+    const out = cn('inset-ring-1 inset-ring-border', 'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring')
+    expect(out).toContain('focus-visible:shadow-focus-ring')
+    expect(out).toContain('focus-visible:inset-ring-ring')
+  })
+
+  it('lets a later class override an earlier conflicting one', () => {
+    expect(cn('px-2.5', 'px-4')).toBe('px-4')
+    expect(cn('h-8', 'h-10')).toBe('h-10')
+    expect(cn('rounded-lg', 'rounded-full')).toBe('rounded-full')
+  })
+
+  it('lets a consumer override our colors', () => {
+    expect(cn('bg-primary text-primary-foreground', 'bg-secondary')).toBe('text-primary-foreground bg-secondary')
   })
 })

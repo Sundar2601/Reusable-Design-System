@@ -1,11 +1,12 @@
 # @bounteous/ui
 
-React components built from the Figma "Design System" library. Package name is set in `package.json`.
+React components built from the Figma file "shadcn/ui components with variables - Tailwind classes". Private package.
 
 ```bash
 npm install
 npm run storybook   # component catalog, light/dark toggle in the toolbar
+npm test            # unit tests
 npm run build       # type-check and build
 ```
 
-Agents and contributors: read [CLAUDE.md](CLAUDE.md). Roadmap and decisions: [PLAN.md](PLAN.md).
+Agents and contributors: read [CLAUDE.md](CLAUDE.md). Roadmap, decisions and Figma fixes: [PLAN.md](PLAN.md).

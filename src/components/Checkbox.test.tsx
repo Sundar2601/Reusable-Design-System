@@ -15,6 +15,11 @@ describe('Checkbox', () => {
     expect(onCheckedChange).toHaveBeenCalledWith(true)
   })
 
+  it('works without a label (the control alone, 16px)', () => {
+    render(<Checkbox aria-label="Select row" />)
+    expect(screen.getByRole('checkbox', { name: 'Select row' })).toHaveClass('size-4')
+  })
+
   it('starts checked with defaultChecked', () => {
     render(<Checkbox label="Accept" defaultChecked />)
     expect(screen.getByRole('checkbox')).toBeChecked()
@@ -34,5 +39,15 @@ describe('Checkbox', () => {
     await user.tab()
     await user.keyboard(' ')
     expect(screen.getByRole('checkbox')).toBeChecked()
+  })
+
+  it('passes aria-invalid through for the invalid state', () => {
+    render(<Checkbox label="Accept" aria-invalid />)
+    expect(screen.getByRole('checkbox')).toBeInvalid()
+  })
+
+  it('shows the description under the label', () => {
+    render(<Checkbox label="Accept" description="Read the terms first." />)
+    expect(screen.getByText('Read the terms first.')).toBeInTheDocument()
   })
 })

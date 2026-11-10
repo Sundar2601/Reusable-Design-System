@@ -1,18 +1,15 @@
-// url=https://www.figma.com/design/LIBRARY_FILE_KEY/Design-System?node-id=12-179
+// url=https://www.figma.com/design/dcJKQOcHWk6gbH7lcMwicU/shadcn-ui-components-with-variables---Tailwind-classes---Updated-October-2026--Community-?node-id=2192-2550
 // source=src/components/Avatar.tsx
 // component=Avatar
-//
-// TODO before publishing: replace LIBRARY_FILE_KEY with the key of the Figma file that
-// hosts the "Design System" library. 12-179 is the Avatar component set in that file.
 import figma from 'figma'
 const instance = figma.selectedInstance
 
-const initials = instance.getString('Initials')
-const size = instance.getEnum('Size', { Small: 'sm', Medium: 'md', Large: 'lg' })
+const size = instance.getEnum('Size', { sm: 'sm', default: 'default', lg: 'lg' })
+const badge = instance.getBoolean('Badge')
 
 export default {
-  example: figma.code`<Avatar size="${size}" initials="${initials}" />`,
-  imports: ['import { Avatar } from "@bounteous/ui"'],
+  example: figma.code`<Avatar size="${size}"><AvatarImage src="/avatar.png" alt="" /><AvatarFallback>AB</AvatarFallback>${badge ? '<AvatarBadge />' : ''}</Avatar>`,
+  imports: ['import { Avatar, AvatarBadge, AvatarFallback, AvatarImage } from "@bounteous/ui"'],
   id: 'avatar',
   metadata: { nestable: true },
 }

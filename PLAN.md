@@ -1,78 +1,72 @@
 # PLAN: Figma design system → agent-ready React library
 
 ## Goal
-Turn the Figma library **"Design System"** into a React component library on GitHub that Claude and other agents can read, use and build with correctly.
+Turn the Figma file **"shadcn/ui components with variables - Tailwind classes"** into a React component library on GitHub that Claude and other agents can read, use and build with correctly.
 
-Figma source: the file linked first (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") is empty. The build reads the published library "Design System". Decision: the owner chose to use the empty file as the working file. The library's variables were imported into it by key to read the Light and Dark values. Library: 'Design System'.
+## History of the source (so nobody is confused later)
+1. The first link (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") was an empty file. I first built from a different published library, "Design System" (blue brand, a custom token set).
+2. On 2026-11-10 the owner pointed to the shadcn community file (`dcJKQOcHWk6gbH7lcMwicU`) and chose to **make it the new source**. Theme, all six components, tests and Code Connect were rebuilt from it. The earlier library's work is in git history (commits before `4ec7d9c`).
+3. Library variables were imported into the empty file during step 1 and are still there. Nothing else was added to either Figma file.
 
 ## Decisions (from the interview)
 | Topic | Decision |
 |---|---|
-| Stack | Vite, React, TypeScript, Tailwind, shadcn/ui restyled to our tokens, Storybook as the catalog |
-| Fonts | Inter, loaded with `@fontsource` (bundled, no external request) |
+| Stack | Vite, React, TypeScript, Tailwind v4, shadcn/ui patterns on Radix restyled to the tokens, Storybook |
+| Fonts | Inter, loaded with `@fontsource-variable/inter` (bundled, no external request) |
 | Default theme | Light. Dark applies with the `.dark` class on a parent element |
 | Icons | Lucide (`lucide-react`) |
-| Package name | `@bounteous/ui` |
-| Repo name | `design-system` (private on GitHub) |
-| Build order | Button, then Input, Checkbox, Radio, then Card, Avatar |
+| Package name | `@bounteous/ui` (private; cannot be published to npm by accident) |
+| Repo name | `design-system`, private on GitHub |
+| Build order | Button, Input, Checkbox, Radio, Card, Avatar |
 | Prop names | Figma property names become React prop names, in camelCase |
-| Code Connect | One `.figma.tsx` file per component |
+| Code Connect | One `.figma.ts` template file per Figma component, pointing at the shadcn file |
 
-## Figma fixes to make (by priority)
-1. ~~Light and Dark modes on the Color collection~~ **Done: both modes exist** (checked 2026-11-10).
-2. ~~Surface/background colors and a spacing scale~~ **Done: `bg/*` and `space/*` exist** (my first search missed them).
-3. Code-safe property values: "Large 48" becomes `Large`, so it maps to `lg`.
-4. Consistent property names: Radio's "Selected" and Checkbox's "Checked" become one boolean name.
-5. Remove Hover and Focus from variants; they are CSS states, not props.
-6. Card's action: replace the hard-wired Button with an instance-swap slot.
-7. One variable naming order (role/property): `text/primary` vs `danger/text` disagree.
-8. Put the code name and allowed values in each component description.
-9. Add missing basics: Button destructive, loading and icon-only; Avatar image; an icon set.
-10. Verify auto layout, no hard-coded fills or strokes, meaningful layer names.
+## Approved mapping (Stop 1) and Button (Stop 2)
+shadcn's variable names are already the Figma `mode` collection's names, so the mapping is 1:1 (see `src/theme/theme.css` and `tokens/figma-tokens.json`). Radius, shadow and text styles follow the Figma values. Spacing and the type scale are Tailwind's defaults, which match Figma. Button was compared with Figma in light and dark (`docs/button-compare/button-figma-vs-code.png`): colors match pixel for pixel, sizes within 1px.
 
-Matters most for code now: 3, 5, plus a foreground token for danger buttons (see the mapping table). Matters most for agents: 3, 8.
-
-Token values are saved in `tokens/figma-tokens.json`.
-
-### New Figma fixes found while building
-11. Rename Button `Type` and Card `Style` to `Variant`. They collide with a native button attribute and a React prop, so code uses `variant` and Code Connect maps it.
-12. Add a text color token for the danger button (white on `danger/default` is about 3.8:1 in light mode, below the 4.5:1 AA minimum) and a destructive Button.
-13. Make the elevated-card shadow an effect style or variable (it is a raw effect today; code defines `--shadow-elevated`).
-14. Give Card real slots (media and action) instead of a hard-wired image and Button.
-15. Add a pressed look for Button (code uses `brand/pressed`, Figma has none) and a focus look for Button.
-16. Add the missing text styles to Figma (Button 16/14/12 Medium, label 14 Medium, caption 12): code names them `text-button-*`, `text-label`, `text-caption`.
+## Figma fixes to make (by priority) – for the shadcn file
+Most important for **agents**: 1, 2. Most important for **code**: 3, 4, 5.
+1. **No component has a description.** Add one to every component: what it is, the React name, and allowed values. This is the biggest gap for agents.
+2. **Dark-mode `input` token is `#171717`**, almost invisible on dark cards and on the dark background. Give it a visible dark value.
+3. **Typo "Roudness"** on Button and Input (should be "Roundness"). Code Connect matches the typo for now.
+4. **Hover and Focus are variants** on Button, and `Dir` (LTR/RTL) is a variant on most components. These are CSS states and the `dir` attribute in code, not props. They multiply the variants (Button has 192).
+5. **Button's default `Size` is `xs`** (the first value). `default` is the real default; code uses it.
+6. **Card is not a component.** It is a page frame built from Card header and Card footer. Make a real Card component with header, content and footer slots.
+7. **Destructive is a raw color.** `destructive`, `destructive-subtle` and `text-destructive` are raw hex values, not aliases of a base color, and the Destructive button applies a 10% paint opacity on top of a variable that already has 10% alpha. Confirm which is intended.
+8. **Checkbox and Radio name states differently** (`Invalid` vs `Error`, `Interaction` vs `State`). Pick one set.
+9. **A 4px corner radius** on Checkbox is not a token (`radius-sm` is 6).
+10. **20 variable collections** (`tw/*` primitives) and a `tokens` collection with numeric names ("0", "1" …). Hide the primitives from publishing and keep one semantic set so agents do not pick raw palette values.
+11. **Icon, badge and key-hint toggles** on Button point at icon instances without Code Connect templates, so the Code Connect files do not map them yet.
 
 ## Status
 | Phase | State |
 |---|---|
 | 1 Setup | Done |
-| 2 Tokens, theme (Stop 1 approved) | Done |
+| 2 Tokens and theme (Stop 1 approved) | Done, rebuilt from the shadcn file |
 | 3 Button (Stop 2 approved) | Done |
-| 4 Input, Checkbox, Radio, Card, Avatar | Done, each checked against Figma values in light and dark |
-| 5 Agent readiness | CLAUDE.md, `llms.txt`, README written; 34 tests passing |
-| 6 Ship (Stop 3) | Not started. Nothing has left this computer. |
+| 4 Input, Field, Checkbox, Radio, Card, Avatar | Done, measured against Figma values in light and dark |
+| 5 Agent readiness | CLAUDE.md, `llms.txt`, README written; 54 tests pass |
+| 6 Ship (Stop 3) | **Not done.** Nothing has been pushed or published. Push is waiting on the owner's GitHub sign-in. |
 
-Tests: 34 automated tests (`npm test`) cover props, accessibility, disabled behavior and class merging for all six components.
+Verified: `npm test` (54 tests), `npm run typecheck`, `npm run build`, `npm run build-storybook`, and `npx figma connect parse` (9 template files).
 
-Not done yet: publishing Code Connect (needs the library file key in each `.figma.ts` file), pushing to GitHub, npm package name.
+Not done yet:
+- Pushing to GitHub (needs the owner's `gh auth login`).
+- Publishing Code Connect (owner runs it; needs the file published as a library and a Figma token with Code Connect write access).
+- Icon Button and the other 60+ components in the file.
+- Visual side-by-side images for components other than Button (the others were checked by measured values).
 
 ## Phases and checkpoints
-1. **Setup**: scaffold the project, write this file and CLAUDE.md, commit.
-2. **Tokens**: export Figma variables.
-   - **STOP 1:** show the table mapping shadcn's theme variables to our tokens, before any theme code.
-   - Then build the light and dark theme CSS.
-3. **Button**: build it with Storybook stories.
-   - **STOP 2:** show Button against Figma in light and dark, with its Code Connect file.
-4. **Form core**: Input, Checkbox, Radio, then Card and Avatar. Each has stories, tests and a Code Connect file.
-5. **Agent readiness**: finish CLAUDE.md as the usage guide, per-component docs, and a component index.
-6. **Ship**:
-   - **STOP 3:** show anything leaving this computer (a push to GitHub, publishing Code Connect) before it happens.
+1. **Setup**: scaffold, write this file and CLAUDE.md, commit.
+2. **Tokens**: **STOP 1:** show the shadcn-variable mapping before any theme code. Then the theme CSS.
+3. **Button**: **STOP 2:** show Button against Figma in light and dark, with its Code Connect file.
+4. **Remaining components**, each with stories, tests and a Code Connect file.
+5. **Agent readiness**: CLAUDE.md, `llms.txt`, README.
+6. **Ship**: **STOP 3:** show anything leaving this computer (a push to GitHub, publishing Code Connect) before it happens.
 
 ## Working rules
 - Commit often, in plain-language messages.
 - Sign-ins and publishing are done by the owner. Agents never handle passwords or tokens.
 - Explain choices in plain language; the owner is a designer.
 - The git repo lives in this folder (separate from the home-folder repo).
-
-## Verification
-`npm test`, `npm run build`, `npm run typecheck`, Storybook builds, light/dark checked against Figma screenshots, `figma connect parse` for Code Connect files.
+- Temporary frames made in Figma for comparison are deleted afterwards.

@@ -1,38 +1,63 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { Button } from './Button'
-import { Card } from './Card'
+import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardImage, CardTitle } from './Card'
+
+function Example(props: { size?: 'default' | 'sm' }) {
+  return (
+    <Card {...props}>
+      <CardHeader>
+        <CardTitle>Plan</CardTitle>
+        <CardDescription>Pick one</CardDescription>
+        <CardAction>
+          <Button variant="link">Sign up</Button>
+        </CardAction>
+      </CardHeader>
+      <CardContent>Body</CardContent>
+      <CardFooter>
+        <Button>Choose</Button>
+      </CardFooter>
+    </Card>
+  )
+}
 
 describe('Card', () => {
-  it('shows the title as a heading and the description', () => {
-    render(<Card title="Plan" description="Pick one" />)
-    expect(screen.getByRole('heading', { name: 'Plan' })).toBeInTheDocument()
-    expect(screen.getByText('Pick one')).toBeInTheDocument()
+  it('renders the header, content and footer parts', () => {
+    render(<Example />)
+    expect(screen.getByText('Plan')).toHaveAttribute('data-slot', 'card-title')
+    expect(screen.getByText('Pick one')).toHaveAttribute('data-slot', 'card-description')
+    expect(screen.getByText('Body')).toHaveAttribute('data-slot', 'card-content')
+    expect(screen.getByRole('button', { name: 'Choose' }).closest('[data-slot=card-footer]')).toBeInTheDocument()
   })
 
-  it('defaults to outlined, and accepts elevated (Figma "Style")', () => {
-    const { rerender } = render(<Card title="Plan" />)
-    expect(screen.getByText('Plan').closest('[data-slot=card]')).toHaveAttribute('data-variant', 'outlined')
-    rerender(<Card title="Plan" variant="elevated" />)
-    const card = screen.getByText('Plan').closest('[data-slot=card]')
-    expect(card).toHaveAttribute('data-variant', 'elevated')
-    expect(card).toHaveClass('shadow-elevated')
+  it('puts the action in the header', () => {
+    render(<Example />)
+    expect(screen.getByRole('button', { name: 'Sign up' }).closest('[data-slot=card-action]')).toBeInTheDocument()
   })
 
-  it('renders the media and action slots only when given', () => {
-    const { rerender } = render(<Card title="Plan" />)
-    expect(screen.queryByRole('button')).not.toBeInTheDocument()
-    expect(screen.queryByRole('img')).not.toBeInTheDocument()
+  it('is the default size, and accepts sm', () => {
+    const { rerender } = render(<Example />)
+    expect(document.querySelector('[data-slot=card]')).toHaveAttribute('data-size', 'default')
+    rerender(<Example size="sm" />)
+    expect(document.querySelector('[data-slot=card]')).toHaveAttribute('data-size', 'sm')
+  })
 
-    rerender(
-      <Card title="Plan" media={<img alt="Cover" src="x.png" />} action={<Button size="md">Choose</Button>} />,
+  it('is 384px wide like Figma (w-96)', () => {
+    render(<Example />)
+    expect(document.querySelector('[data-slot=card]')).toHaveClass('w-96')
+  })
+
+  it('renders an image area above the header', () => {
+    render(
+      <Card>
+        <CardImage>
+          <img alt="Cover" src="x.png" />
+        </CardImage>
+        <CardHeader>
+          <CardTitle>Plan</CardTitle>
+        </CardHeader>
+      </Card>,
     )
-    expect(screen.getByRole('img', { name: 'Cover' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Choose' })).toBeInTheDocument()
-  })
-
-  it('does not turn the title into a native tooltip', () => {
-    render(<Card title="Plan" />)
-    expect(screen.getByText('Plan').closest('[data-slot=card]')).not.toHaveAttribute('title')
+    expect(screen.getByRole('img', { name: 'Cover' }).closest('[data-slot=card-image]')).toBeInTheDocument()
   })
 })

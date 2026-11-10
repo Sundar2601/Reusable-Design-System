@@ -1,18 +1,32 @@
-// url=https://www.figma.com/design/LIBRARY_FILE_KEY/Design-System?node-id=12-65
+// url=https://www.figma.com/design/dcJKQOcHWk6gbH7lcMwicU/shadcn-ui-components-with-variables---Tailwind-classes---Updated-October-2026--Community-?node-id=1939-2183
 // source=src/components/Checkbox.tsx
 // component=Checkbox
 //
-// TODO before publishing: replace LIBRARY_FILE_KEY with the key of the Figma file that
-// hosts the "Design System" library. 12-65 is the Checkbox component set in that file.
+// Focus is a CSS state. Invalid becomes aria-invalid, Disabled becomes disabled.
 import figma from 'figma'
 const instance = figma.selectedInstance
 
-const label = instance.getString('Label')
-const checked = instance.getEnum('Checked', { False: false, True: true })
-const state = instance.getEnum('State', { Default: 'default', Disabled: 'disabled' })
+const checked = instance.getEnum('Data state', {
+  Checked: true,
+  Unchecked: false,
+  'Invalid-checked': true,
+  'Invalid-unchecked': false,
+})
+const invalid = instance.getEnum('Data state', {
+  Checked: false,
+  Unchecked: false,
+  'Invalid-checked': true,
+  'Invalid-unchecked': true,
+})
+const interaction = instance.getEnum('Interaction', {
+  Default: 'default',
+  Focus: 'default',
+  Disabled: 'disabled',
+  Invalid: 'default',
+})
 
 export default {
-  example: figma.code`<Checkbox label="${label}"${checked ? ' defaultChecked' : ''}${state === 'disabled' ? ' disabled' : ''} />`,
+  example: figma.code`<Checkbox aria-label="Checkbox"${checked ? ' defaultChecked' : ''}${invalid ? ' aria-invalid' : ''}${interaction === 'disabled' ? ' disabled' : ''} />`,
   imports: ['import { Checkbox } from "@bounteous/ui"'],
   id: 'checkbox',
   metadata: { nestable: true },

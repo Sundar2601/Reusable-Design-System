@@ -1,60 +1,64 @@
 import * as React from 'react'
 import { Checkbox as CheckboxPrimitive } from 'radix-ui'
+import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 /**
- * Checkbox. Figma component "Checkbox" (Checked / State / Label).
- * - Figma `Checked`        -> `checked` (or `defaultChecked`), with `onCheckedChange`
- * - Figma `State=Disabled` -> `disabled`
- * - Figma `Label`          -> `label`
+ * Checkbox. Figma components "Checkbox" (control) and "Checkbox" (field with label).
+ * - Figma `Data state` Checked / Unchecked -> `checked` (or `defaultChecked`) + `onCheckedChange`
+ * - Figma `Interaction=Disabled`           -> `disabled`
+ * - Figma `Invalid` states                 -> `aria-invalid`
+ * - Figma `Interaction=Focus` is CSS, not a prop.
+ * - The field's label and description -> `label` and `description` (optional).
  */
 export interface CheckboxProps extends Omit<React.ComponentProps<typeof CheckboxPrimitive.Root>, 'children'> {
-  /** Text shown next to the box. */
-  label?: string
+  /** Text next to the box. */
+  label?: React.ReactNode
+  /** Smaller text under the label. */
+  description?: React.ReactNode
 }
 
-function Checkbox({ className, label, id, ...props }: CheckboxProps) {
+function Checkbox({ className, label, description, id, ...props }: CheckboxProps) {
   const autoId = React.useId()
   const checkboxId = id ?? autoId
 
+  const control = (
+    <CheckboxPrimitive.Root
+      id={checkboxId}
+      data-slot="checkbox"
+      className={cn(
+        // Figma: 16px box, radius 4, 1px border drawn inside
+        'size-4 shrink-0 cursor-pointer rounded-[4px] bg-background inset-ring-1 inset-ring-border outline-none transition-shadow',
+        'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
+        'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',
+        'data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:inset-ring-primary',
+        'data-[state=checked]:focus-visible:inset-ring-ring',
+        'disabled:cursor-not-allowed disabled:opacity-50',
+        !label && !description && className,
+      )}
+      {...props}
+    >
+      <CheckboxPrimitive.Indicator className="flex items-center justify-center text-current">
+        <Check className="size-3.5" />
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
+  )
+
+  if (!label && !description) return control
+
   return (
-    <div data-slot="checkbox" className={cn('inline-flex items-center gap-sm', className)}>
-      <CheckboxPrimitive.Root
-        id={checkboxId}
-        className={cn(
-          // Figma: 20px box, 1.5px border, radius/sm
-          'flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-sm border-[1.5px] border-input bg-card transition-colors',
-          'outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
-          'data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-brand-on-brand',
-          'disabled:cursor-not-allowed disabled:border-border disabled:bg-bg-disabled disabled:text-text-disabled',
-          // Disabled wins over checked (Figma: gray box, gray check)
-          'disabled:data-[state=checked]:border-border disabled:data-[state=checked]:bg-bg-disabled disabled:data-[state=checked]:text-text-disabled',
-        )}
-        {...props}
-      >
-        <CheckboxPrimitive.Indicator>
-          <svg width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
-            <path
-              d="M1 3.5L3.8 6L9 1"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </CheckboxPrimitive.Indicator>
-      </CheckboxPrimitive.Root>
+    <div
+      data-slot="checkbox-field"
+      data-disabled={props.disabled || undefined}
+      className={cn('grid grid-cols-[1rem_1fr] items-center gap-x-2 gap-y-0.5 data-[disabled]:opacity-50', className)}
+    >
+      {control}
       {label ? (
-        <label
-          htmlFor={checkboxId}
-          className={cn(
-            'text-body-medium text-foreground',
-            props.disabled && 'cursor-not-allowed text-text-disabled',
-          )}
-        >
+        <label htmlFor={checkboxId} className="text-sm font-medium text-foreground">
           {label}
         </label>
       ) : null}
+      {description ? <p className="col-start-2 text-sm text-muted-foreground">{description}</p> : null}
     </div>
   )
 }
