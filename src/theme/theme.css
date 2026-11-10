@@ -57,6 +57,9 @@
   --font-button-large: 500 16px/24px var(--font-sans);
   --font-button-medium: 500 14px/20px var(--font-sans);
   --font-button-small: 500 12px/16px var(--font-sans);
+  /* Form text (Figma: field label Inter Medium 14, helper text Inter Regular 12) */
+  --font-label: 500 14px/20px var(--font-sans);
+  --font-caption: 400 12px/16px var(--font-sans);
 }
 
 .dark {
@@ -166,6 +169,8 @@
 @utility text-button-large { font: var(--font-button-large); }
 @utility text-button-medium { font: var(--font-button-medium); }
 @utility text-button-small { font: var(--font-button-small); }
+@utility text-label { font: var(--font-label); }
+@utility text-caption { font: var(--font-caption); }
 
 @layer base {
   * { border-color: var(--border); }

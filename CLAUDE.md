@@ -33,8 +33,13 @@ Vite, React, TypeScript, Tailwind, shadcn/ui (restyled to our tokens), Storybook
 | Component | Props (Figma name -> React prop) | Notes |
 |---|---|---|
 | `Button` | `Type` -> `variant` (`primary` / `secondary` / `ghost`), `Size` -> `size` (`lg` 48px / `md` 40px / `sm` 32px), `State=Disabled` -> `disabled`, `Label` -> children | `variant` not `type`: `type` is a native button attribute. Hover/active/focus are CSS. `asChild` renders a link. |
+| `Input` | `Label` -> `label`, `Placeholder` -> `placeholder`, `Helper text` -> `helperText`, `State=Error` -> `error`, `State=Disabled` -> `disabled` | Wraps a native input; label and helper are wired for screen readers. Focus is CSS. Default width 320px; override with `className`. |
+| `Checkbox` | `Checked` -> `checked` / `defaultChecked` + `onCheckedChange`, `State=Disabled` -> `disabled`, `Label` -> `label` | Built on Radix. |
+| `Radio` + `RadioGroup` | `Selected` -> the group's `value` equals the Radio's `value`, `State=Disabled` -> `disabled`, `Label` -> `label` | A Radio must be inside a `RadioGroup`. |
 
-Planned next: Input, Checkbox, Radio, Card, Avatar.
+Label rule: Button's `Label` is its children. For form controls, `Label` is a `label` prop because the label is a separate element.
+
+Planned next: Card, Avatar.
 
 ## Boundaries for agents
 - Do not push to GitHub, publish Code Connect, or publish to npm without the owner's confirmation. Show what will leave the computer first.

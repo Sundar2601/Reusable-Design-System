@@ -22,6 +22,8 @@ const twMerge = extendTailwindMerge({
             'button-large',
             'button-medium',
             'button-small',
+            'label',
+            'caption',
           ],
         },
       ],
