@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Text Field" />
+
+# Android Text Field: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Text Field** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidTextField } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidTextField label="Email" supportingText="We never share it" />
+<AndroidTextField variant="outlined" label="Email" error supportingText="Enter a valid email" />
+<AndroidTextField label="Search" leadingIcon={<Search />} trailingIcon={<X />} />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidTextFieldComponent]  // from '@/shared/extended/android-text-field.component'
+```
+
+```html
+<android-text-field label="Email" supportingText="We never share it" [(value)]="email" />
+<android-text-field variant="outlined" label="Email" [error]="true" supportingText="Enter a valid email" />
+<android-text-field label="Search"><svg slot="leading">...</svg><svg slot="trailing">...</svg></android-text-field>
+```

@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Dialog" />
+
+# Android Dialog: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Dialog** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidDialog, AndroidScrim } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidDialog
+  icon={<Trash2 />}
+  title="Delete item?"
+  description="This cannot be undone."
+  actions={<><AndroidButton variant="text">Cancel</AndroidButton><AndroidButton variant="text">Delete</AndroidButton></>}
+/>
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidDialogComponent]  // from '@/shared/extended/android-dialog.component'
+```
+
+```html
+<android-dialog title="Delete item?" description="This cannot be undone." [centered]="true">
+  <svg slot="icon">...</svg>
+  <android-button slot="actions" variant="text">Cancel</android-button>
+  <android-button slot="actions" variant="text">Delete</android-button>
+</android-dialog>
+```

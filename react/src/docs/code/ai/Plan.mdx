@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Plan" />
+
+# Plan: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Plan** (React and Angular).
+
+## React
+
+```tsx
+import { Plan, PlanHeader, PlanContent, PlanFooter } from '@bounteous/ui'
+```
+
+```tsx
+<Plan>
+  <PlanHeader title="Migrate the checkout form" description="Four steps." />
+  <PlanContent>...</PlanContent>
+  <PlanFooter><Button size="sm">Build</Button></PlanFooter>
+</Plan>
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiPlanComponent]  // from '@/shared/extended/ai-plan.component'
+```
+
+```html
+<ai-plan heading="Migrate the checkout form" description="Four steps.">
+  ...
+  <div footer><button z-button zSize="sm">Build</button></div>
+</ai-plan>
+```

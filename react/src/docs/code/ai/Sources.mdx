@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Sources" />
+
+# Sources: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Sources** (React and Angular).
+
+## React
+
+```tsx
+import { Sources, SourcesTrigger, SourcesContent, Source } from '@bounteous/ui'
+```
+
+```tsx
+<Sources>
+  <SourcesTrigger count={2} />
+  <SourcesContent>
+    <Source href="https://react.dev" title="React" />
+    <Source href="https://developer.mozilla.org" title="MDN" />
+  </SourcesContent>
+</Sources>
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiSourcesComponent]  // from '@/shared/extended/ai-sources.component'
+```
+
+```html
+<ai-sources [sources]="[
+  { href: 'https://react.dev', title: 'React' },
+  { href: 'https://developer.mozilla.org', title: 'MDN' }
+]" />
+```

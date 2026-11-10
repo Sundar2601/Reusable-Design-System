@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Tabs" />
+
+# Tabs: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Tabs** (React) and **Angular / Tabs**.
+
+## React
+
+```tsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@bounteous/ui'
+```
+
+```tsx
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Account settings.</TabsContent>
+  <TabsContent value="password">Password settings.</TabsContent>
+</Tabs>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardTabsImports]  // from '@/shared/components/tabs'
+```
+
+```html
+<z-tab-group>
+  <z-tab label="Account">Account settings.</z-tab>
+  <z-tab label="Password">Password settings.</z-tab>
+</z-tab-group>
+```

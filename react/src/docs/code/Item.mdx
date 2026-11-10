@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Item" />
+
+# Item: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Item** (React) and **Angular / Item**.
+
+## React
+
+```tsx
+import { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemGroup, ItemSeparator } from '@bounteous/ui'
+```
+
+```tsx
+<Item variant="outline">
+  <ItemContent>
+    <ItemTitle>Basic Item</ItemTitle>
+    <ItemDescription>A simple item.</ItemDescription>
+  </ItemContent>
+  <ItemActions><Button size="sm">Action</Button></ItemActions>
+</Item>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardItemImports]  // from '@/shared/components/item/item.imports'
+```
+
+```html
+<z-item zVariant="outline">
+  <z-item-content>
+    <z-item-title>Basic Item</z-item-title>
+    <p z-item-description>A simple item.</p>
+  </z-item-content>
+  <z-item-actions><button z-button zSize="sm">Action</button></z-item-actions>
+</z-item>
+```

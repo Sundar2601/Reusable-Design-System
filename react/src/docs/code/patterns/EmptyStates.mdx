@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Patterns/Empty states" />
+
+# Empty states pattern: React and Angular
+
+Live previews are under **Patterns / Empty states** (React) and **Angular / Patterns / Empty states**. Composed only from existing components.
+
+## React
+
+```tsx
+<Empty className="border">
+  <EmptyHeader>
+    <EmptyMedia variant="icon"><SearchX /></EmptyMedia>
+    <EmptyTitle>No results found</EmptyTitle>
+    <EmptyDescription>Try a different term or clear your filters.</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent><Button variant="outline">Clear filters</Button></EmptyContent>
+</Empty>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardEmptyComponent, ZardButtonComponent]
+```
+
+```html
+<z-empty class="border" zTitle="No results found" zDescription="Try a different term or clear your filters." [zActions]="[a]" />
+<ng-template #a><button z-button zType="outline">Clear filters</button></ng-template>
+```

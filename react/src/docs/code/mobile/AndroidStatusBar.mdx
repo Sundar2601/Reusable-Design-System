@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Status Bar" />
+
+# Android Status Bar: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Status Bar** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidStatusBar, AndroidGestureBar } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidStatusBar time="9:30" />
+<AndroidGestureBar />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidStatusBarComponent, AndroidGestureBarComponent]  // from '@/shared/extended/android-status-bar.component'
+```
+
+```html
+<android-status-bar time="9:30" />
+<android-gesture-bar />
+```

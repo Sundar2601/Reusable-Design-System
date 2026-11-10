@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Menubar" />
+
+# Menubar: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Menubar** (React) and **Angular / Menubar**.
+
+## React
+
+```tsx
+import { Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, MenubarShortcut, MenubarSeparator } from '@bounteous/ui'
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>New Tab <MenubarShortcut>⌘T</MenubarShortcut></MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```
+
+## Angular (Hand-built, Tailwind tokens)
+
+```ts
+imports: [MenubarComponent]  // from '@/shared/extended/menubar.component' (hand-built, ZardUI has no Menubar)
+```
+
+```html
+<app-menubar [menus]="menus" />
+
+<!-- menus = [{ label: "File", items: [{ label: "New Tab", shortcut: "⌘T" }, { separator: true }, { label: "Print" }] }] -->
+```

@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Button" />
+
+# iOS Button: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Button** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosButton } from '@bounteous/ui'
+```
+
+```tsx
+<IosButton>Continue</IosButton>
+<IosButton variant="tinted" size="medium">Tinted</IosButton>
+<IosButton variant="plain" size="small">Plain</IosButton>
+<IosButton destructive>Delete</IosButton>
+```
+
+## Angular
+
+```ts
+imports: [IosButtonComponent]  // from '@/shared/extended/ios-button.component'
+```
+
+```html
+<button ios-button size="large">Continue</button>
+<button ios-button variant="tinted" size="medium">Tinted</button>
+<button ios-button variant="plain" size="small">Plain</button>
+<button ios-button [destructive]="true">Delete</button>
+```

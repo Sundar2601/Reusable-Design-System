@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Switch" />
+
+# Android Switch: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Switch** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidSwitch } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidSwitch aria-label="Wi-Fi" defaultChecked />
+<AndroidSwitch checked={on} onCheckedChange={setOn} withIcon={false} />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidSwitchComponent]  // from '@/shared/extended/android-switch.component'
+```
+
+```html
+<android-switch ariaLabel="Wi-Fi" [(checked)]="on" />
+<android-switch [checked]="true" [withIcon]="false" [disabled]="true" />
+```

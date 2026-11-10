@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Drawer" />
+
+# Drawer: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Drawer** (React) and **Angular / Drawer**.
+
+## React
+
+```tsx
+import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from '@bounteous/ui'
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger asChild><Button variant="outline">Open drawer</Button></DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Move goal</DrawerTitle>
+      <DrawerDescription>Set your daily goal.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter><DrawerClose asChild><Button variant="outline">Cancel</Button></DrawerClose></DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardDrawerImports, ZardButtonComponent]  // from '@/shared/components/drawer'
+```
+
+```html
+<button z-button zType="outline" (click)="open = true">Open drawer</button>
+<z-drawer [(zVisible)]="open" zPlacement="bottom" [zHandle]="true">
+  <z-drawer-header>
+    <z-drawer-title>Move goal</z-drawer-title>
+    <z-drawer-description>Set your daily goal.</z-drawer-description>
+  </z-drawer-header>
+  <z-drawer-footer><button z-button zType="outline" z-drawer-close>Cancel</button></z-drawer-footer>
+</z-drawer>
+```

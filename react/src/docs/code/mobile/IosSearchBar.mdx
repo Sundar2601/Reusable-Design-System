@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Search Bar & Text Field" />
+
+# iOS Search Bar & Text Field: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Search Bar & Text Field** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosSearchBar, IosTextField } from '@bounteous/ui'
+```
+
+```tsx
+<IosSearchBar placeholder="Search" showCancel onCancel={() => {}} />
+<IosTextField label="Email" placeholder="name@example.com" />
+```
+
+## Angular
+
+```ts
+imports: [IosSearchBarComponent, IosTextFieldComponent]  // from '@/shared/extended/ios-search-bar.component'
+```
+
+```html
+<ios-search-bar [(value)]="query" [showCancel]="true" (cancel)="close()" />
+<ios-text-field label="Email" placeholder="name@example.com" />
+```

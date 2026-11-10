@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Dropdown Menu" />
+
+# Dropdown Menu: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Dropdown Menu** (React) and **Angular / Dropdown Menu**.
+
+## React
+
+```tsx
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuShortcut } from '@bounteous/ui'
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger asChild><Button variant="outline">Open</Button></DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut></DropdownMenuItem>
+    <DropdownMenuItem variant="destructive">Log out</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardDropdownImports, ZardButtonComponent]  // from '@/shared/components/dropdown'
+```
+
+```html
+<button z-button zType="outline" z-dropdown [zDropdownMenu]="menu">Open</button>
+<z-dropdown-menu-content #menu="zDropdownMenuContent" class="w-56">
+  <z-dropdown-menu-label>My Account</z-dropdown-menu-label>
+  <z-dropdown-menu-separator />
+  <z-dropdown-menu-item>Profile <z-dropdown-menu-shortcut>⇧⌘P</z-dropdown-menu-shortcut></z-dropdown-menu-item>
+  <z-dropdown-menu-item zType="destructive">Log out</z-dropdown-menu-item>
+</z-dropdown-menu-content>
+```

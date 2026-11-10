@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Page, Section, RatioBox, ImageStates, AvatarSizes } from './_components'
+
+<Meta title="Foundations/Imagery and Iconography" />
+
+# Imagery and Iconography
+
+<Page>
+<Section title="Aspect ratios">
+<div className="flex flex-wrap items-end gap-6">
+<RatioBox label="1:1" w={1} h={1} />
+<RatioBox label="4:3" w={4} h={3} />
+<RatioBox label="3:2" w={3} h={2} />
+<RatioBox label="16:9" w={16} h={9} />
+<RatioBox label="21:9" w={21} h={9} />
+<RatioBox label="3:4" w={3} h={4} />
+</div>
+</Section>
+<Section title="Image states">
+<ImageStates />
+</Section>
+<Section title="Avatar sizes" description="sm 24, default 32, lg 40, with status badge.">
+<AvatarSizes />
+</Section>
+<Section title="Iconography">
+<p className="text-sm text-muted-foreground">Icons use the Lucide set at 16px (default), 18px in large avatars and 24px for standalone icons, with 1.5 to 2px strokes, colored via <code>currentColor</code>.</p>
+</Section>
+</Page>

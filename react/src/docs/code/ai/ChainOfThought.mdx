@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Chain of Thought" />
+
+# Chain of Thought: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Chain of Thought** (React and Angular).
+
+## React
+
+```tsx
+import { ChainOfThought, ChainOfThoughtStep, ChainOfThoughtSearchResults, ChainOfThoughtSearchResult } from '@bounteous/ui'
+```
+
+```tsx
+<ChainOfThought>
+  <ChainOfThoughtStep label="Understand the question" status="complete" />
+  <ChainOfThoughtStep label="Search the docs" status="active">
+    <ChainOfThoughtSearchResults>
+      <ChainOfThoughtSearchResult>zod.dev</ChainOfThoughtSearchResult>
+    </ChainOfThoughtSearchResults>
+  </ChainOfThoughtStep>
+  <ChainOfThoughtStep label="Write the answer" status="pending" last />
+</ChainOfThought>
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiChainOfThoughtComponent]  // from '@/shared/extended/ai-chain-of-thought.component'
+```
+
+```html
+<ai-chain-of-thought [steps]="[
+  { label: 'Understand the question', status: 'complete' },
+  { label: 'Search the docs', status: 'active', results: ['zod.dev'] },
+  { label: 'Write the answer', status: 'pending' }
+]" />
+```

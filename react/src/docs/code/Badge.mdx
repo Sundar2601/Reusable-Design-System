@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Badge" />
+
+# Badge: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Badge** (React) and **Angular / Badge**.
+
+## React
+
+```tsx
+import { Badge } from '@bounteous/ui'
+```
+
+```tsx
+<Badge>Badge</Badge>
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="destructive">Destructive</Badge>
+<Badge variant="outline">Outline</Badge>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardBadgeComponent]  // from '@/shared/components/badge'
+```
+
+```html
+<z-badge>Badge</z-badge>
+<z-badge zType="secondary">Secondary</z-badge>
+<z-badge zType="destructive">Destructive</z-badge>
+<z-badge zType="outline">Outline</z-badge>
+```

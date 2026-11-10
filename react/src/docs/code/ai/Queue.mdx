@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Queue" />
+
+# Queue: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Queue** (React and Angular).
+
+## React
+
+```tsx
+import { Queue, QueueSection, QueueItem } from '@bounteous/ui'
+```
+
+```tsx
+<Queue>
+  <QueueSection label="In progress" count={1}>
+    <QueueItem status="in-progress">Generate the API client</QueueItem>
+  </QueueSection>
+  <QueueSection label="Completed" count={1}>
+    <QueueItem status="completed">Read the spec</QueueItem>
+  </QueueSection>
+</Queue>
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiQueueComponent]  // from '@/shared/extended/ai-queue.component'
+```
+
+```html
+<ai-queue [sections]="[
+  { label: 'In progress', items: [{ label: 'Generate the API client', status: 'in-progress' }] },
+  { label: 'Completed', items: [{ label: 'Read the spec', status: 'completed' }] }
+]" />
+```

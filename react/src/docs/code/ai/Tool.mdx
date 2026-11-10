@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Tool" />
+
+# Tool: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Tool** (React and Angular).
+
+## React
+
+```tsx
+import { Tool, ToolHeader, ToolContent, ToolInput, ToolOutput } from '@bounteous/ui'
+```
+
+```tsx
+<Tool defaultOpen>
+  <ToolHeader name="search_reports" state="output-available" />
+  <ToolContent>
+    <ToolInput input={{ query: 'revenue' }} />
+    <ToolOutput output={{ total: 3 }} />
+  </ToolContent>
+</Tool>
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiToolComponent]  // from '@/shared/extended/ai-tool.component'
+```
+
+```html
+<ai-tool name="search_reports" state="output-available" [toolInput]="{ query: 'revenue' }" [output]="{ total: 3 }" [open]="true" />
+```

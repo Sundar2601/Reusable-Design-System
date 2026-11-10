@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Navigation Menu" />
+
+# Navigation Menu: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Navigation Menu** (React) and **Angular / Navigation Menu**.
+
+## React
+
+```tsx
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from '@bounteous/ui'
+```
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="#">Introduction</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardNavigationMenuImports]  // from '@/shared/components/navigation-menu'
+```
+
+```html
+<z-navigation-menu>
+  <ul z-navigation-menu-list>
+    <li z-navigation-menu-item>
+      <button z-navigation-menu-trigger [zNavigationMenuTriggerFor]="start">Getting started</button>
+    </li>
+  </ul>
+</z-navigation-menu>
+<ng-template #start><div z-navigation-menu-content><a z-navigation-menu-link href="#">Introduction</a></div></ng-template>
+```

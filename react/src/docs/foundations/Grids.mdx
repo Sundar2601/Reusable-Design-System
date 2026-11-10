@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Page, Section, GridOverlay } from './_components'
+
+<Meta title="Foundations/Grids" />
+
+# Grids
+
+Template grids from the Figma Templates page. Column overlays are scaled down for display; the baseline grid is 8px.
+
+<Page>
+<Section title="Mobile">
+<div className="flex flex-wrap gap-8">
+<GridOverlay scale={0.4} g={{ name: 'Mobile portrait', w: 390, h: 844, cols: 4, margin: 16, gutter: 16 }} />
+<GridOverlay scale={0.4} g={{ name: 'Mobile landscape', w: 844, h: 390, cols: 8, margin: 48, gutter: 16 }} />
+</div>
+</Section>
+<Section title="Tablet">
+<div className="flex flex-wrap gap-8">
+<GridOverlay scale={0.4} g={{ name: 'Tablet portrait', w: 834, h: 1194, cols: 8, margin: 24, gutter: 16 }} />
+<GridOverlay scale={0.4} g={{ name: 'Tablet landscape', w: 1194, h: 834, cols: 12, margin: 32, gutter: 24 }} />
+</div>
+</Section>
+<Section title="Desktop">
+<GridOverlay scale={0.5} g={{ name: 'Desktop', w: 1440, h: 1024, cols: 12, margin: 64, gutter: 24 }} />
+</Section>
+</Page>

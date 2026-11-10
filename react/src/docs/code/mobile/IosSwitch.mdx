@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Switch" />
+
+# iOS Switch: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Switch** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosSwitch } from '@bounteous/ui'
+```
+
+```tsx
+<IosSwitch aria-label="Airplane mode" defaultChecked onCheckedChange={(on) => console.log(on)} />
+<IosSwitch disabled />
+```
+
+## Angular
+
+```ts
+imports: [IosSwitchComponent]  // from '@/shared/extended/ios-switch.component'
+```
+
+```html
+<ios-switch [(checked)]="airplane" ariaLabel="Airplane mode" />
+<ios-switch [disabled]="true" />
+```

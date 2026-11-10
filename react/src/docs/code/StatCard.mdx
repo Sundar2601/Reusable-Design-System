@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Stat Card" />
+
+# Stat Card: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Stat Card** (React) and **Angular / Stat Card**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { StatCard } from '@bounteous/ui'
+```
+
+```tsx
+<StatCard label="Total revenue" value="$45,231" delta="+20.1%" trend="up" description="from last month" />
+```
+
+## Angular
+
+```ts
+imports: [StatCardComponent]  // from '@/shared/extended/stat-card.component'
+```
+
+```html
+<ui-stat-card label="Total revenue" value="$45,231" delta="+20.1%" trend="up" description="from last month" />
+```

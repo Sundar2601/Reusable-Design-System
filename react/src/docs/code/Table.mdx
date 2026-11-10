@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Table" />
+
+# Table: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Table** (React) and **Angular / Table**.
+
+## React
+
+```tsx
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@bounteous/ui'
+```
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow><TableHead>Invoice</TableHead><TableHead>Status</TableHead></TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow><TableCell>INV001</TableCell><TableCell>Paid</TableCell></TableRow>
+  </TableBody>
+</Table>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardTableImports]  // from '@/shared/components/table/table.imports'
+```
+
+```html
+<table z-table>
+  <thead z-table-header>
+    <tr z-table-row><th z-table-head>Invoice</th><th z-table-head>Status</th></tr>
+  </thead>
+  <tbody z-table-body>
+    <tr z-table-row><td z-table-cell>INV001</td><td z-table-cell>Paid</td></tr>
+  </tbody>
+</table>
+```

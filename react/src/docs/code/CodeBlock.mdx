@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Code Block" />
+
+# Code Block: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Code Block** (React) and **Angular / Code Block**.
+
+## React
+
+```tsx
+import { CodeBlock } from '@bounteous/ui'
+```
+
+```tsx
+<CodeBlock language="tsx" code={`<Button>Click me</Button>`} />
+```
+
+## Angular (hand-built, ZardUI has no code block)
+
+```ts
+imports: [AppCodeBlockComponent]  // hand-built, from '@/shared/extended/code-block.component'
+```
+
+```html
+<app-code-block language="html" [code]="source" />
+```

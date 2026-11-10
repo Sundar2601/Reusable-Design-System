@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Hover Card" />
+
+# Hover Card: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Hover Card** (React) and **Angular / Hover Card**.
+
+## React
+
+```tsx
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@bounteous/ui'
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger asChild><Button variant="link">@nextjs</Button></HoverCardTrigger>
+  <HoverCardContent>The React Framework.</HoverCardContent>
+</HoverCard>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardHoverCardDirective, ZardHoverCardComponent]  // from '@/shared/components/hover-card/hover-card.component'
+```
+
+```html
+<button z-button zType="link" zHoverCard [zContent]="card">@nextjs</button>
+<ng-template #card>The React Framework.</ng-template>
+```

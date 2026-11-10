@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Aspect Ratio" />
+
+# Aspect Ratio: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Aspect Ratio** (React) and **Angular / Aspect Ratio**.
+
+## React
+
+```tsx
+import { AspectRatio } from '@bounteous/ui'
+```
+
+```tsx
+<AspectRatio ratio={16 / 9} className="bg-muted rounded-lg">
+  <img src="..." alt="" />
+</AspectRatio>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardAspectRatioComponent]  // from '@/shared/components/aspect-ratio'
+```
+
+```html
+<z-aspect-ratio [zRatio]="16 / 9" class="bg-muted rounded-lg">
+  <img src="..." alt="" />
+</z-aspect-ratio>
+```

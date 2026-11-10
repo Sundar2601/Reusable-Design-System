@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Suggestions" />
+
+# Suggestions: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Suggestions** (React and Angular).
+
+## React
+
+```tsx
+import { Suggestions, Suggestion } from '@bounteous/ui'
+```
+
+```tsx
+<Suggestions>
+  <Suggestion suggestion="Summarize this document" onSelect={(s) => setPrompt(s)} />
+  <Suggestion suggestion="Draft a reply" onSelect={(s) => setPrompt(s)} />
+</Suggestions>
+```
+
+## Angular
+
+```ts
+imports: [AiSuggestionsComponent]  // from '@/shared/extended/ai-suggestions.component'
+```
+
+```html
+<ui-ai-suggestions [suggestions]="['Summarize this document', 'Draft a reply']" layout="wrap" (selected)="setPrompt($event)" />
+```

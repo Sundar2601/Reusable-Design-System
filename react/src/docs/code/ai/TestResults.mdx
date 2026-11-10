@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Test Results" />
+
+# Test Results: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Test Results** (React and Angular).
+
+## React
+
+```tsx
+import { TestResults } from '@bounteous/ui'
+```
+
+```tsx
+<TestResults suites={[{ name: "Button.test.tsx", tests: [{ name: "renders", status: "passed", duration: 12 }] }]} />
+```
+
+## Angular (hand-built, ZardUI parts)
+
+```ts
+imports: [AiTestResultsComponent]  // from '@/shared/extended/ai-test-results.component'
+```
+
+```html
+<ui-ai-test-results [suites]="suites" />
+```

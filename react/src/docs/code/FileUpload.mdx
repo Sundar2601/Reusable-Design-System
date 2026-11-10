@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/File Upload" />
+
+# File Upload: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / File Upload** (React) and **Angular / File Upload**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { FileUpload } from '@bounteous/ui'
+```
+
+```tsx
+<FileUpload multiple accept="image/*" onFilesChange={(files) => console.log(files)} />
+```
+
+## Angular
+
+```ts
+imports: [FileUploadComponent]  // from '@/shared/extended/file-upload.component'
+```
+
+```html
+<ui-file-upload [multiple]="true" accept="image/*" (filesChange)="onFiles($event)" />
+```

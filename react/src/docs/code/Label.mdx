@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Label" />
+
+# Label: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Label** (React) and **Angular / Label**.
+
+## React
+
+```tsx
+import { Label } from '@bounteous/ui'
+```
+
+```tsx
+<Label htmlFor="email">Email</Label>
+<Label htmlFor="email" required>Email</Label>
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [ZardLabelComponent]  // from '@/shared/extended/label.component' (hand-built)
+```
+
+```html
+<label z-label for="email">Email</label>
+<label z-label for="email" zRequired>Email</label>
+```

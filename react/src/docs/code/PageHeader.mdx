@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Page Header" />
+
+# Page Header: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Page Header** (React) and **Angular / Page Header**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { PageHeader } from '@bounteous/ui'
+```
+
+```tsx
+<PageHeader
+  title="Projects"
+  description="Manage all of your team projects."
+  breadcrumb={<span>Home / Projects</span>}
+  actions={<Button>New project</Button>}
+/>
+```
+
+## Angular
+
+```ts
+imports: [PageHeaderComponent]  // from '@/shared/extended/page-header.component'
+```
+
+```html
+<ui-page-header heading="Projects" description="Manage all of your team projects.">
+  <span breadcrumb>Home / Projects</span>
+  <button actions z-button>New project</button>
+</ui-page-header>
+```

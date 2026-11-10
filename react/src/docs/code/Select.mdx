@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Select" />
+
+# Select: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Select** (React) and **Angular / Select**.
+
+## React
+
+```tsx
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@bounteous/ui'
+```
+
+```tsx
+<Select>
+  <SelectTrigger><SelectValue placeholder="Select a fruit" /></SelectTrigger>
+  <SelectContent>
+    <SelectItem value="apple">Apple</SelectItem>
+    <SelectItem value="banana">Banana</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardSelectImports]  // from '@/shared/components/select/select.imports'
+```
+
+```html
+<z-select zPlaceholder="Select a fruit">
+  <z-select-item zValue="apple">Apple</z-select-item>
+  <z-select-item zValue="banana">Banana</z-select-item>
+</z-select>
+<z-select zInvalid>...</z-select>
+<z-select zDisabled>...</z-select>
+```

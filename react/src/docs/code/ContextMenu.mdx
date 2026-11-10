@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Context Menu" />
+
+# Context Menu: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Context Menu** (React) and **Angular / Context Menu**.
+
+## React
+
+```tsx
+import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuSeparator, ContextMenuShortcut } from '@bounteous/ui'
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger className="h-36 w-72">Right click here</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Back <ContextMenuShortcut>⌘[</ContextMenuShortcut></ContextMenuItem>
+    <ContextMenuSeparator />
+    <ContextMenuItem>Reload</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardContextMenuImports]  // from '@/shared/components/context-menu'
+```
+
+```html
+<div z-context-menu [zContextMenuTriggerFor]="menu" class="h-36 w-72">Right click here</div>
+<z-dropdown-menu-content #menu="zDropdownMenuContent" class="w-56">
+  <z-dropdown-menu-item>Back <z-dropdown-menu-shortcut>⌘[</z-dropdown-menu-shortcut></z-dropdown-menu-item>
+  <z-dropdown-menu-separator />
+  <z-dropdown-menu-item>Reload</z-dropdown-menu-item>
+</z-dropdown-menu-content>
+```

@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Model Selector" />
+
+# Model Selector: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Model Selector** (React and Angular).
+
+## React
+
+```tsx
+import { ModelSelector } from '@bounteous/ui'
+```
+
+```tsx
+<ModelSelector models={models} value={model} onValueChange={setModel} />
+```
+
+## Angular (hand-built, ZardUI parts)
+
+```ts
+imports: [AiModelSelectorComponent]  // from '@/shared/extended/ai-model-selector.component'
+```
+
+```html
+<ui-ai-model-selector [models]="models" [(value)]="model" />
+```

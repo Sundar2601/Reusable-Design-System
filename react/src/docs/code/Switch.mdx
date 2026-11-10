@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Switch" />
+
+# Switch: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Switch** (React) and **Angular / Switch**.
+
+## React
+
+```tsx
+import { Switch } from '@bounteous/ui'
+```
+
+```tsx
+<Switch />
+<Switch defaultChecked />
+<Switch size="sm" />
+<Switch disabled />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardSwitchComponent]  // from '@/shared/components/switch'
+```
+
+```html
+<z-switch />
+<z-switch [zChecked]="true" />
+<z-switch zSize="sm" />
+<z-switch zDisabled />
+```

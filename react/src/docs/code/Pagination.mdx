@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Pagination" />
+
+# Pagination: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Pagination** (React) and **Angular / Pagination**.
+
+## React
+
+```tsx
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from '@bounteous/ui'
+```
+
+```tsx
+<Pagination>
+  <PaginationContent>
+    <PaginationItem><PaginationPrevious href="#" /></PaginationItem>
+    <PaginationItem><PaginationLink href="#" isActive>1</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationLink href="#">2</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationEllipsis /></PaginationItem>
+    <PaginationItem><PaginationNext href="#" /></PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardPaginationComponent]  // from '@/shared/components/pagination'
+```
+
+```html
+<z-pagination [zTotal]="10" [(zPageIndex)]="page" />
+```

@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Tooltip" />
+
+# Tooltip: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Tooltip** (React) and **Angular / Tooltip**.
+
+## React
+
+```tsx
+import { Tooltip, TooltipTrigger, TooltipContent } from '@bounteous/ui'
+```
+
+```tsx
+<Tooltip>
+  <TooltipTrigger asChild><Button variant="outline">Hover</Button></TooltipTrigger>
+  <TooltipContent side="top">Add to library</TooltipContent>
+</Tooltip>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardTooltipImports]  // from '@/shared/components/tooltip/tooltip.imports'
+```
+
+```html
+<button z-button zType="outline" zTooltip="Add to library" zPosition="top">Hover</button>
+```

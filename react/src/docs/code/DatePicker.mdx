@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/DatePicker" />
+
+# Date Picker: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Date Picker** (React) and **Angular / Date Picker**.
+
+## React
+
+```tsx
+import { DatePicker } from '@bounteous/ui'
+```
+
+```tsx
+<DatePicker placeholder="Pick a date" onValueChange={setDate} />
+<DatePicker defaultValue={new Date()} format="dd/MM/yyyy" />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardDatePickerComponent]  // from '@/shared/components/date-picker'
+```
+
+```html
+<z-date-picker zPlaceholder="Pick a date" />
+<z-date-picker zFormat="dd/MM/yyyy" />
+```

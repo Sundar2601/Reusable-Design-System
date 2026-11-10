@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Banner" />
+
+# Banner: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Banner** (React) and **Angular / Banner**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { Banner } from '@bounteous/ui'
+```
+
+```tsx
+<Banner title="Scheduled maintenance">Unavailable on Sunday at 2 AM.</Banner>
+<Banner variant="destructive" title="Payment failed" action={<Button size="sm" variant="outline">Update</Button>} onDismiss={() => {}} />
+```
+
+## Angular
+
+```ts
+imports: [BannerComponent]  // from '@/shared/extended/banner.component'
+```
+
+```html
+<ui-banner heading="Scheduled maintenance">Unavailable on Sunday at 2 AM.</ui-banner>
+<ui-banner variant="destructive" heading="Payment failed" [dismissible]="true">
+  <button action z-button zSize="sm" zType="outline">Update</button>
+</ui-banner>
+```

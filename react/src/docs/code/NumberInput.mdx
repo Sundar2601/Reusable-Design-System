@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Number Input" />
+
+# Number Input: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Number Input** (React) and **Angular / Number Input**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { NumberInput } from '@bounteous/ui'
+```
+
+```tsx
+<NumberInput defaultValue={1} min={0} max={10} />
+<NumberInput step={5} onValueChange={(n) => console.log(n)} />
+```
+
+## Angular
+
+```ts
+imports: [NumberInputComponent]  // from '@/shared/extended/number-input.component'
+```
+
+```html
+<ui-number-input [(value)]="qty" [min]="0" [max]="10" />
+<ui-number-input [(value)]="qty" [step]="5" />
+```

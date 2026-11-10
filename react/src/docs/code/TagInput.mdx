@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Tag Input" />
+
+# Tag Input: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Tag Input** (React) and **Angular / Tag Input**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { TagInput } from '@bounteous/ui'
+```
+
+```tsx
+<TagInput defaultValue={['design', 'react']} max={5} />
+<TagInput aria-invalid />
+```
+
+## Angular
+
+```ts
+imports: [TagInputComponent]  // from '@/shared/extended/tag-input.component'
+```
+
+```html
+<ui-tag-input [(value)]="tags" [max]="5" />
+<ui-tag-input [invalid]="true" />
+```

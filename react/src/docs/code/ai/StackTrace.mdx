@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Stack Trace" />
+
+# Stack Trace: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Stack Trace** (React and Angular).
+
+## React
+
+```tsx
+import { StackTrace } from '@bounteous/ui'
+```
+
+```tsx
+<StackTrace name="TypeError" message="x is undefined" frames={[{ fn: "App", file: "src/App.tsx", line: 12, column: 5 }]} />
+```
+
+## Angular (hand-built, ZardUI parts)
+
+```ts
+imports: [AiStackTraceComponent]  // from '@/shared/extended/ai-stack-trace.component'
+```
+
+```html
+<ui-ai-stack-trace name="TypeError" message="x is undefined" [frames]="frames" />
+```

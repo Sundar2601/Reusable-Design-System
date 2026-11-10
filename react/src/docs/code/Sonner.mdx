@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Sonner" />
+
+# Sonner: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Sonner** (React) and **Angular / Sonner**.
+
+## React
+
+```tsx
+import { Toaster, toast } from '@bounteous/ui'
+```
+
+```tsx
+// once, near the app root
+<Toaster />
+
+// anywhere
+toast("Event has been created", { description: "Sunday, December 03, 2023" })
+toast.success("Saved")
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardSonnerComponent]  // from '@/shared/components/sonner'
+// then: inject(ZardSonnerService).success('Saved')
+```
+
+```html
+<z-sonner />   <!-- once, near the app root -->
+```

@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Patterns/Loading" />
+
+# Loading pattern: React and Angular
+
+Live previews are under **Patterns / Loading** (React) and **Angular / Patterns / Loading**. Composed only from existing components.
+
+## React
+
+```tsx
+<Skeleton className="h-4 w-64" />
+<Button disabled><Spinner /> Saving</Button>
+<Progress value={60} />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardSkeletonComponent, ZardSpinnerComponent, ZardProgressComponent, ZardButtonComponent]
+```
+
+```html
+<z-skeleton class="h-4 w-64" />
+<button z-button zDisabled><z-spinner /> Saving</button>
+<z-progress [value]="60" />
+```

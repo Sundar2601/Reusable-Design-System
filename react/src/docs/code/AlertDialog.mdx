@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Alert Dialog" />
+
+# Alert Dialog: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Alert Dialog** (React) and **Angular / Alert Dialog**.
+
+## React
+
+```tsx
+import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel, AlertDialogAction } from '@bounteous/ui'
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger asChild><Button variant="outline">Show dialog</Button></AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+      <AlertDialogDescription>This cannot be undone.</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Continue</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardAlertDialogImports, ZardButtonComponent]  // from '@/shared/components/alert-dialog'
+```
+
+```html
+<button z-button zType="outline" (click)="open = true">Show dialog</button>
+<z-alert-dialog [(zVisible)]="open">
+  <z-alert-dialog-header>
+    <z-alert-dialog-title>Are you sure?</z-alert-dialog-title>
+    <z-alert-dialog-description>This cannot be undone.</z-alert-dialog-description>
+  </z-alert-dialog-header>
+  <z-alert-dialog-footer>
+    <button z-button zType="outline" z-alert-dialog-close>Cancel</button>
+    <button z-button z-alert-dialog-close>Continue</button>
+  </z-alert-dialog-footer>
+</z-alert-dialog>
+```

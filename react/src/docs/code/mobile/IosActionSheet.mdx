@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Action Sheet" />
+
+# iOS Action Sheet: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Action Sheet** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosActionSheet } from '@bounteous/ui'
+```
+
+```tsx
+<IosActionSheet
+  title="Profile Photo"
+  actions={[{ label: 'Take Photo' }, { label: 'Delete', destructive: true }]}
+  onCancel={close}
+/>
+```
+
+## Angular
+
+```ts
+imports: [IosActionSheetComponent]  // from '@/shared/extended/ios-action-sheet.component'
+```
+
+```html
+<ios-action-sheet
+  title="Profile Photo"
+  [actions]="[{ label: 'Take Photo' }, { label: 'Delete', destructive: true }]"
+  (actionClick)="onAction($event)"
+  (cancel)="close()"
+/>
+```

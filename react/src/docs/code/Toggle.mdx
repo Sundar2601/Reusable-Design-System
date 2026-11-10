@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Toggle" />
+
+# Toggle: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Toggle** (React) and **Angular / Toggle**.
+
+## React
+
+```tsx
+import { Toggle } from '@bounteous/ui'
+```
+
+```tsx
+<Toggle aria-label="Bold"><Bold /></Toggle>
+<Toggle variant="outline" size="sm" aria-label="Italic">Italic</Toggle>
+<Toggle defaultPressed>On</Toggle>
+<Toggle disabled>Disabled</Toggle>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardToggleComponent]  // from '@/shared/components/toggle'
+```
+
+```html
+<z-toggle zAriaLabel="Bold">Bold</z-toggle>
+<z-toggle zType="outline" zSize="sm" zAriaLabel="Italic">Italic</z-toggle>
+<z-toggle [zValue]="true" zAriaLabel="On">On</z-toggle>
+<z-toggle zDisabled zAriaLabel="Disabled">Disabled</z-toggle>
+```

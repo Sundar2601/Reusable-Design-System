@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Card" />
+
+# Android Card: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Card** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidCard, AndroidCardMedia, AndroidCardContent, AndroidCardTitle, AndroidCardDescription, AndroidCardActions } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidCard variant="elevated" className="w-80">
+  <AndroidCardMedia />
+  <AndroidCardContent>
+    <AndroidCardTitle>Weekend trip</AndroidCardTitle>
+    <AndroidCardDescription>Two nights by the lake.</AndroidCardDescription>
+  </AndroidCardContent>
+  <AndroidCardActions>
+    <AndroidButton variant="text">Dismiss</AndroidButton>
+  </AndroidCardActions>
+</AndroidCard>
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidCardComponent]  // from '@/shared/extended/android-card.component'
+```
+
+```html
+<android-card class="w-80" variant="elevated">
+  <div slot="media" class="h-40 bg-primary/10"></div>
+  <h3 class="text-base font-medium">Weekend trip</h3>
+  <p class="text-sm text-muted-foreground">Two nights by the lake.</p>
+  <android-button slot="actions" variant="text">Dismiss</android-button>
+</android-card>
+```

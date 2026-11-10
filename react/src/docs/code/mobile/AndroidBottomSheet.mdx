@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Bottom Sheet" />
+
+# Android Bottom Sheet: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Bottom Sheet** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidBottomSheet } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidBottomSheet title="Share">
+  <AndroidListItem headline="Copy link" leading={<Link />} onClick={copy} />
+  <AndroidListItem headline="Share to..." leading={<Share2 />} onClick={share} />
+</AndroidBottomSheet>
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidBottomSheetComponent]  // from '@/shared/extended/android-bottom-sheet.component'
+```
+
+```html
+<android-bottom-sheet title="Share" variant="modal">
+  <android-list-item headline="Copy link" [interactive]="true"><svg slot="leading">...</svg></android-list-item>
+  <android-list-item headline="Share to..." [interactive]="true"><svg slot="leading">...</svg></android-list-item>
+</android-bottom-sheet>
+```

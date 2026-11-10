@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Terminal" />
+
+# Terminal: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Terminal** (React and Angular).
+
+## React
+
+```tsx
+import { Terminal } from '@bounteous/ui'
+```
+
+```tsx
+<Terminal output={log} streaming onClear={() => setLog("")} />
+```
+
+## Angular (hand-built, ZardUI parts)
+
+```ts
+imports: [AiTerminalComponent]  // from '@/shared/extended/ai-terminal.component'
+```
+
+```html
+<ui-ai-terminal [output]="log" [streaming]="true" (clear)="onClear()" />
+```

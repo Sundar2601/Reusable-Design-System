@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Checkpoint" />
+
+# Checkpoint: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Checkpoint** (React and Angular).
+
+## React
+
+```tsx
+import { Checkpoint } from '@bounteous/ui'
+```
+
+```tsx
+<Checkpoint label="Checkpoint 3" description="2 min ago" onRestore={() => restore()} />
+```
+
+## Angular (hand-built, ZardUI parts)
+
+```ts
+imports: [AiCheckpointComponent]  // from '@/shared/extended/ai-checkpoint.component'
+```
+
+```html
+<ui-ai-checkpoint label="Checkpoint 3" description="2 min ago" (restore)="restore()" />
+```

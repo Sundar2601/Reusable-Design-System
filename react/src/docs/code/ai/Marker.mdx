@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Marker" />
+
+# Marker: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Marker** (React and Angular).
+
+## React
+
+```tsx
+import { Marker } from '@bounteous/ui'
+```
+
+```tsx
+<Marker>Today</Marker>
+<Marker variant="separator">Conversation compacted</Marker>
+<Marker variant="border" icon={<Sparkles />}>Switched model</Marker>
+```
+
+## Angular
+
+```ts
+imports: [...ZardMarkerImports]  // from '@/shared/components/marker'
+```
+
+```html
+<z-marker zVariant="separator"><z-marker-content>Conversation compacted</z-marker-content></z-marker>
+```

@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Top App Bar" />
+
+# Android Top App Bar: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Top App Bar** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidTopAppBar } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidTopAppBar variant="small" title="Inbox" navigationIcon={<ArrowLeft />} actions={<Search />} />
+<AndroidTopAppBar variant="large" title="Settings" scrolled />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidTopAppBarComponent]  // from '@/shared/extended/android-top-app-bar.component'
+```
+
+```html
+<android-top-app-bar variant="small" title="Inbox">
+  <svg slot="navigation">...</svg>
+  <span slot="actions">...</span>
+</android-top-app-bar>
+```

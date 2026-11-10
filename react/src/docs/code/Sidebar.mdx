@@ -1,0 +1,51 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Sidebar" />
+
+# Sidebar: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Sidebar** (React) and **Angular / Sidebar**.
+
+## React
+
+```tsx
+import { SidebarProvider, Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarInset, SidebarTrigger } from '@bounteous/ui'
+```
+
+```tsx
+<SidebarProvider>
+  <Sidebar collapsible="icon">
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Application</SidebarGroupLabel>
+        <SidebarMenu>
+          <SidebarMenuItem><SidebarMenuButton isActive>Home</SidebarMenuButton></SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset><SidebarTrigger /> Content</SidebarInset>
+</SidebarProvider>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardSidebarImports]  // from '@/shared/components/sidebar'
+```
+
+```html
+<z-sidebar-provider>
+  <z-sidebar zCollapsible="icon">
+    <z-sidebar-content>
+      <z-sidebar-group>
+        <z-sidebar-group-label>Application</z-sidebar-group-label>
+        <ul z-sidebar-menu>
+          <li z-sidebar-menu-item><button z-sidebar-menu-button [zActive]="true">Home</button></li>
+        </ul>
+      </z-sidebar-group>
+    </z-sidebar-content>
+  </z-sidebar>
+  <z-sidebar-inset><button z-sidebar-trigger></button> Content</z-sidebar-inset>
+</z-sidebar-provider>
+```

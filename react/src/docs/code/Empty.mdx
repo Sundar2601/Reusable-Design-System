@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Empty" />
+
+# Empty: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Empty** (React) and **Angular / Empty**.
+
+## React
+
+```tsx
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from '@bounteous/ui'
+```
+
+```tsx
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia variant="icon"><Inbox /></EmptyMedia>
+    <EmptyTitle>No messages</EmptyTitle>
+    <EmptyDescription>You have no messages yet.</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent><Button>Compose</Button></EmptyContent>
+</Empty>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardEmptyComponent]  // from '@/shared/components/empty'
+```
+
+```html
+<z-empty zTitle="No messages" zDescription="You have no messages yet." [zActions]="[compose]" />
+<ng-template #compose><button z-button>Compose</button></ng-template>
+```

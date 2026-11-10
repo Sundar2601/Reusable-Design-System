@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Message & Bubble" />
+
+# Message & Bubble: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Message & Bubble** (React and Angular).
+
+## React
+
+```tsx
+import { ChatThread, Message, MessageAvatar, MessageContent, MessageHeader, MessageFooter, Bubble, BubbleGroup } from '@bounteous/ui'
+```
+
+```tsx
+<ChatThread>
+  <Message align="end">
+    <MessageContent><Bubble>Can you summarize this?</Bubble></MessageContent>
+  </Message>
+  <Message>
+    <MessageAvatar fallback="AI" />
+    <MessageContent>
+      <MessageHeader>Assistant</MessageHeader>
+      <Bubble variant="muted">Sure, here is a summary.</Bubble>
+      <MessageFooter>10:42</MessageFooter>
+    </MessageContent>
+  </Message>
+</ChatThread>
+```
+
+## Angular
+
+```ts
+imports: [...ZardMessageImports, ...ZardBubbleImports]  // from '@/shared/components/message' and '@/shared/components/bubble'
+```
+
+```html
+<z-message-group>
+  <z-message zAlign="end" zVariant="default">Can you summarize this?</z-message>
+  <z-message zFallback="AI" zVariant="muted" zHeader="Assistant" zFooter="10:42">Sure, here is a summary.</z-message>
+</z-message-group>
+```

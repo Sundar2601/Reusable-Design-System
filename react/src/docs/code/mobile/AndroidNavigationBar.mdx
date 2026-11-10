@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Navigation Bar" />
+
+# Android Navigation Bar: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Navigation Bar** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidNavigationBar } from '@bounteous/ui'
+```
+
+```tsx
+const items = [
+  { value: "home", label: "Home", icon: <Home /> },
+  { value: "mail", label: "Mail", icon: <Mail />, badge: 3 },
+]
+<AndroidNavigationBar items={items} defaultValue="home" onValueChange={setTab} />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidNavigationBarComponent]  // from '@/shared/extended/android-navigation-bar.component'
+```
+
+```html
+<android-navigation-bar [items]="items" [(value)]="tab" />
+<!-- items: { value, label, icon (SVG markup), badge? }[] -->
+```

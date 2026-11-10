@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/List" />
+
+# iOS List: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / List** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosList, IosListRow } from '@bounteous/ui'
+```
+
+```tsx
+<IosList header="Settings" footer="Changes sync across devices.">
+  <IosListRow title="Airplane Mode" accessory={<IosSwitch />} />
+  <IosListRow title="Wi-Fi" value="Home" chevron />
+  <IosListRow title="Sign Out" destructive />
+</IosList>
+```
+
+## Angular
+
+```ts
+imports: [IosListComponent, IosListRowComponent]  // from '@/shared/extended/ios-list.component'
+```
+
+```html
+<ios-list header="Settings" footer="Changes sync across devices.">
+  <ios-list-row title="Airplane Mode"><ios-switch accessory /></ios-list-row>
+  <ios-list-row title="Wi-Fi" value="Home" [chevron]="true" />
+  <ios-list-row title="Sign Out" [destructive]="true" />
+</ios-list>
+```

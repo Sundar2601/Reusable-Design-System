@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Page, Section, DocTable, Mono, MotionDemo } from './_components'
+
+<Meta title="Foundations/Motion and Layout" />
+
+# Motion and Layout
+
+Duration, easing and breakpoint tokens. Click a track to play the demo. Values are reference defaults; confirm against the Figma Motion/Layout section.
+
+<Page>
+<Section title="Duration">
+<DocTable head={['Token', 'Value', 'Use', 'Demo']} rows={[
+  [<Mono>duration-instant</Mono>, '100ms', 'Hover, press feedback', <MotionDemo duration={100} easing="ease-out" />],
+  [<Mono>duration-fast</Mono>, '150ms', 'Small state changes', <MotionDemo duration={150} easing="ease-out" />],
+  [<Mono>duration-normal</Mono>, '200ms', 'Default transitions', <MotionDemo duration={200} easing="ease-in-out" />],
+  [<Mono>duration-slow</Mono>, '300ms', 'Overlays, sheets', <MotionDemo duration={300} easing="ease-in-out" />],
+  [<Mono>duration-slower</Mono>, '500ms', 'Page-level, large movement', <MotionDemo duration={500} easing="ease-in-out" />],
+]} />
+</Section>
+<Section title="Easing">
+<DocTable head={['Token', 'Curve', 'Use']} rows={[
+  [<Mono>ease-standard</Mono>, <Mono>cubic-bezier(0.4, 0, 0.2, 1)</Mono>, 'Default'],
+  [<Mono>ease-in</Mono>, <Mono>cubic-bezier(0.4, 0, 1, 1)</Mono>, 'Elements leaving'],
+  [<Mono>ease-out</Mono>, <Mono>cubic-bezier(0, 0, 0.2, 1)</Mono>, 'Elements entering'],
+  [<Mono>linear</Mono>, <Mono>linear</Mono>, 'Progress, loaders'],
+]} />
+</Section>
+<Section title="Breakpoints">
+<DocTable head={['Token', 'Min width', 'Device']} rows={[
+  [<Mono>sm</Mono>, '640px', 'Large phone / mobile landscape'],
+  [<Mono>md</Mono>, '768px', 'Tablet portrait'],
+  [<Mono>lg</Mono>, '1024px', 'Tablet landscape / small desktop'],
+  [<Mono>xl</Mono>, '1280px', 'Desktop'],
+  [<Mono>2xl</Mono>, '1536px', 'Large desktop'],
+]} />
+</Section>
+</Page>

@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Calendar" />
+
+# Calendar: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Calendar** (React) and **Angular / Calendar**.
+
+## React
+
+```tsx
+import { Calendar } from '@bounteous/ui'
+```
+
+```tsx
+const [date, setDate] = useState<Date | undefined>(new Date())
+
+<Calendar mode="single" selected={date} onSelect={setDate} />
+<Calendar mode="range" numberOfMonths={2} />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardCalendarImports]  // from '@/shared/components/calendar/calendar.imports'
+```
+
+```html
+<z-calendar zMode="single" [(value)]="date" />
+<z-calendar zMode="range" [zNumberOfMonths]="2" />
+```

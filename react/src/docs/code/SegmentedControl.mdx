@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Segmented Control" />
+
+# Segmented Control: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Segmented Control** (React) and **Angular / Segmented Control**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { SegmentedControl } from '@bounteous/ui'
+```
+
+```tsx
+<SegmentedControl
+  defaultValue="week"
+  options={[{ value: 'day', label: 'Day' }, { value: 'week', label: 'Week' }]}
+  onValueChange={(v) => console.log(v)}
+/>
+```
+
+## Angular
+
+```ts
+imports: [SegmentedControlComponent]  // from '@/shared/extended/segmented-control.component'
+```
+
+```html
+<ui-segmented-control [options]="options" [(value)]="view" />
+<ui-segmented-control [options]="options" [(value)]="view" size="sm" />
+```

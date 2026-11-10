@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Scroll Area" />
+
+# Scroll Area: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Scroll Area** (React) and **Angular / Scroll Area**.
+
+## React
+
+```tsx
+import { ScrollArea, ScrollBar } from '@bounteous/ui'
+```
+
+```tsx
+<ScrollArea className="h-72 w-48">
+  ...long content...
+</ScrollArea>
+```
+
+## Angular (hand-built, ZardUI has no scroll area)
+
+```ts
+imports: [AppScrollAreaComponent]  // hand-built, from '@/shared/extended/scroll-area.component'
+```
+
+```html
+<app-scroll-area class="h-72 w-48">
+  ...long content...
+</app-scroll-area>
+```

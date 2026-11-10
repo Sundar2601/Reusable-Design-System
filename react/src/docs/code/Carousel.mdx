@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Carousel" />
+
+# Carousel: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Carousel** (React) and **Angular / Carousel**.
+
+## React
+
+```tsx
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@bounteous/ui'
+```
+
+```tsx
+<Carousel className="w-full max-w-xs">
+  <CarouselContent>
+    <CarouselItem>1</CarouselItem>
+    <CarouselItem>2</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardCarouselImports]  // from '@/shared/components/carousel/carousel.imports'
+```
+
+```html
+<z-carousel class="w-full max-w-xs">
+  <z-carousel-content>
+    <z-carousel-item>1</z-carousel-item>
+    <z-carousel-item>2</z-carousel-item>
+  </z-carousel-content>
+</z-carousel>
+```

@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Avatar Group" />
+
+# Avatar Group: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Avatar Group** (React) and **Angular / Avatar Group**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { AvatarStack } from '@bounteous/ui'
+```
+
+```tsx
+<AvatarStack items={[{ name: 'Ada Lovelace' }, { name: 'Grace Hopper' }, { name: 'Alan Turing' }]} max={2} />
+<AvatarStack items={people} size="lg" />
+```
+
+## Angular
+
+```ts
+imports: [AvatarStackComponent]  // from '@/shared/extended/avatar-stack.component'
+```
+
+```html
+<ui-avatar-stack [items]="people" [max]="2" />
+<ui-avatar-stack [items]="people" size="lg" />
+```

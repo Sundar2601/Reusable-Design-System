@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Accordion" />
+
+# Accordion: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Accordion** (React) and **Angular / Accordion**.
+
+## React
+
+```tsx
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@bounteous/ui'
+```
+
+```tsx
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardAccordionImports]  // from '@/shared/components/accordion/accordion.imports'
+```
+
+```html
+<z-accordion zType="single" zDefaultValue="item-1">
+  <z-accordion-item zValue="item-1" zTitle="Is it accessible?">
+    Yes. It adheres to the WAI-ARIA design pattern.
+  </z-accordion-item>
+</z-accordion>
+```

@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Confirmation" />
+
+# Confirmation: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Confirmation** (React and Angular).
+
+## React
+
+```tsx
+import { Confirmation } from '@bounteous/ui'
+```
+
+```tsx
+<Confirmation
+  title="Allow the assistant to delete 3 files?"
+  description="This cannot be undone."
+  onApprove={approve}
+  onReject={reject}
+/>
+<Confirmation state="accepted" title="Delete 3 files" />
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiConfirmationComponent]  // from '@/shared/extended/ai-confirmation.component'
+```
+
+```html
+<ai-confirmation heading="Allow the assistant to delete 3 files?" description="This cannot be undone." (approved)="approve()" (rejected)="reject()" />
+<ai-confirmation state="accepted" heading="Delete 3 files" />
+```

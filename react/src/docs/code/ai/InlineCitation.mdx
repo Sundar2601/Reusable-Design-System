@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Inline Citation" />
+
+# Inline Citation: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Inline Citation** (React and Angular).
+
+## React
+
+```tsx
+import { InlineCitation, InlineCitationText, InlineCitationCard, InlineCitationCardTrigger, InlineCitationCardBody, InlineCitationSource } from '@bounteous/ui'
+```
+
+```tsx
+<InlineCitation>
+  <InlineCitationText>Server components ship no JavaScript.</InlineCitationText>
+  <InlineCitationCard>
+    <InlineCitationCardTrigger index={1} />
+    <InlineCitationCardBody>
+      <InlineCitationSource title="Server Components" url="https://react.dev" />
+    </InlineCitationCardBody>
+  </InlineCitationCard>
+</InlineCitation>
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiInlineCitationComponent]  // from '@/shared/extended/ai-inline-citation.component'
+```
+
+```html
+<ai-inline-citation [index]="1" title="Server Components" url="https://react.dev">
+  Server components ship no JavaScript.
+</ai-inline-citation>
+```

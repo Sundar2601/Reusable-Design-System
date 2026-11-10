@@ -1,0 +1,80 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Charts Basic" />
+
+# Charts Basic: React and Angular
+
+Bar, stacked bar, horizontal bar, line, area, stacked area, pie, donut and donut with text. Live previews are under **Components / Charts / Basic** (React) and **Charts / Basic** (Angular).
+
+All charts take a `config` that maps each data key to a label and a theme color (`--chart-1` to `--chart-5`).
+
+## React (Recharts)
+
+```tsx
+import { ChartBar, ChartBarStacked, ChartBarHorizontal, ChartLine, ChartArea, ChartAreaStacked } from '@bounteous/ui'
+import { ChartPie, ChartDonut, ChartDonutText, type ChartConfig } from '@bounteous/ui'
+
+const config: ChartConfig = {
+  desktop: { label: 'Desktop', color: 'var(--chart-1)' },
+  mobile: { label: 'Mobile', color: 'var(--chart-2)' },
+}
+const data = [
+  { month: 'January', desktop: 186, mobile: 80 },
+  { month: 'February', desktop: 305, mobile: 200 },
+]
+```
+
+```tsx
+<ChartBar data={data} config={{ desktop: config.desktop }} />
+<ChartBarStacked data={data} config={config} />
+<ChartBarHorizontal data={data} config={{ desktop: config.desktop }} />
+<ChartLine data={data} config={{ desktop: config.desktop }} />
+<ChartArea data={data} config={{ desktop: config.desktop }} />
+<ChartAreaStacked data={data} config={config} />
+```
+
+Pie charts use a name key (default `browser`) and a value key (default `visitors`):
+
+```tsx
+const pieConfig: ChartConfig = {
+  chrome: { label: 'Chrome', color: 'var(--chart-1)' },
+  safari: { label: 'Safari', color: 'var(--chart-2)' },
+}
+const browsers = [{ browser: 'chrome', visitors: 275 }, { browser: 'safari', visitors: 200 }]
+
+<ChartPie data={browsers} config={pieConfig} />
+<ChartDonut data={browsers} config={pieConfig} />
+<ChartDonutText data={browsers} config={pieConfig} label="Visitors" />
+```
+
+Build your own charts with the helpers `ChartContainer`, `ChartTooltipContent` and `ChartLegendContent` around any Recharts chart.
+
+## Angular (ZardUI)
+
+Register ECharts once (`app.config.ts`), then import the chart parts:
+
+```ts
+providers: [provideZardCharts()]   // from '@/shared/components/chart/chart-echarts.provider'
+imports: [ZardChartImports]        // from '@/shared/components/chart/chart.imports'
+```
+
+```html
+<!-- Bar, stacked bar, horizontal bar -->
+<z-chart class="aspect-video" [zData]="data" [zConfig]="config" zType="bar" zXAxisKey="month" [zSeries]="['desktop']">
+  <z-chart-tooltip />
+</z-chart>
+<z-chart [zData]="data" [zConfig]="config" zType="bar" zStacked zXAxisKey="month" [zSeries]="['desktop', 'mobile']">
+  <z-chart-tooltip /><z-chart-legend />
+</z-chart>
+<z-chart [zData]="data" [zConfig]="config" zType="bar" zHorizontal zXAxisKey="month" [zSeries]="['desktop']" />
+
+<!-- Line, area, stacked area -->
+<z-chart [zData]="data" [zConfig]="config" zType="line" zXAxisKey="month" [zSeries]="['desktop']" />
+<z-chart [zData]="data" [zConfig]="config" zType="area" zXAxisKey="month" [zSeries]="['desktop']" />
+<z-chart [zData]="data" [zConfig]="config" zType="area" zStacked zXAxisKey="month" [zSeries]="['desktop', 'mobile']" />
+
+<!-- Pie, donut, donut with text -->
+<z-chart [zData]="browsers" [zConfig]="pieConfig" zType="pie" zNameKey="browser" [zSeries]="['visitors']" />
+<z-chart [zData]="browsers" [zConfig]="pieConfig" zType="pie" zNameKey="browser" [zSeries]="['visitors']" zInnerRadius="60%" />
+<z-chart [zData]="browsers" [zConfig]="pieConfig" zType="pie" zNameKey="browser" [zSeries]="['visitors']" zInnerRadius="60%" zCenterValue="925" zCenterLabel="Visitors" />
+```

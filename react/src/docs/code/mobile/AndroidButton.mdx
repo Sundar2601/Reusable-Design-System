@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Button" />
+
+# Android Button: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Button** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidButton } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidButton>Filled</AndroidButton>
+<AndroidButton variant="tonal">Tonal</AndroidButton>
+<AndroidButton variant="outlined" icon={<Plus />}>Add</AndroidButton>
+<AndroidButton variant="text" disabled>Text</AndroidButton>
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidButtonComponent]  // from '@/shared/extended/android-button.component'
+```
+
+```html
+<android-button>Filled</android-button>
+<android-button variant="tonal">Tonal</android-button>
+<android-button variant="outlined"><svg slot="icon">...</svg>Add</android-button>
+<android-button variant="text" [disabled]="true">Text</android-button>
+```

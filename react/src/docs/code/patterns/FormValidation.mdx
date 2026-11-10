@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Patterns/Form validation" />
+
+# Form validation pattern: React and Angular
+
+Live previews are under **Patterns / Form validation** (React) and **Angular / Patterns / Form validation**. Composed only from existing components.
+
+## React
+
+```tsx
+<form className="flex w-80 flex-col gap-4">
+  <FormField label="Email" required error="Enter a valid email address.">
+    {(c) => <Input {...c} type="email" />}
+  </FormField>
+  <Button type="submit">Create account</Button>
+</form>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardFieldImports, ZardInputComponent, ZardAlertComponent, ZardButtonComponent]
+```
+
+```html
+<z-alert zType="destructive" zTitle="There are 2 problems" zDescription="Fix the highlighted fields." />
+<z-field>
+  <label z-field-label for="e1">Email</label>
+  <input z-input id="e1" aria-invalid="true" aria-describedby="e1-err" />
+  <p id="e1-err" role="alert" class="text-sm text-text-destructive">Enter a valid email address.</p>
+</z-field>
+<button z-button>Create account</button>
+```

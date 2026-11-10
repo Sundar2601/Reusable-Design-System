@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/FormField" />
+
+# Form Field: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Form Field** (React) and **Angular / Form Field**.
+
+## React
+
+```tsx
+import { FormField, Input } from '@bounteous/ui'
+```
+
+```tsx
+<FormField label="Email" description="We never share it." required>
+  {(control) => <Input {...control} />}
+</FormField>
+<FormField label="Email" error="Enter a valid email address.">
+  {(control) => <Input {...control} />}
+</FormField>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardFieldImports, ZardInputComponent]  // from '@/shared/components/field/field.imports'
+```
+
+```html
+<z-field>
+  <label z-field-label for="email">Email</label>
+  <input z-input id="email" />
+  <p z-field-description>We never share it.</p>
+</z-field>
+```

@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Kbd" />
+
+# Kbd: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Kbd** (React) and **Angular / Kbd**.
+
+## React
+
+```tsx
+import { Kbd, KbdGroup } from '@bounteous/ui'
+```
+
+```tsx
+<Kbd>K</Kbd>
+<KbdGroup><Kbd>Ctrl</Kbd><Kbd>B</Kbd></KbdGroup>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardKbdImports]  // from '@/shared/components/kbd/kbd.imports'
+```
+
+```html
+<z-kbd>K</z-kbd>
+<z-kbd-group><z-kbd>Ctrl</z-kbd><z-kbd>B</z-kbd></z-kbd-group>
+```

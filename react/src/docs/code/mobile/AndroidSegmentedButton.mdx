@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Segmented Button" />
+
+# Android Segmented Button: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Segmented Button** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidSegmentedButton } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidSegmentedButton
+  options={[{ value: "day", label: "Day" }, { value: "week", label: "Week" }, { value: "month", label: "Month" }]}
+  defaultValue={["week"]}
+  onValueChange={setRange}
+/>
+<AndroidSegmentedButton options={options} multiple />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidSegmentedButtonComponent]  // from '@/shared/extended/android-segmented-button.component'
+```
+
+```html
+<android-segmented-button [options]="options" [(value)]="range" />
+<android-segmented-button [options]="options" [multiple]="true" />
+```

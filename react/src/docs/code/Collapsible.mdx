@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Collapsible" />
+
+# Collapsible: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Collapsible** (React) and **Angular / Collapsible**.
+
+## React
+
+```tsx
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@bounteous/ui'
+```
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger asChild><Button variant="ghost">Toggle</Button></CollapsibleTrigger>
+  <CollapsibleContent>Hidden content</CollapsibleContent>
+</Collapsible>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardCollapsibleImports]  // from '@/shared/components/collapsible/collapsible.imports'
+```
+
+```html
+<z-collapsible>
+  <button z-button z-collapsible-trigger zType="ghost">Toggle</button>
+  <z-collapsible-content>Hidden content</z-collapsible-content>
+</z-collapsible>
+```

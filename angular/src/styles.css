@@ -3,5 +3,9 @@
 @plugin "tailwindcss-animate";
 /* Same tokens as the React catalog, so both frameworks match Figma. */
 @import '../../react/src/theme/theme.css';
+@import './typeset.css';
+@import './utilities.css';
+@import 'maplibre-gl/dist/maplibre-gl.css';
+@import './app/shared/components/map/map.css';
 @source './';
 @source '../.storybook';

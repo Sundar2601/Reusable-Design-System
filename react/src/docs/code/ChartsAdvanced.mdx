@@ -1,0 +1,75 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Charts Advanced" />
+
+# Charts Advanced: React and Angular
+
+Radar, Radial, Combo, Scatter, Sparkline, Gauge, Funnel, Heatmap, Treemap and Sankey. Live previews are under **Components / Charts / Advanced** (React) and **Angular / Charts / Advanced**. Colors come from the theme tokens `var(--chart-1)` to `var(--chart-5)`.
+
+## React
+
+React charts use `recharts`. Gauge and Heatmap are hand-built (SVG and CSS grid). Every chart takes a `data` prop with sensible defaults.
+
+```tsx
+import {
+  ChartRadar, ChartRadial, ChartCombo, ChartScatter, ChartSparkline,
+  ChartGauge, ChartFunnel, ChartHeatmap, ChartTreemap, ChartSankey,
+} from '@/components/ChartsAdvanced'
+```
+
+```tsx
+<ChartRadar data={[{ axis: 'Speed', desktop: 86, mobile: 62 }, { axis: 'Safety', desktop: 90, mobile: 70 }]} />
+<ChartRadial data={[{ name: 'Chrome', value: 275 }, { name: 'Safari', value: 200 }]} />
+<ChartCombo data={[{ label: 'Jan', bar: 186, line: 80 }, { label: 'Feb', bar: 305, line: 200 }]} />
+<ChartScatter data={[{ x: 100, y: 200, z: 200 }, { x: 120, y: 100, z: 260 }]} />
+<ChartSparkline data={[12, 18, 14, 22, 19, 28]} />
+<ChartGauge data={{ value: 72, max: 100, label: 'Score' }} />
+<ChartFunnel data={[{ name: 'Visitors', value: 5000 }, { name: 'Paid', value: 900 }]} />
+<ChartHeatmap data={{ rows: ['Mon', 'Tue'], cols: ['9a', '11a'], values: [[2, 5], [3, 7]] }} />
+<ChartTreemap data={[{ name: 'Frontend', children: [{ name: 'React', size: 420 }] }]} />
+<ChartSankey data={{ nodes: [{ name: 'A' }, { name: 'B' }], links: [{ source: 0, target: 1, value: 10 }] }} />
+```
+
+## Angular
+
+Radar, Radial, Combo and Gauge use the ZardUI chart (ECharts). Register ECharts once with `provideZardCharts()` in `app.config.ts`.
+
+```ts
+imports: [ZardChartImports]  // from '@/shared/components/chart/chart.imports'
+```
+
+```html
+<!-- Radar -->
+<z-chart zType="radar" [zConfig]="config" [zData]="data" zXAxisKey="axis" [zSeries]="['desktop', 'mobile']">
+  <z-chart-legend />
+</z-chart>
+
+<!-- Radial -->
+<z-chart zType="radial" [zConfig]="config" [zData]="data" zNameKey="name" [zSeries]="['value']" />
+
+<!-- Combo (bar + line) -->
+<z-chart zType="bar" [zConfig]="config" [zData]="data" zXAxisKey="label"
+  [zSeries]="[{ dataKey: 'bar', type: 'bar' }, { dataKey: 'line', type: 'line' }]" />
+
+<!-- Gauge -->
+<z-chart zType="radial" zRadialVariant="gauge" [zConfig]="config" [zData]="data" zNameKey="name"
+  [zSeries]="['value']" zStartAngle="180" zEndAngle="0" zCenterValue="72" zCenterLabel="Score" />
+```
+
+Scatter, Sparkline, Funnel, Heatmap, Treemap and Sankey are hand-built standalone components with inline SVG, in `@/shared/extended`.
+
+```ts
+imports: [
+  ChartScatterComponent, ChartSparklineComponent, ChartFunnelComponent,
+  ChartHeatmapComponent, ChartTreemapComponent, ChartSankeyComponent,
+]
+```
+
+```html
+<ui-chart-scatter [data]="points" />
+<ui-chart-sparkline [data]="[12, 18, 14, 22]" />
+<ui-chart-funnel [data]="stages" />
+<ui-chart-heatmap [data]="heatmap" />
+<ui-chart-treemap [data]="tree" />
+<ui-chart-sankey [data]="flow" />
+```

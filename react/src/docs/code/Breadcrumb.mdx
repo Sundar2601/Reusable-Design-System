@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Breadcrumb" />
+
+# Breadcrumb: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Breadcrumb** (React) and **Angular / Breadcrumb**.
+
+## React
+
+```tsx
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from '@bounteous/ui'
+```
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem><BreadcrumbLink href="/">Home</BreadcrumbLink></BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem><BreadcrumbPage>Components</BreadcrumbPage></BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardBreadcrumbImports]  // from '@/shared/components/breadcrumb'
+```
+
+```html
+<z-breadcrumb>
+  <z-breadcrumb-item [routerLink]="['/']">Home</z-breadcrumb-item>
+  <z-breadcrumb-item>Components</z-breadcrumb-item>
+</z-breadcrumb>
+```

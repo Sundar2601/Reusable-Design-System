@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/FAB" />
+
+# Android FAB: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / FAB** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidFab } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidFab icon={<Plus />} aria-label="Add" />
+<AndroidFab size="large" variant="secondary" icon={<Plus />} />
+<AndroidFab icon={<Pencil />} label="Compose" />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidFabComponent]  // from '@/shared/extended/android-fab.component'
+```
+
+```html
+<android-fab ariaLabel="Add"><svg>...</svg></android-fab>
+<android-fab size="large" variant="secondary"><svg>...</svg></android-fab>
+<android-fab label="Compose"><svg>...</svg></android-fab>
+```

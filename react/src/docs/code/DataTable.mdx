@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Data Table" />
+
+# Data Table: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Data Table** (React) and **Angular / Data Table**.
+
+## React
+
+```tsx
+import { DataTable } from '@bounteous/ui'
+```
+
+```tsx
+<DataTable />  // TanStack Table: sortable headers, row selection
+```
+
+## Angular (hand-built, ZardUI has no data table)
+
+```ts
+imports: [AppDataTableComponent]  // hand-built, from '@/shared/extended/data-table.component'
+```
+
+```html
+<app-data-table [data]="payments" />
+```

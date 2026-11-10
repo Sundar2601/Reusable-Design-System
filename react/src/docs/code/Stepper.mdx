@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Stepper" />
+
+# Stepper: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Stepper** (React) and **Angular / Stepper**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { Stepper } from '@bounteous/ui'
+```
+
+```tsx
+<Stepper steps={[{ title: 'Account' }, { title: 'Profile' }, { title: 'Done' }]} current={1} />
+<Stepper steps={steps} current={2} orientation="vertical" />
+```
+
+## Angular
+
+```ts
+imports: [StepperComponent]  // from '@/shared/extended/stepper.component'
+```
+
+```html
+<ui-stepper [steps]="steps" [current]="1" />
+<ui-stepper [steps]="steps" [current]="2" orientation="vertical" />
+```

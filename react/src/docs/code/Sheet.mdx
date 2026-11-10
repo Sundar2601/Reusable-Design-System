@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Sheet" />
+
+# Sheet: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Sheet** (React) and **Angular / Sheet**.
+
+## React
+
+```tsx
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose } from '@bounteous/ui'
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger asChild><Button variant="outline">Open</Button></SheetTrigger>
+  <SheetContent side="right">
+    <SheetHeader>
+      <SheetTitle>Edit profile</SheetTitle>
+      <SheetDescription>Make changes here.</SheetDescription>
+    </SheetHeader>
+    <SheetFooter><SheetClose asChild><Button>Save</Button></SheetClose></SheetFooter>
+  </SheetContent>
+</Sheet>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardSheetImports, ZardButtonComponent]  // from '@/shared/components/sheet'
+```
+
+```html
+<button z-button zType="outline" (click)="open = true">Open</button>
+<z-sheet [(zVisible)]="open" zSide="right">
+  <z-sheet-header>
+    <z-sheet-title>Edit profile</z-sheet-title>
+    <z-sheet-description>Make changes here.</z-sheet-description>
+  </z-sheet-header>
+  <z-sheet-footer><button z-button z-sheet-close>Save</button></z-sheet-footer>
+</z-sheet>
+```

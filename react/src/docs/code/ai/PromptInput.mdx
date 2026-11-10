@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Prompt Input" />
+
+# Prompt Input: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Prompt Input** (React and Angular).
+
+## React
+
+```tsx
+import { PromptInput, PromptInputTextarea, PromptInputToolbar, PromptInputTools, PromptInputModel, PromptInputSubmit, PromptInputAttachments } from '@bounteous/ui'
+```
+
+```tsx
+<PromptInput onSubmit={(text) => send(text)}>
+  <PromptInputTextarea placeholder="Ask anything" />
+  <PromptInputToolbar>
+    <PromptInputTools><PromptInputModel>Claude Sonnet</PromptInputModel></PromptInputTools>
+    <PromptInputSubmit status="ready" />
+  </PromptInputToolbar>
+</PromptInput>
+```
+
+## Angular
+
+```ts
+imports: [AiPromptInputComponent]  // from '@/shared/extended/ai-prompt-input.component'
+```
+
+```html
+<ui-ai-prompt-input [(value)]="text" status="ready" (submitted)="send($event)" (stopped)="stop()">
+  <span tools><button z-button zType="ghost" zSize="sm">Claude Sonnet</button></span>
+</ui-ai-prompt-input>
+```

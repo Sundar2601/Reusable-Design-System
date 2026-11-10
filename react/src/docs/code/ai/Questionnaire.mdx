@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Questionnaire" />
+
+# Questionnaire: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Questionnaire** (React and Angular).
+
+## React
+
+```tsx
+import { Questionnaire } from '@bounteous/ui'
+```
+
+```tsx
+<Questionnaire
+  shortcuts="numbers"
+  items={[
+    { name: 'tone', title: 'Which tone?', required: true, choices: [{ value: 'formal', label: 'Formal' }, { value: 'friendly', label: 'Friendly' }] },
+    { name: 'topics', title: 'Which topics?', multiple: true, choices: [{ value: 'pricing', label: 'Pricing' }] },
+  ]}
+  onSubmit={(answers) => console.log(answers)}
+/>
+```
+
+## Angular
+
+```ts
+imports: [...ZardQuestionnaireImports]  // from '@/shared/components/questionnaire'
+```
+
+```html
+<z-questionnaire zActive="tone" zShortcuts="numbers" (zSubmit)="onSubmit($event)">
+  <z-questionnaire-item zName="tone" zRequired>
+    <z-questionnaire-title>Which tone?</z-questionnaire-title>
+    <z-questionnaire-choices>
+      <z-questionnaire-choice zValue="formal">Formal</z-questionnaire-choice>
+      <z-questionnaire-choice zValue="friendly">Friendly</z-questionnaire-choice>
+    </z-questionnaire-choices>
+  </z-questionnaire-item>
+  <z-questionnaire-actions>
+    <button z-questionnaire-previous>Back</button>
+    <button z-questionnaire-next>Next</button>
+    <button z-questionnaire-submit>Submit</button>
+  </z-questionnaire-actions>
+</z-questionnaire>
+```

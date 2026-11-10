@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Context" />
+
+# Context: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Context** (React and Angular).
+
+## React
+
+```tsx
+import { Context } from '@bounteous/ui'
+```
+
+```tsx
+<Context used={48200} max={200000} model="Claude Sonnet"
+  breakdown={[{ label: "Messages", tokens: 31000 }, { label: "Tool results", tokens: 13000 }]} />
+```
+
+## Angular (hand-built, ZardUI parts)
+
+```ts
+imports: [AiContextComponent]  // from '@/shared/extended/ai-context.component'
+```
+
+```html
+<ui-ai-context [used]="48200" [max]="200000" model="Claude Sonnet" [breakdown]="breakdown" />
+```

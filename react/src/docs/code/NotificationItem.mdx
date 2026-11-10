@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Notification Item" />
+
+# Notification Item: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Notification Item** (React) and **Angular / Notification Item**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { NotificationItem } from '@bounteous/ui'
+```
+
+```tsx
+<NotificationItem
+  title="Ada Lovelace commented"
+  description="Looks good to me."
+  time="2m ago"
+  avatarFallback="AL"
+  unread
+  actions={<Button size="sm">Reply</Button>}
+/>
+```
+
+## Angular
+
+```ts
+imports: [NotificationItemComponent]  // from '@/shared/extended/notification-item.component'
+```
+
+```html
+<ui-notification-item heading="Ada Lovelace commented" description="Looks good to me." time="2m ago" avatarFallback="AL" [unread]="true">
+  <button actions z-button zSize="sm">Reply</button>
+</ui-notification-item>
+```

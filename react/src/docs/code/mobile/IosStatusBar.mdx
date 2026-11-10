@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Status Bar & Home Indicator" />
+
+# iOS Status Bar & Home Indicator: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Status Bar & Home Indicator** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosStatusBar, IosHomeIndicator } from '@bounteous/ui'
+```
+
+```tsx
+<IosStatusBar time="9:41" />
+<IosHomeIndicator />
+```
+
+## Angular
+
+```ts
+imports: [IosStatusBarComponent, IosHomeIndicatorComponent]  // from '@/shared/extended/ios-status-bar.component'
+```
+
+```html
+<ios-status-bar time="9:41" />
+<ios-home-indicator />
+```

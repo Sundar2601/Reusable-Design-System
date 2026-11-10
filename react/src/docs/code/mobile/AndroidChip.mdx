@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Chips" />
+
+# Android Chips: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Chips** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidChip, AndroidChipGroup } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidChipGroup>
+  <AndroidChip>Assist</AndroidChip>
+  <AndroidChip variant="filter" selected>Favorites</AndroidChip>
+  <AndroidChip variant="input" onRemove={remove}>Ada</AndroidChip>
+  <AndroidChip variant="suggestion">Nearby</AndroidChip>
+</AndroidChipGroup>
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidChipComponent, AndroidChipGroupComponent]  // from '@/shared/extended/android-chip.component'
+```
+
+```html
+<android-chip-group>
+  <android-chip>Assist</android-chip>
+  <android-chip variant="filter" [(selected)]="fav">Favorites</android-chip>
+  <android-chip variant="input" (removed)="remove()">Ada</android-chip>
+  <android-chip variant="suggestion">Nearby</android-chip>
+</android-chip-group>
+```

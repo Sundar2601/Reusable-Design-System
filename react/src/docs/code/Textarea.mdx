@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Textarea" />
+
+# Textarea: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Textarea** (React) and **Angular / Textarea**.
+
+## React
+
+```tsx
+import { Textarea } from '@bounteous/ui'
+```
+
+```tsx
+<Textarea placeholder="Type your message here." />
+<Textarea aria-invalid />
+<Textarea disabled />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardTextareaComponent]  // from '@/shared/components/textarea'
+```
+
+```html
+<textarea z-textarea placeholder="Type your message here."></textarea>
+<textarea z-textarea aria-invalid="true"></textarea>
+<textarea z-textarea disabled></textarea>
+```

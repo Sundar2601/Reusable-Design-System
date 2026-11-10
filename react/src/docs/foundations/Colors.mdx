@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Page, Section, SwatchGrid } from './_components'
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+Semantic color tokens from the Figma `Colors / Light` and `Colors / Dark` sections. Swatches render from CSS variables, so they follow the Light/Dark toolbar toggle. Hex values are read from `theme.css`.
+
+<Page>
+<Section title="Core" description="Surfaces, text, brand and status.">
+<SwatchGrid prefixes={['--background', '--foreground', '--card', '--popover', '--primary', '--secondary', '--muted', '--accent', '--destructive', '--text-', '--warning']} />
+</Section>
+<Section title="Border, input and ring">
+<SwatchGrid prefixes={['--border', '--input', '--ring']} />
+</Section>
+<Section title="Chart">
+<SwatchGrid prefixes={['--chart-']} />
+</Section>
+<Section title="Sidebar">
+<SwatchGrid prefixes={['--sidebar']} />
+</Section>
+</Page>

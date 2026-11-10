@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Navigation Bar" />
+
+# iOS Navigation Bar: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Navigation Bar** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosNavigationBar } from '@bounteous/ui'
+```
+
+```tsx
+<IosNavigationBar title="Settings" largeTitle trailing={<span>Edit</span>} />
+<IosNavigationBar title="General" backLabel="Settings" onBack={() => {}} />
+```
+
+## Angular
+
+```ts
+imports: [IosNavigationBarComponent]  // from '@/shared/extended/ios-navigation-bar.component'
+```
+
+```html
+<ios-navigation-bar title="Settings" [largeTitle]="true"><span>Edit</span></ios-navigation-bar>
+<ios-navigation-bar title="General" backLabel="Settings" (back)="goBack()" />
+```

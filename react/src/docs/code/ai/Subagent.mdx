@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Subagent" />
+
+# Subagent: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Subagent** (React and Angular).
+
+## React
+
+```tsx
+import { Subagent } from '@bounteous/ui'
+```
+
+```tsx
+<Subagent name="Explorer" task="Find legacy Button usages" status="running" steps={steps} />
+```
+
+## Angular (hand-built, ZardUI parts)
+
+```ts
+imports: [AiSubagentComponent]  // from '@/shared/extended/ai-subagent.component'
+```
+
+```html
+<ui-ai-subagent name="Explorer" task="Find legacy Button usages" status="running" [steps]="steps" />
+```

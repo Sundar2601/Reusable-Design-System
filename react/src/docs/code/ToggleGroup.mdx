@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/ToggleGroup" />
+
+# Toggle Group: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Toggle Group** (React) and **Angular / Toggle Group**.
+
+## React
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from '@bounteous/ui'
+```
+
+```tsx
+<ToggleGroup type="multiple" variant="outline">
+  <ToggleGroupItem value="bold" aria-label="Bold"><Bold /></ToggleGroupItem>
+  <ToggleGroupItem value="italic" aria-label="Italic"><Italic /></ToggleGroupItem>
+</ToggleGroup>
+<ToggleGroup type="single" defaultValue="left" spacing={2}>...</ToggleGroup>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardToggleGroupComponent]  // from '@/shared/components/toggle-group'
+```
+
+```html
+<z-toggle-group zType="outline" zMode="multiple" [zItems]="[
+  { value: 'bold', label: 'Bold' },
+  { value: 'italic', label: 'Italic' },
+]" />
+<z-toggle-group zMode="single" zDefaultValue="left" [zSpacing]="2" [zItems]="items" />
+```

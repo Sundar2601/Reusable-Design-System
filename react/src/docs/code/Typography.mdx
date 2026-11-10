@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Typography" />
+
+# Typography: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Typography** (React) and **Angular / Typography**.
+
+## React
+
+```tsx
+import { H1, H2, H3, H4, P, Lead, Large, Small, Muted, InlineCode, Blockquote } from '@bounteous/ui'
+```
+
+```tsx
+<H1>Heading 1</H1>
+<P>Body text.</P>
+<Lead>Lead text.</Lead>
+<Muted>Muted text.</Muted>
+<InlineCode>npm install</InlineCode>
+<Blockquote>A quote.</Blockquote>
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [TypographyComponent]  // hand-built, from '@/shared/extended/typography.component' (ZardUI has no typography component)
+```
+
+```html
+<app-typography variant="h1">Heading 1</app-typography>
+<app-typography variant="p">Body text.</app-typography>
+<app-typography variant="lead">Lead text.</app-typography>
+<app-typography variant="muted">Muted text.</app-typography>
+<app-typography variant="code">npm install</app-typography>
+<app-typography variant="blockquote">A quote.</app-typography>
+```

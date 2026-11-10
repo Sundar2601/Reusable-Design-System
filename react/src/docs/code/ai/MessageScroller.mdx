@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Message Scroller" />
+
+# Message Scroller: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Message Scroller** (React and Angular).
+
+## React
+
+```tsx
+import { MessageScroller, ChatThread } from '@bounteous/ui'
+```
+
+```tsx
+<MessageScroller className="h-96">
+  <ChatThread>{/* messages */}</ChatThread>
+</MessageScroller>
+```
+
+## Angular
+
+```ts
+imports: [AiMessageScrollerComponent]  // from '@/shared/extended/ai-message-scroller.component'
+```
+
+```html
+<ui-ai-message-scroller class="h-96">
+  <z-message-group><!-- messages --></z-message-group>
+</ui-ai-message-scroller>
+```

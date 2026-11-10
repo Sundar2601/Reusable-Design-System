@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Dialog" />
+
+# Dialog: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Dialog** (React) and **Angular / Dialog**.
+
+## React
+
+```tsx
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from '@bounteous/ui'
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger asChild><Button variant="outline">Edit profile</Button></DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit profile</DialogTitle>
+      <DialogDescription>Make changes here.</DialogDescription>
+    </DialogHeader>
+    <DialogFooter><DialogClose asChild><Button variant="outline">Cancel</Button></DialogClose></DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardDialogImports, ZardButtonComponent]  // from '@/shared/components/dialog'
+```
+
+```html
+<button z-button zType="outline" (click)="open = true">Edit profile</button>
+<z-dialog [(zVisible)]="open">
+  <z-dialog-header>
+    <z-dialog-title>Edit profile</z-dialog-title>
+    <z-dialog-description>Make changes here.</z-dialog-description>
+  </z-dialog-header>
+  <z-dialog-footer><button z-button zType="outline" z-dialog-close>Cancel</button></z-dialog-footer>
+</z-dialog>
+```

@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/Snackbar" />
+
+# Android Snackbar: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / Snackbar** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidSnackbar } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidSnackbar message="Message archived" action="Undo" onAction={undo} onClose={dismiss} />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidSnackbarComponent]  // from '@/shared/extended/android-snackbar.component'
+```
+
+```html
+<android-snackbar message="Message archived" action="Undo" [closable]="true" (actionClick)="undo()" (closed)="dismiss()" />
+```

@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Patterns/Error states" />
+
+# Error states pattern: React and Angular
+
+Live previews are under **Patterns / Error states** (React) and **Angular / Patterns / Error states**. Composed only from existing components.
+
+## React
+
+```tsx
+<Alert variant="destructive">
+  <CircleAlert />
+  <AlertTitle>Could not load your invoices</AlertTitle>
+  <AlertDescription>Something went wrong on our side.</AlertDescription>
+</Alert>
+<Banner variant="warning" title="You are offline." action={<Button size="sm" variant="outline">Retry</Button>}>
+  Changes will sync when your connection returns.
+</Banner>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardAlertComponent, ZardEmptyComponent, ZardButtonComponent]
+```
+
+```html
+<z-alert zType="destructive" zTitle="Could not load your invoices" zDescription="Something went wrong on our side." />
+<z-empty class="border" zTitle="Something went wrong" zDescription="Try again in a moment." [zActions]="[a]" />
+<ng-template #a><button z-button>Try again</button></ng-template>
+```

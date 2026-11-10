@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Filter Bar" />
+
+# Filter Bar: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Filter Bar** (React) and **Angular / Filter Bar**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { FilterBar } from '@bounteous/ui'
+```
+
+```tsx
+<FilterBar
+  filters={[{ key: 'status', label: 'Status', options: [{ value: 'active', label: 'Active' }] }]}
+  onValueChange={(v) => console.log(v)}
+  onSearchChange={(q) => console.log(q)}
+/>
+```
+
+## Angular
+
+```ts
+imports: [FilterBarComponent]  // from '@/shared/extended/filter-bar.component'
+```
+
+```html
+<ui-filter-bar [filters]="filters" [(value)]="selected" [(search)]="query" />
+```

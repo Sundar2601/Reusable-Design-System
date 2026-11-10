@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Alert" />
+
+# iOS Alert: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Alert** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosAlert } from '@bounteous/ui'
+```
+
+```tsx
+<IosAlert
+  title="Delete Photo?"
+  message="This cannot be undone."
+  actions={[
+    { label: 'Cancel', style: 'cancel' },
+    { label: 'Delete', style: 'destructive', onClick: remove },
+  ]}
+/>
+```
+
+## Angular
+
+```ts
+imports: [IosAlertComponent]  // from '@/shared/extended/ios-alert.component'
+```
+
+```html
+<ios-alert
+  title="Delete Photo?"
+  message="This cannot be undone."
+  [actions]="[{ label: 'Cancel', style: 'cancel' }, { label: 'Delete', style: 'destructive' }]"
+  (actionClick)="onAction($event)"
+/>
+```

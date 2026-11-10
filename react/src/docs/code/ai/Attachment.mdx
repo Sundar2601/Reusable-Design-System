@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Attachment" />
+
+# Attachment: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Attachment** (React and Angular).
+
+## React
+
+```tsx
+import { Attachment, AttachmentMedia, AttachmentContent, AttachmentTitle, AttachmentDescription, AttachmentActions, AttachmentAction, AttachmentGroup } from '@bounteous/ui'
+```
+
+```tsx
+<Attachment state="done">
+  <AttachmentMedia><FileText /></AttachmentMedia>
+  <AttachmentContent>
+    <AttachmentTitle>report.pdf</AttachmentTitle>
+    <AttachmentDescription>PDF, 2.4 MB</AttachmentDescription>
+  </AttachmentContent>
+  <AttachmentActions>
+    <AttachmentAction aria-label="Remove"><X /></AttachmentAction>
+  </AttachmentActions>
+</Attachment>
+```
+
+## Angular
+
+```ts
+imports: [...ZardAttachmentImports]  // from '@/shared/components/attachment'
+```
+
+```html
+<z-attachment zState="done">
+  <z-attachment-media><ng-icon name="lucideFileText" /></z-attachment-media>
+  <z-attachment-content>
+    <z-attachment-title>report.pdf</z-attachment-title>
+    <z-attachment-description>PDF, 2.4 MB</z-attachment-description>
+  </z-attachment-content>
+  <z-attachment-actions><button z-attachment-action aria-label="Remove"><ng-icon name="lucideX" /></button></z-attachment-actions>
+</z-attachment>
+```

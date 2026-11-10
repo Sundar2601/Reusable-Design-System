@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Trace" />
+
+# Trace: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Trace** (React and Angular).
+
+## React
+
+```tsx
+import { Trace, TraceStep } from '@bounteous/ui'
+```
+
+```tsx
+<Trace defaultOpen title="Thought for 4 seconds">
+  <TraceStep title="Searched the web" description="3 results" />
+  <TraceStep status="running" title="Reading page" />
+  <TraceStep status="pending" title="Writing the answer" />
+</Trace>
+```
+
+## Angular
+
+```ts
+imports: [AiTraceComponent]  // from '@/shared/extended/ai-trace.component'
+```
+
+```html
+<ui-ai-trace title="Thought for 4 seconds" [steps]="steps" [(open)]="open" />
+<!-- steps = [{ title: 'Searched the web', description: '3 results' }, { title: 'Reading page', status: 'running' }] -->
+```

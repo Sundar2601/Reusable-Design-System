@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Timeline" />
+
+# Timeline: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Timeline** (React) and **Angular / Timeline**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { Timeline } from '@bounteous/ui'
+```
+
+```tsx
+<Timeline
+  items={[
+    { title: 'Order placed', time: '9:41 AM', status: 'complete' },
+    { title: 'Out for delivery', status: 'current' },
+    { title: 'Delivered', status: 'upcoming' },
+  ]}
+/>
+```
+
+## Angular
+
+```ts
+imports: [TimelineComponent]  // from '@/shared/extended/timeline.component'
+```
+
+```html
+<ui-timeline [items]="items" />
+```

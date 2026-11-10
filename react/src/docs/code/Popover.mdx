@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Popover" />
+
+# Popover: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Popover** (React) and **Angular / Popover**.
+
+## React
+
+```tsx
+import { Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverTitle, PopoverDescription } from '@bounteous/ui'
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger asChild><Button variant="outline">Open popover</Button></PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader>
+      <PopoverTitle>Dimensions</PopoverTitle>
+      <PopoverDescription>Set the dimensions for the layer.</PopoverDescription>
+    </PopoverHeader>
+  </PopoverContent>
+</Popover>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardPopoverImports, ZardButtonComponent]  // from '@/shared/components/popover'
+```
+
+```html
+<button z-button zType="outline" zPopover [zContent]="content">Open popover</button>
+<ng-template #content>
+  <z-popover>
+    <div z-popover-header>
+      <h4 z-popover-title>Dimensions</h4>
+      <p z-popover-description>Set the dimensions for the layer.</p>
+    </div>
+  </z-popover>
+</ng-template>
+```

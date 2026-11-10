@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/Android/List Item" />
+
+# Android List Item: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / Android / List Item** (React and Angular).
+
+## React
+
+```tsx
+import { AndroidListItem } from '@bounteous/ui'
+```
+
+```tsx
+<AndroidListItem headline="Inbox" supportingText="3 new messages" leading={<Mail />} trailing={<ChevronRight />} divider onClick={open} />
+<AndroidListItem headline="Starred" overline="Folder" lines={3} supportingText="Long supporting text..." />
+```
+
+## Angular (hand-built)
+
+```ts
+imports: [AndroidListItemComponent]  // from '@/shared/extended/android-list-item.component'
+```
+
+```html
+<android-list-item headline="Inbox" supportingText="3 new messages" [divider]="true" [interactive]="true">
+  <svg slot="leading">...</svg>
+  <svg slot="trailing">...</svg>
+</android-list-item>
+```

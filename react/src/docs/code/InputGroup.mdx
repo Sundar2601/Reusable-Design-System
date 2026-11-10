@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/InputGroup" />
+
+# Input Group: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Input Group** (React) and **Angular / Input Group**.
+
+## React
+
+```tsx
+import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText } from '@bounteous/ui'
+```
+
+```tsx
+<InputGroup>
+  <InputGroupAddon><InputGroupText>https://</InputGroupText></InputGroupAddon>
+  <InputGroupInput placeholder="example.com" />
+  <InputGroupAddon align="inline-end"><InputGroupButton>Copy</InputGroupButton></InputGroupAddon>
+</InputGroup>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardInputGroupImports, ZardInputComponent]  // from '@/shared/components/input-group/input-group.imports'
+```
+
+```html
+<z-input-group>
+  <z-input-group-addon><span z-input-group-text>https://</span></z-input-group-addon>
+  <input z-input placeholder="example.com" />
+  <z-input-group-addon zAlign="inline-end"><button z-input-group-button>Copy</button></z-input-group-addon>
+</z-input-group>
+```

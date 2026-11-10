@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Resizable" />
+
+# Resizable: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Resizable** (React) and **Angular / Resizable**.
+
+## React
+
+```tsx
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@bounteous/ui'
+```
+
+```tsx
+<ResizablePanelGroup orientation="horizontal">
+  <ResizablePanel defaultSize={50}>One</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel defaultSize={50}>Two</ResizablePanel>
+</ResizablePanelGroup>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardResizableImports]  // from '@/shared/components/resizable/resizable.imports'
+```
+
+```html
+<z-resizable zLayout="horizontal">
+  <z-resizable-panel [zDefaultSize]="50">One</z-resizable-panel>
+  <z-resizable-handle zWithHandle />
+  <z-resizable-panel [zDefaultSize]="50">Two</z-resizable-panel>
+</z-resizable>
+```

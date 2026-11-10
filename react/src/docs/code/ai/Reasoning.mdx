@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/AI Elements/Reasoning" />
+
+# Reasoning: React and Angular
+
+Same component, both frameworks. Live previews are under **AI Elements / Reasoning** (React and Angular).
+
+## React
+
+```tsx
+import { Reasoning } from '@bounteous/ui'
+```
+
+```tsx
+<Reasoning isStreaming>Weighing the options...</Reasoning>
+<Reasoning duration={8}>The user wants a short summary.</Reasoning>
+```
+
+## Angular (hand-built on ZardUI)
+
+```ts
+imports: [AiReasoningComponent]  // from '@/shared/extended/ai-reasoning.component'
+```
+
+```html
+<ai-reasoning [isStreaming]="true" [open]="true">Weighing the options...</ai-reasoning>
+<ai-reasoning [duration]="8">The user wants a short summary.</ai-reasoning>
+```

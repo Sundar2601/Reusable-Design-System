@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/ButtonGroup" />
+
+# Button Group: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Button Group** (React) and **Angular / Button Group**.
+
+## React
+
+```tsx
+import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@bounteous/ui'
+```
+
+```tsx
+<ButtonGroup>
+  <Button variant="outline">Archive</Button>
+  <Button variant="outline">Report</Button>
+</ButtonGroup>
+<ButtonGroup orientation="vertical">...</ButtonGroup>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardButtonGroupImports, ZardButtonComponent]  // from '@/shared/components/button-group/button-group.imports'
+```
+
+```html
+<z-button-group>
+  <button z-button zType="outline">Archive</button>
+  <button z-button zType="outline">Report</button>
+</z-button-group>
+<z-button-group zOrientation="vertical">...</z-button-group>
+```

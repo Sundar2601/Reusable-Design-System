@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Slider" />
+
+# Slider: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Slider** (React) and **Angular / Slider**.
+
+## React
+
+```tsx
+import { Slider } from '@bounteous/ui'
+```
+
+```tsx
+<Slider defaultValue={[50]} max={100} step={1} />
+<Slider defaultValue={[25, 75]} />
+<Slider defaultValue={[50]} disabled />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardSliderImports]  // from '@/shared/components/slider/slider.imports'
+```
+
+```html
+<z-slider [zDefault]="[50]" />
+<z-slider [zDefault]="[25, 75]" />
+<z-slider [zDefault]="[50]" zDisabled />
+```

@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Page, Section, TypeRow, Mono } from './_components'
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+Inter for UI, Roboto Mono for code on web. iOS and Android keep their own platform type styles in Figma. Scale below follows Tailwind sizes used by the components (size/line-height in px / weight).
+
+<Page>
+<Section title="UI scale (Inter)">
+<TypeRow s={{ name: 'Display', size: 48, line: 48, weight: 700 }} />
+<TypeRow s={{ name: 'H1', size: 36, line: 40, weight: 700 }} />
+<TypeRow s={{ name: 'H2', size: 30, line: 36, weight: 600 }} />
+<TypeRow s={{ name: 'H3', size: 24, line: 32, weight: 600 }} />
+<TypeRow s={{ name: 'H4', size: 20, line: 28, weight: 600 }} />
+<TypeRow s={{ name: 'Large', size: 18, line: 28, weight: 500 }} />
+<TypeRow s={{ name: 'Body', size: 16, line: 24, weight: 400 }} />
+<TypeRow s={{ name: 'Body small (base)', size: 14, line: 20, weight: 400 }} />
+<TypeRow s={{ name: 'Label', size: 14, line: 20, weight: 500 }} />
+<TypeRow s={{ name: 'Caption', size: 12, line: 16, weight: 400 }} />
+</Section>
+<Section title="Code (Roboto Mono)">
+<TypeRow mono s={{ name: 'Mono', size: 14, line: 20, weight: 400, sample: 'const theme = useTheme() // 0123456789' }} />
+<TypeRow mono s={{ name: 'Mono small', size: 12, line: 16, weight: 400, sample: 'npm install @bounteous/ui' }} />
+</Section>
+<Section title="Notes">
+<p className="text-sm text-muted-foreground">Base body size is 14/20 (<Mono>body</Mono> in theme.css). Font stack: <Mono>Inter Variable, ui-sans-serif, system-ui</Mono>. Exact Figma text-style values should be verified against the Typography section.</p>
+</Section>
+</Page>

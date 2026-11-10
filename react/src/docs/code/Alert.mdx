@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Alert" />
+
+# Alert: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Alert** (React) and **Angular / Alert**.
+
+## React
+
+```tsx
+import { Alert, AlertTitle, AlertDescription } from '@bounteous/ui'
+```
+
+```tsx
+<Alert>
+  <Terminal />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>You can add components using the cli.</AlertDescription>
+</Alert>
+<Alert variant="destructive">...</Alert>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardAlertComponent]  // from '@/shared/components/alert'
+```
+
+```html
+<z-alert zTitle="Heads up!" zDescription="You can add components using the cli." />
+<z-alert zType="destructive" zTitle="Error" zDescription="Something went wrong." />
+```

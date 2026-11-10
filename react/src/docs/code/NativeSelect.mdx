@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/NativeSelect" />
+
+# Native Select: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Native Select** (React) and **Angular / Native Select**.
+
+## React
+
+```tsx
+import { NativeSelect, NativeSelectOption } from '@bounteous/ui'
+```
+
+```tsx
+<NativeSelect>
+  <NativeSelectOption value="todo">Todo</NativeSelectOption>
+  <NativeSelectOption value="done">Done</NativeSelectOption>
+</NativeSelect>
+<NativeSelect size="sm" aria-invalid>...</NativeSelect>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardNativeSelectDirective]  // from '@/shared/components/native-select'
+```
+
+```html
+<select z-native-select>
+  <option value="todo">Todo</option>
+  <option value="done">Done</option>
+</select>
+<select z-native-select zSize="sm" aria-invalid="true">...</select>
+```

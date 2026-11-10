@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Page, Section, SpaceRow, RadiusSample, ShadowSample } from './_components'
+
+<Meta title="Foundations/Spacing, Radius and Elevation" />
+
+# Spacing, Radius and Elevation
+
+4px base scale, radius tokens and shadow effect styles (`theme.css`).
+
+<Page>
+<Section title="Spacing" description="px / Tailwind step (value x 4px).">
+{[0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96].map((px) => <SpaceRow key={px} px={px} />)}
+</Section>
+<Section title="Radius">
+<div className="flex flex-wrap gap-6">
+{[['xs', '2px'], ['sm', '6px'], ['md', '8px'], ['lg', '10px'], ['xl', '14px'], ['2xl', '18px'], ['3xl', '22px'], ['4xl', '26px'], ['full', '9999px']].map(([n, v]) => <RadiusSample key={n} name={`radius-${n}`} value={v} />)}
+</div>
+</Section>
+<Section title="Elevation (Box Shadow)">
+<div className="flex flex-wrap gap-8">
+<ShadowSample name="2xs" value="0 1px 0 0 rgb(0 0 0 / 0.05)" />
+<ShadowSample name="xs" value="0 1px 2px 0 rgb(0 0 0 / 0.1)" />
+<ShadowSample name="sm" value="0 1px 3px 0 rgb(0 0 0 / 0.1)" />
+<ShadowSample name="md" value="0 2px 4px -2px rgb(0 0 0 / 0.1), 0 4px 6px -1px rgb(0 0 0 / 0.1)" />
+<ShadowSample name="lg" value="0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1)" />
+<ShadowSample name="focus-ring" value="0 0 0 3px rgb(161 161 161 / 0.5)" />
+<ShadowSample name="destructive-ring" value="0 0 0 3px rgb(220 38 38 / 0.2)" />
+</div>
+</Section>
+</Page>

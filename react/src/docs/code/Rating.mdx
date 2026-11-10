@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Rating" />
+
+# Rating: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Rating** (React) and **Angular / Rating**. This is an extended component (beyond shadcn), hand-built in both.
+
+## React
+
+```tsx
+import { Rating } from '@bounteous/ui'
+```
+
+```tsx
+<Rating defaultValue={3} />
+<Rating value={4} readOnly />
+<Rating size="lg" onValueChange={(v) => console.log(v)} />
+```
+
+## Angular
+
+```ts
+imports: [RatingComponent]  // from '@/shared/extended/rating.component'
+```
+
+```html
+<ui-rating [(value)]="rating" />
+<ui-rating [value]="4" [readOnly]="true" />
+<ui-rating size="lg" [(value)]="rating" />
+```

@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Mobile/iOS/Tab Bar" />
+
+# iOS Tab Bar: React and Angular
+
+Same component, both frameworks. Live previews are under **Mobile / iOS / Tab Bar** (React and Angular). Hand-built Apple HIG replica using the theme tokens, so it follows light and dark. Tint is overridable with `--ios-tint`.
+
+## React
+
+```tsx
+import { IosTabBar } from '@bounteous/ui'
+```
+
+```tsx
+<IosTabBar
+  defaultValue="home"
+  items={[
+    { value: 'home', label: 'Home', icon: <House /> },
+    { value: 'search', label: 'Search', icon: <Search /> },
+  ]}
+  onValueChange={(v) => console.log(v)}
+/>
+```
+
+## Angular
+
+```ts
+imports: [IosTabBarComponent]  // from '@/shared/extended/ios-tab-bar.component'
+```
+
+```html
+<!-- icon is inner SVG markup, e.g. <circle cx="11" cy="11" r="8"/> -->
+<ios-tab-bar [items]="items" [(value)]="tab" />
+```
