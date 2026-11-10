@@ -1,248 +1,105 @@
 {
-  "_source": "Figma library 'Design System', read 2026-11-10. Colors resolve through Primitives; modes Light and Dark. Radius and spacing have one mode.",
+  "_source": "Figma file 'shadcn/ui components with variables - Tailwind classes' (key dcJKQOcHWk6gbH7lcMwicU), collection `mode` (light mode / dark mode). Read 2026-11-10.",
   "color": {
-    "text/primary": {
-      "light": "#0f172a",
-      "dark": "#f8fafc",
-      "alias": [
-        "neutral/900",
-        "neutral/50"
-      ]
-    },
-    "text/secondary": {
-      "light": "#475569",
-      "dark": "#cbd5e1",
-      "alias": [
-        "neutral/600",
-        "neutral/300"
-      ]
-    },
-    "text/tertiary": {
-      "light": "#64748b",
-      "dark": "#94a3b8",
-      "alias": [
-        "neutral/500",
-        "neutral/400"
-      ]
-    },
-    "text/disabled": {
-      "light": "#94a3b8",
-      "dark": "#64748b",
-      "alias": [
-        "neutral/400",
-        "neutral/500"
-      ]
-    },
-    "text/inverse": {
+    "background": {
       "light": "#ffffff",
-      "dark": "#0f172a",
-      "alias": [
-        "neutral/0",
-        "neutral/900"
-      ]
+      "dark": "#0a0a0a"
     },
-    "text/link": {
-      "light": "#2a55db",
-      "dark": "#8eb6ff",
-      "alias": [
-        "brand/600",
-        "brand/300"
-      ]
+    "foreground": {
+      "light": "#0a0a0a",
+      "dark": "#fafafa"
     },
-    "border/default": {
-      "light": "#e2e8f0",
-      "dark": "#334155",
-      "alias": [
-        "neutral/200",
-        "neutral/700"
-      ]
-    },
-    "border/strong": {
-      "light": "#cbd5e1",
-      "dark": "#475569",
-      "alias": [
-        "neutral/300",
-        "neutral/600"
-      ]
-    },
-    "border/focus": {
-      "light": "#3b6ff5",
-      "dark": "#5c91ff",
-      "alias": [
-        "brand/500",
-        "brand/400"
-      ]
-    },
-    "bg/page": {
-      "light": "#f8fafc",
-      "dark": "#0f172a",
-      "alias": [
-        "neutral/50",
-        "neutral/900"
-      ]
-    },
-    "bg/surface": {
+    "card": {
       "light": "#ffffff",
-      "dark": "#1e293b",
-      "alias": [
-        "neutral/0",
-        "neutral/800"
-      ]
+      "dark": "#171717"
     },
-    "bg/subtle": {
-      "light": "#f1f5f9",
-      "dark": "#334155",
-      "alias": [
-        "neutral/100",
-        "neutral/700"
-      ]
+    "cardForeground": {
+      "light": "#0a0a0a",
+      "dark": "#fafafa"
     },
-    "bg/disabled": {
-      "light": "#f1f5f9",
-      "dark": "#334155",
-      "alias": [
-        "neutral/100",
-        "neutral/700"
-      ]
-    },
-    "brand/default": {
-      "light": "#2a55db",
-      "dark": "#5c91ff",
-      "alias": [
-        "brand/600",
-        "brand/400"
-      ]
-    },
-    "brand/hover": {
-      "light": "#2243b0",
-      "dark": "#8eb6ff",
-      "alias": [
-        "brand/700",
-        "brand/300"
-      ]
-    },
-    "brand/pressed": {
-      "light": "#1f3a8a",
-      "dark": "#bcd3ff",
-      "alias": [
-        "brand/800",
-        "brand/200"
-      ]
-    },
-    "brand/subtle": {
-      "light": "#eef4ff",
-      "dark": "#1b2f66",
-      "alias": [
-        "brand/50",
-        "brand/900"
-      ]
-    },
-    "danger/default": {
-      "light": "#f04438",
-      "dark": "#f04438",
-      "alias": [
-        "danger/500",
-        "danger/500"
-      ]
-    },
-    "danger/subtle": {
-      "light": "#fef3f2",
-      "dark": "#b42318",
-      "alias": [
-        "danger/50",
-        "danger/700"
-      ]
-    },
-    "danger/text": {
-      "light": "#b42318",
-      "dark": "#fef3f2",
-      "alias": [
-        "danger/700",
-        "danger/50"
-      ]
-    },
-    "success/default": {
-      "light": "#12b76a",
-      "dark": "#12b76a",
-      "alias": [
-        "success/500",
-        "success/500"
-      ]
-    },
-    "success/subtle": {
-      "light": "#ecfdf3",
-      "dark": "#027a48",
-      "alias": [
-        "success/50",
-        "success/700"
-      ]
-    },
-    "success/text": {
-      "light": "#027a48",
-      "dark": "#ecfdf3",
-      "alias": [
-        "success/700",
-        "success/50"
-      ]
-    },
-    "warning/default": {
-      "light": "#f79009",
-      "dark": "#f79009",
-      "alias": [
-        "warning/500",
-        "warning/500"
-      ]
-    },
-    "warning/subtle": {
-      "light": "#fffaeb",
-      "dark": "#b54708",
-      "alias": [
-        "warning/50",
-        "warning/700"
-      ]
-    },
-    "warning/text": {
-      "light": "#b54708",
-      "dark": "#fffaeb",
-      "alias": [
-        "warning/700",
-        "warning/50"
-      ]
-    },
-    "brand/on-brand": {
+    "popover": {
       "light": "#ffffff",
-      "dark": "#0f172a",
-      "alias": [
-        "neutral/0",
-        "neutral/900"
-      ]
+      "dark": "#262626"
+    },
+    "popoverForeground": {
+      "light": "#0a0a0a",
+      "dark": "#fafafa"
+    },
+    "primary": {
+      "light": "#171717",
+      "dark": "#e5e5e5"
+    },
+    "primaryForeground": {
+      "light": "#fafafa",
+      "dark": "#171717"
+    },
+    "secondary": {
+      "light": "#f5f5f5",
+      "dark": "#262626"
+    },
+    "secondaryForeground": {
+      "light": "#0a0a0a",
+      "dark": "#fafafa"
+    },
+    "muted": {
+      "light": "#f5f5f5",
+      "dark": "#262626"
+    },
+    "mutedForeground": {
+      "light": "#737373",
+      "dark": "#a3a3a3"
+    },
+    "accent": {
+      "light": "#f5f5f5",
+      "dark": "#404040"
+    },
+    "accentForeground": {
+      "light": "#171717",
+      "dark": "#fafafa"
+    },
+    "destructive": {
+      "light": "#e7000b",
+      "dark": "#ff7f6e"
+    },
+    "destructiveSubtle": {
+      "light": "#e7000b@10%",
+      "dark": "#ff7f6e@20%"
+    },
+    "textDestructive": {
+      "light": "#e7000b",
+      "dark": "#ff7f6e"
+    },
+    "border": {
+      "light": "#e5e5e5",
+      "dark": "#404040"
+    },
+    "input": {
+      "light": "#e5e5e5",
+      "dark": "#171717"
+    },
+    "ring": {
+      "light": "#737373",
+      "dark": "#737373"
     }
   },
   "radius": {
-    "none": 0,
-    "sm": 4,
+    "xs": 2,
+    "sm": 6,
     "md": 8,
-    "lg": 12,
-    "xl": 16,
-    "full": 999
+    "lg": 10,
+    "xl": 14,
+    "2xl": 18,
+    "3xl": 22,
+    "4xl": 26,
+    "full": 9999
   },
-  "space": {
-    "xs": 4,
-    "sm": 8,
-    "md": 12,
-    "lg": 16,
-    "xl": 24,
-    "2xl": 32,
-    "3xl": 48,
-    "4xl": 64
+  "shadow": {
+    "2xs": "0 1px 0 rgb(0 0 0/.05)",
+    "xs": "0 1px 2px rgb(0 0 0/.1)",
+    "sm": "0 1px 3px rgb(0 0 0/.1)",
+    "focus-ring": "0 0 0 3px #a1a1a1@50%",
+    "destructive-ring": "0 0 0 3px #dc2626@20%"
   },
-  "text": {
-    "heading-h1": "40/48 Inter Bold",
-    "heading-h2": "32/40 Inter Bold",
-    "heading-h3": "24/32 Inter Semi Bold",
-    "heading-h4": "20/28 Inter Semi Bold",
-    "body-large": "18/28 Inter Regular",
-    "body-medium": "16/24 Inter Regular",
-    "body-small": "14/20 Inter Regular"
-  }
+  "text": "Tailwind text styles in Inter: text-xs 12/16, text-sm 14/20, text-base 16/24, text-lg 18/28, text-xl 20/28, weights Thin..Black",
+  "note": "Chart and sidebar variables are in src/theme/theme.css."
 }
