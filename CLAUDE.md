@@ -53,7 +53,7 @@ Also in the Figma file (added 2026-11-10, no React code yet):
 - **Chart gallery** page: 68 chart examples (Area 10, Bar 10, Line 10, Pie 11, Radar 12, Radial 6, Tooltip 9). They are cards, not components. Series use `chart-1` to `chart-5`. Radar titles are inferred, the docs pages do not list titles.
 - **AI Elements** pages (Chatbot, Code, Voice, Workflow, Utilities): 48 components with a description and the React parts in it (for example `Tool`, `Reasoning`, `PromptInput`). They have no component properties yet.
 - **Blocks** pages: `dashboard-01`, `sidebar-01` to `sidebar-16`, `login-01` to `login-05`, `signup-01` to `signup-05`. They are token-bound frames, not instances of Button or Input.
-- **Icons** page: 193 Lucide icons as components named `Icon/<name>` (the lucide-react name in kebab-case).
+- **Icons** page: 2,049 Lucide icons as components named `Icon/<name>` (the lucide-react name in kebab-case).
 
 ## Boundaries for agents
 - Do not push to GitHub, publish Code Connect, or publish to npm without the owner's confirmation. Show what will leave the computer first.
