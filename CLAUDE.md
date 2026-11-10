@@ -47,7 +47,7 @@ Figma property -> React prop. The Figma file uses the code names and values, so 
 | `Card` + parts | One Figma `Card`: `Size` -> `size` (`default` `sm`); toggles `Image`, `Action`, `Content`, `Footer` -> which of `CardImage`, `CardAction`, `CardContent`, `CardFooter` appear; text `Title`, `Description`, `Content text` | `Card.figma.ts` |
 | `Avatar` + parts | `Size` -> `size` (`sm` 24px, `default` 32px, `lg` 40px); `Type` (`fallback` `icon` `image`) -> `AvatarFallback` / `AvatarImage`; `Initials` -> fallback text; `Badge` -> `AvatarBadge` | `Avatar.figma.ts` |
 
-The Figma file has 40 more components with no React code yet (Select, Dialog, Tabs, Table, Toast and others). Machine-readable summary: `llms.txt`.
+The Figma file covers every entry in the shadcn/ui docs as of 2026-11-10 (67 pages, 126 components and parts, 41 icons). React code exists for the components above only; the rest (Select, Dialog, Tabs, Table, Toast, Combobox, Data Table, Message, Trace and others) are designed in Figma but not built in code yet. Machine-readable summary: `llms.txt`.
 
 ## Boundaries for agents
 - Do not push to GitHub, publish Code Connect, or publish to npm without the owner's confirmation. Show what will leave the computer first.

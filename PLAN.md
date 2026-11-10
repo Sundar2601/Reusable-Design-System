@@ -7,7 +7,7 @@ Turn the Figma file **"shadcn/ui components with variables - Tailwind classes"**
 1. The first link (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") was an empty file. I first built from a different published library, "Design System" (blue brand, a custom token set).
 2. On 2026-11-10 the owner pointed to the shadcn community file (`dcJKQOcHWk6gbH7lcMwicU`) and chose to **make it the new source**. Theme, all six components, tests and Code Connect were rebuilt from it. The earlier library's work is in git history (commits before `4ec7d9c`).
 3. Library variables were imported into the empty file during step 1 and are still there. Nothing else was added to either Figma file.
-4. The owner then asked for a new Figma file with the complete shadcn/ui system, built to match this code. It is `shadcn/ui Design System (agent-ready)` (`R1fwFPPMBLnVhMLWumxCkw`) in the Bounteous org: 90 variables (Light/Dark), 32 text styles, 7 effect styles, 35 icons, 46 component pages. It fixes most of the issues listed below for the community kit (descriptions on every component, no hover/focus/LTR-RTL variants, `Roundness` spelled correctly as the `Rounded` property, dark `input` border visible). **Code Connect now points at this file** (11 templates, parsed clean). The community kit file is no longer the source.
+4. The owner then asked for a new Figma file with the complete shadcn/ui system, built to match this code. It is `shadcn/ui Design System (agent-ready)` (`R1fwFPPMBLnVhMLWumxCkw`) in the Bounteous org: 90 variables (Light/Dark), 32 text styles, 7 effect styles, 41 icons, 67 component pages with 126 components and parts. It was first built with 46 components from a stale tool list; on review against the live docs (65 entries) the 21 missing ones were added (13 familiar, 8 newer: Attachment, Bubble, Code Block, Marker, Message, Message Scroller, Questionnaire, Trace), and the existing ones were compared with the docs and fixed (Badge ghost and link, Alert action, Alert Dialog media, Drawer top and left, Tabs line and vertical, menu submenus, Toggle Group spacing, Progress label, Slider range and vertical, Toast naming). It fixes most of the issues listed below for the community kit (descriptions on every component, no hover/focus/LTR-RTL variants, `Roundness` spelled correctly as the `Rounded` property, dark `input` border visible). **Code Connect now points at this file** (11 templates, parsed clean). The community kit file is no longer the source.
 
 ## Decisions (from the interview)
 | Topic | Decision |
@@ -55,7 +55,8 @@ Not done yet:
 - Confirming the GitHub repo is private (the owner checks Settings → General → Danger Zone).
 - Publishing Code Connect (owner runs it; needs the new Figma file published as a library and a Figma token with Code Connect write access).
 - Aligning the repo dark `--input` token with the new Figma file (`neutral/700`, `#404040`).
-- Icon Button and the other 60+ components in the file.
+- React code for the components designed in Figma but not built in code (only Button, Input, Field, Checkbox, Radio, Card and Avatar exist in code).
+- Sidebar floating and inset variants are not drawn in Figma.
 - Visual side-by-side images for components other than Button (the others were checked by measured values).
 
 ## Phases and checkpoints
