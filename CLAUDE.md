@@ -30,7 +30,11 @@ Vite, React, TypeScript, Tailwind, shadcn/ui (restyled to our tokens), Storybook
 5. Export it from `src/index.ts`, add it to the component index below, and commit.
 
 ## Component index
-_Filled in as components are built._ Planned order: Button, Input, Checkbox, Radio, Card, Avatar.
+| Component | Props (Figma name -> React prop) | Notes |
+|---|---|---|
+| `Button` | `Type` -> `variant` (`primary` / `secondary` / `ghost`), `Size` -> `size` (`lg` 48px / `md` 40px / `sm` 32px), `State=Disabled` -> `disabled`, `Label` -> children | `variant` not `type`: `type` is a native button attribute. Hover/active/focus are CSS. `asChild` renders a link. |
+
+Planned next: Input, Checkbox, Radio, Card, Avatar.
 
 ## Boundaries for agents
 - Do not push to GitHub, publish Code Connect, or publish to npm without the owner's confirmation. Show what will leave the computer first.
