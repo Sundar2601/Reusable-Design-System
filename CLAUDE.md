@@ -50,9 +50,9 @@ Figma property -> React prop. The Figma file uses the code names and values, so 
 The Figma file covers every entry in the shadcn/ui docs as of 2026-11-10 (67 component pages, 126 components and parts). React code exists for the components above only; the rest (Select, Dialog, Tabs, Table, Toast, Combobox, Data Table, Message, Trace and others) are designed in Figma but not built in code yet. Machine-readable summary: `llms.txt`.
 
 Also in the Figma file (added 2026-11-10, no React code yet):
-- **Chart gallery** page: 68 chart examples (Area 10, Bar 10, Line 10, Pie 11, Radar 12, Radial 6, Tooltip 9). They are cards, not components. Series use `chart-1` to `chart-5`. Radar titles are inferred, the docs pages do not list titles.
-- **AI Elements** pages (Chatbot, Code, Voice, Workflow, Utilities): 50 components (including Chat and Subagent) with a description and the React parts in it (for example `Tool`, `Reasoning`, `PromptInput`). They have no component properties yet.
-- **Blocks** pages: `dashboard-01`, `sidebar-01` to `sidebar-16`, `login-01` to `login-05`, `signup-01` to `signup-05`. They are token-bound frames, not instances of Button or Input.
+- **Chart examples** page: 68 chart examples (Area 10, Bar 10, Line 10, Pie 11, Radar 12, Radial 6, Tooltip 9). They are cards, not components. Series use `chart-1` to `chart-5`. Radar titles are inferred, the docs pages do not list titles.
+- **AI Elements**: one page per component. 20 pages named as in the shadcn docs (`AI / Chain of Thought`, `AI / Chat`, `AI / Tool`, ...) and 30 older AI SDK Elements under `AI (legacy) / ...` (Actions, Agent, Canvas, Node, ...). Each has a description with the React parts and no component properties yet.
+- **Blocks** pages (`Blocks / Dashboard`, `Sidebar`, `Login`, `Signup`): `dashboard-01`, `sidebar-01` to `sidebar-16`, `login-01` to `login-05`, `signup-01` to `signup-05`. They are token-bound frames, not instances of Button or Input.
 - **Illustrations** page: 12 original spot illustrations (`Illustration/<name>`) in token colors. The official shadcn/ui has no illustration set.
 - **Motion** page and `Motion` variable collection: durations (150/200/300/500 ms), easings and the enter/exit patterns shadcn components use (fade, zoom, slide, sheet, accordion, spin, pulse). The official docs have no motion page.
 - **Themes** page: the 7 shadcn base colors (Neutral, Zinc, Stone, Mauve, Olive, Mist, Taupe) in light and dark. They are modes of the `Color` collection (`Light`/`Dark` = Neutral; the others are named `Zinc / Light` and so on). Values come from ui.shadcn.com/r/colors.
@@ -69,3 +69,6 @@ Also in the Figma file (added 2026-11-10, no React code yet):
 
 ## Known gaps
 The earlier kit file had no component descriptions; the current Figma file has one on every component. Repo and Figma differ in one place to fix: the repo dark `--input` is `#171717`, Figma uses `neutral/700` (`#404040`) so the field border is visible. See PLAN.md.
+
+## Figma page order
+Cover, Getting started, FOUNDATIONS (Colors, Themes, Text styles, Typeset, Radius spacing and shadows, Motion, Icons, Illustrations), COMPONENTS (A to Z, with Chart examples and Scroll Fade (utility)), AI ELEMENTS, AI ELEMENTS (LEGACY), BLOCKS. Separator pages are named with dashes.
