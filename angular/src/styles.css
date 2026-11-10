@@ -1,4 +1,4 @@
 @import 'tailwindcss';
-@import '../../src/theme/theme.css';
+@import '../../react/src/theme/theme.css';
 @source './';
 @source '../.storybook';
