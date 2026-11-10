@@ -15,7 +15,7 @@
   --popover: #ffffff;                  /* bg/surface */
   --popover-foreground: #0f172a;       /* text/primary */
   --primary: #2a55db;                  /* brand/default */
-  --primary-foreground: #ffffff;       /* text/inverse */
+  --primary-foreground: #ffffff;       /* brand/on-brand */
   --secondary: #f1f5f9;                /* bg/subtle */
   --secondary-foreground: #0f172a;     /* text/primary */
   --muted: #f1f5f9;                    /* bg/subtle */
@@ -31,6 +31,7 @@
   /* Extra Figma tokens with no shadcn slot */
   --brand-hover: #2243b0;
   --brand-pressed: #1f3a8a;
+  --brand-on-brand: #ffffff;
   --text-tertiary: #64748b;
   --text-disabled: #94a3b8;
   --text-link: #2a55db;
@@ -52,6 +53,10 @@
   --font-body-large: 400 18px/28px var(--font-sans);
   --font-body-medium: 400 16px/24px var(--font-sans);
   --font-body-small: 400 14px/20px var(--font-sans);
+  /* Button text styles (Figma: Inter Medium 16 / 14 / 12) */
+  --font-button-large: 500 16px/24px var(--font-sans);
+  --font-button-medium: 500 14px/20px var(--font-sans);
+  --font-button-small: 500 12px/16px var(--font-sans);
 }
 
 .dark {
@@ -77,6 +82,7 @@
 
   --brand-hover: #8eb6ff;
   --brand-pressed: #bcd3ff;
+  --brand-on-brand: #0f172a;
   --text-tertiary: #94a3b8;
   --text-disabled: #64748b;
   --text-link: #8eb6ff;
@@ -115,6 +121,7 @@
 
   --color-brand-hover: var(--brand-hover);
   --color-brand-pressed: var(--brand-pressed);
+  --color-brand-on-brand: var(--brand-on-brand);
   --color-text-tertiary: var(--text-tertiary);
   --color-text-disabled: var(--text-disabled);
   --color-text-link: var(--text-link);
@@ -156,6 +163,9 @@
 @utility text-body-large { font: var(--font-body-large); }
 @utility text-body-medium { font: var(--font-body-medium); }
 @utility text-body-small { font: var(--font-body-small); }
+@utility text-button-large { font: var(--font-button-large); }
+@utility text-button-medium { font: var(--font-button-medium); }
+@utility text-button-small { font: var(--font-button-small); }
 
 @layer base {
   * { border-color: var(--border); }
