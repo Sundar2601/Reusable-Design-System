@@ -1,11 +1,14 @@
-import type { Preview } from '@storybook/angular'
+import { applicationConfig, componentWrapperDecorator, type Preview } from '@storybook/angular'
+import { provideZard } from '../src/app/shared/core/provider/providezard'
 
 const preview: Preview = {
   decorators: [
+    applicationConfig({ providers: [provideZard()] }),
+    // Padding around every story, also in the docs page, to match the React catalog.
+    componentWrapperDecorator((story) => `<div class="p-6">${story}</div>`),
     (story, context) => {
       document.documentElement.classList.toggle('dark', context.globals['theme'] === 'dark')
       document.body.classList.add('bg-background', 'text-foreground', 'font-sans')
-      document.body.style.padding = '24px'
       return story()
     },
   ],

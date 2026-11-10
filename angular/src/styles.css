@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@import './app/shared/core/css/zard.css';
+@plugin "tailwindcss-animate";
+/* Same tokens as the React catalog, so both frameworks match Figma. */
 @import '../../react/src/theme/theme.css';
 @source './';
 @source '../.storybook';

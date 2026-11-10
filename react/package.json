@@ -13,7 +13,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "angular:install": "npm --prefix ../angular install",
-    "storybook:angular": "npm --prefix ../angular run storybook",
+    "storybook:angular": "npm --prefix ../angular run storybook:composed",
     "storybook:all": "npm run storybook:angular & npm run storybook",
     "build-storybook:all": "storybook build && npm --prefix ../angular run build-storybook -- --output-dir ../react/storybook-static/angular"
   },
