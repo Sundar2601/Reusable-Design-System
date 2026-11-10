@@ -1,33 +1,28 @@
-// url=https://www.figma.com/design/dcJKQOcHWk6gbH7lcMwicU/shadcn-ui-components-with-variables---Tailwind-classes---Updated-October-2026--Community-?node-id=1872-3230
+// url=https://www.figma.com/design/R1fwFPPMBLnVhMLWumxCkw/shadcn-ui-Design-System-agent-ready?node-id=5-391
 // source=src/components/Button.tsx
 // component=Button
 //
-// Hover and Focus are CSS states in code, so only Disabled becomes a prop.
-// The Left icon, Right icon and Kbd toggles are not mapped yet: they need Code Connect
-// templates for the icon components first (leftIcon, rightIcon and kbd accept any element).
+// Hover and focus are CSS states in code, so they are not Figma variants.
+// The Icon left / Icon right toggles and their Left icon / Right icon swaps are not mapped:
+// they need Code Connect templates for the icon components first. In code use leftIcon and rightIcon.
+// Rounded buttons are a separate Figma set: see ButtonRounded.figma.ts.
 import figma from 'figma'
 const instance = figma.selectedInstance
 
 const variant = instance.getEnum('Variant', {
-  Default: 'default',
-  Outline: 'outline',
-  Secondary: 'secondary',
-  Ghost: 'ghost',
-  Destructive: 'destructive',
-  Link: 'link',
+  default: 'default',
+  outline: 'outline',
+  secondary: 'secondary',
+  ghost: 'ghost',
+  destructive: 'destructive',
+  link: 'link',
 })
 const size = instance.getEnum('Size', { xs: 'xs', sm: 'sm', default: 'default', lg: 'lg' })
-const state = instance.getEnum('State', {
-  Default: 'default',
-  Hover: 'default',
-  Focus: 'default',
-  Disabled: 'disabled',
-})
-// "Roudness" is a typo in the Figma file; the property name must match it exactly.
-const rounded = instance.getEnum('Roudness', { Default: false, Rounded: true })
+const disabled = instance.getEnum('Disabled', { false: false, true: true })
+const label = instance.getString('Label')
 
 export default {
-  example: figma.code`<Button variant="${variant}" size="${size}"${rounded ? ' rounded' : ''}${state === 'disabled' ? ' disabled' : ''}>Button</Button>`,
+  example: figma.code`<Button variant="${variant}" size="${size}"${disabled ? ' disabled' : ''}>${label}</Button>`,
   imports: ['import { Button } from "@bounteous/ui"'],
   id: 'button',
   metadata: { nestable: true },

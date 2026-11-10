@@ -1,32 +1,18 @@
-// url=https://www.figma.com/design/dcJKQOcHWk6gbH7lcMwicU/shadcn-ui-components-with-variables---Tailwind-classes---Updated-October-2026--Community-?node-id=1939-2183
+// url=https://www.figma.com/design/R1fwFPPMBLnVhMLWumxCkw/shadcn-ui-Design-System-agent-ready?node-id=7-273
 // source=src/components/Checkbox.tsx
 // component=Checkbox
 //
-// Focus is a CSS state. Invalid becomes aria-invalid, Disabled becomes disabled.
+// The bare 16px control. Invalid becomes aria-invalid, Disabled becomes disabled.
+// Focus is a CSS state. For the control with a label see CheckboxField.figma.ts.
 import figma from 'figma'
 const instance = figma.selectedInstance
 
-const checked = instance.getEnum('Data state', {
-  Checked: true,
-  Unchecked: false,
-  'Invalid-checked': true,
-  'Invalid-unchecked': false,
-})
-const invalid = instance.getEnum('Data state', {
-  Checked: false,
-  Unchecked: false,
-  'Invalid-checked': true,
-  'Invalid-unchecked': true,
-})
-const interaction = instance.getEnum('Interaction', {
-  Default: 'default',
-  Focus: 'default',
-  Disabled: 'disabled',
-  Invalid: 'default',
-})
+const checked = instance.getEnum('Checked', { false: '', true: ' defaultChecked', indeterminate: ' defaultChecked="indeterminate"' })
+const invalid = instance.getEnum('Invalid', { false: false, true: true })
+const disabled = instance.getEnum('Disabled', { false: false, true: true })
 
 export default {
-  example: figma.code`<Checkbox aria-label="Checkbox"${checked ? ' defaultChecked' : ''}${invalid ? ' aria-invalid' : ''}${interaction === 'disabled' ? ' disabled' : ''} />`,
+  example: figma.code`<Checkbox aria-label="Checkbox"${checked}${invalid ? ' aria-invalid' : ''}${disabled ? ' disabled' : ''} />`,
   imports: ['import { Checkbox } from "@bounteous/ui"'],
   id: 'checkbox',
   metadata: { nestable: true },

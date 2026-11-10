@@ -7,6 +7,7 @@ Turn the Figma file **"shadcn/ui components with variables - Tailwind classes"**
 1. The first link (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") was an empty file. I first built from a different published library, "Design System" (blue brand, a custom token set).
 2. On 2026-11-10 the owner pointed to the shadcn community file (`dcJKQOcHWk6gbH7lcMwicU`) and chose to **make it the new source**. Theme, all six components, tests and Code Connect were rebuilt from it. The earlier library's work is in git history (commits before `4ec7d9c`).
 3. Library variables were imported into the empty file during step 1 and are still there. Nothing else was added to either Figma file.
+4. The owner then asked for a new Figma file with the complete shadcn/ui system, built to match this code. It is `shadcn/ui Design System (agent-ready)` (`R1fwFPPMBLnVhMLWumxCkw`) in the Bounteous org: 90 variables (Light/Dark), 32 text styles, 7 effect styles, 35 icons, 46 component pages. It fixes most of the issues listed below for the community kit (descriptions on every component, no hover/focus/LTR-RTL variants, `Roundness` spelled correctly as the `Rounded` property, dark `input` border visible). **Code Connect now points at this file** (11 templates, parsed clean). The community kit file is no longer the source.
 
 ## Decisions (from the interview)
 | Topic | Decision |
@@ -19,7 +20,7 @@ Turn the Figma file **"shadcn/ui components with variables - Tailwind classes"**
 | Repo | `Sundar2601/Reusable-Design-System` on GitHub (https://github.com/Sundar2601/Reusable-Design-System). Meant to be private: confirm in GitHub Settings. |
 | Build order | Button, Input, Checkbox, Radio, Card, Avatar |
 | Prop names | Figma property names become React prop names, in camelCase |
-| Code Connect | One `.figma.ts` template file per Figma component, pointing at the shadcn file |
+| Code Connect | One `.figma.ts` template file per Figma component, pointing at the agent-ready Figma file `R1fwFPPMBLnVhMLWumxCkw` |
 
 ## Approved mapping (Stop 1) and Button (Stop 2)
 shadcn's variable names are already the Figma `mode` collection's names, so the mapping is 1:1 (see `src/theme/theme.css` and `tokens/figma-tokens.json`). Radius, shadow and text styles follow the Figma values. Spacing and the type scale are Tailwind's defaults, which match Figma. Button was compared with Figma in light and dark (`docs/button-compare/button-figma-vs-code.png`): colors match pixel for pixel, sizes within 1px.
@@ -48,11 +49,12 @@ Most important for **agents**: 1, 2. Most important for **code**: 3, 4, 5.
 | 5 Agent readiness | CLAUDE.md, `llms.txt`, README written; 54 tests pass |
 | 6 Ship (Stop 3) | **Pushed to GitHub** (commit `d8b0784`, 2026-11-10, approved by the owner). **Code Connect is not published.** |
 
-Verified: `npm test` (54 tests), `npm run typecheck`, `npm run build`, `npm run build-storybook`, and `npx figma connect parse` (9 template files).
+Verified: `npm test` (54 tests), `npm run typecheck`, `npm run build`, `npm run build-storybook`, and `npx figma connect parse` (11 template files).
 
 Not done yet:
 - Confirming the GitHub repo is private (the owner checks Settings → General → Danger Zone).
-- Publishing Code Connect (owner runs it; needs the file published as a library and a Figma token with Code Connect write access).
+- Publishing Code Connect (owner runs it; needs the new Figma file published as a library and a Figma token with Code Connect write access).
+- Aligning the repo dark `--input` token with the new Figma file (`neutral/700`, `#404040`).
 - Icon Button and the other 60+ components in the file.
 - Visual side-by-side images for components other than Button (the others were checked by measured values).
 

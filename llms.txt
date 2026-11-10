@@ -1,6 +1,6 @@
 # @bounteous/ui
 
-React component library for the Figma file "shadcn/ui components with variables - Tailwind classes" (key dcJKQOcHWk6gbH7lcMwicU). Vite, React, TypeScript, Tailwind v4, Radix, shadcn patterns restyled to the Figma tokens.
+React component library for the Figma file "shadcn/ui Design System (agent-ready)" (key R1fwFPPMBLnVhMLWumxCkw). Figma property names and values are the React props. Vite, React, TypeScript, Tailwind v4, Radix, shadcn patterns restyled to the Figma tokens.
 Read CLAUDE.md first. Token values: tokens/figma-tokens.json. Catalog: `npm run storybook`. Tests: `npm test`.
 
 ## Rules
@@ -11,13 +11,14 @@ Read CLAUDE.md first. Token values: tokens/figma-tokens.json. Catalog: `npm run 
 - Strokes are drawn inside the box (inset-ring), matching Figma sizes.
 
 ## Components (Figma -> React)
-- Button: Variant->variant (default|outline|secondary|ghost|destructive|link); Size->size (xs 24px|sm 28|default 32|lg 36); State=Disabled->disabled; Roudness=Rounded->rounded; Left icon/Right icon->leftIcon/rightIcon; Kbd->kbd; label=children
-- Input: State=Destructive->aria-invalid; State=Disabled->disabled; Roudness=Rounded->rounded; placeholder/value native. 320x32.
+- Button: Variant->variant (default|outline|secondary|ghost|destructive|link); Size->size (xs 24px|sm 28|default 32|lg 36); Disabled=true->disabled; Label->children; set "Button / Rounded"->rounded
+- Input: Invalid=true->aria-invalid; Disabled=true->disabled; Rounded=true->rounded; Value+Text->placeholder or defaultValue. 320x32.
 - Field, FieldLabel (required, disabled), FieldDescription (align=left|right)
-- Checkbox: checked/defaultChecked/onCheckedChange; aria-invalid; disabled; optional label, description. 16px.
-- Radio inside RadioGroup: group value equals Radio value means selected; aria-invalid; disabled; optional label, description.
+- Checkbox: Checked (false|true|indeterminate)->checked/defaultChecked/onCheckedChange; Invalid->aria-invalid; Disabled->disabled; Checkbox Field adds label, description. 16px.
+- Radio inside RadioGroup: Checked means group value equals Radio value; Invalid->aria-invalid; Disabled->disabled; Radio Field adds label, description.
 - Card (size default|sm) with CardImage, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter. 384px wide.
-- Avatar (size sm 24|default 32|lg 40) with AvatarImage, AvatarFallback, AvatarBadge; AvatarGroup, AvatarGroupCount.
+- Avatar (size sm 24|default 32|lg 40; Type fallback|icon|image) with AvatarImage, AvatarFallback, AvatarBadge; AvatarGroup, AvatarGroupCount.
+- Figma also has: Accordion, Alert, Alert Dialog, Aspect Ratio, Badge, Breadcrumb, Calendar, Carousel, Chart, Collapsible, Command, Context Menu, Dialog, Drawer, Dropdown Menu, Form, Hover Card, Input OTP, Label, Menubar, Navigation Menu, Pagination, Popover, Progress, Resizable, Scroll Area, Select, Separator, Sheet, Sidebar, Skeleton, Slider, Sonner (Toast), Switch, Table, Tabs, Textarea, Toggle, Toggle Group, Tooltip. No React code for these yet.
 
 ## Tokens
 Colors (light/dark): background foreground card card-foreground popover popover-foreground primary primary-foreground secondary secondary-foreground muted muted-foreground accent accent-foreground destructive destructive-subtle text-destructive border input ring chart-1..5 sidebar-*.

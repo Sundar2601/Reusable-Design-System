@@ -1,13 +1,14 @@
-// url=https://www.figma.com/design/dcJKQOcHWk6gbH7lcMwicU/shadcn-ui-components-with-variables---Tailwind-classes---Updated-October-2026--Community-?node-id=1930-445
+// url=https://www.figma.com/design/R1fwFPPMBLnVhMLWumxCkw/shadcn-ui-Design-System-agent-ready?node-id=8-2860
 // source=src/components/Field.tsx
 // component=FieldDescription
 import figma from 'figma'
 const instance = figma.selectedInstance
 
-const align = instance.getEnum('Alignment', { Left: 'left', Right: 'right' })
+const align = instance.getEnum('Align', { left: 'left', right: 'right' })
+const text = instance.getString('Text')
 
 export default {
-  example: figma.code`<FieldDescription align="${align}">Description</FieldDescription>`,
+  example: figma.code`<FieldDescription align="${align}">${text}</FieldDescription>`,
   imports: ['import { FieldDescription } from "@bounteous/ui"'],
   id: 'field-description',
   metadata: { nestable: true },
