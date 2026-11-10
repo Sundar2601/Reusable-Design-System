@@ -26,6 +26,9 @@
   --destructive: #e7000b;
   --destructive-subtle: rgb(231 0 11 / 0.1);
   --text-destructive: #e7000b;
+  --warning-subtle: #fffbeb;
+  --warning-border: #fde68a;
+  --text-warning: #78350f;
   --border: #e5e5e5;
   --input: #e5e5e5;
   --ring: #737373;
@@ -64,6 +67,9 @@
   --destructive: #ff7f6e;
   --destructive-subtle: rgb(255 127 110 / 0.2);
   --text-destructive: #ff7f6e;
+  --warning-subtle: #451a03;
+  --warning-border: #78350f;
+  --text-warning: #fde68a;
   --border: #404040;
   --input: #171717; /* as in Figma; low contrast on dark cards, see PLAN.md */
   --ring: #737373;
@@ -105,6 +111,9 @@
   --color-destructive: var(--destructive);
   --color-destructive-subtle: var(--destructive-subtle);
   --color-text-destructive: var(--text-destructive);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-border: var(--warning-border);
+  --color-text-warning: var(--text-warning);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);

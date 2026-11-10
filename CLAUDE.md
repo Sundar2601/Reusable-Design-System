@@ -58,6 +58,7 @@ Also in the Figma file (added 2026-11-10, no React code yet):
 - **Themes** page: the 7 shadcn base colors (Neutral, Zinc, Stone, Mauve, Olive, Mist, Taupe) in light and dark. They are modes of the `Color` collection (`Light`/`Dark` = Neutral; the others are named `Zinc / Light` and so on). Values come from ui.shadcn.com/r/colors.
 - **Typeset** page and `Typeset` variable collection: the six presets (base, docs, chat, reading, compact, large) with size, leading and flow. Heading scale is an approximation.
 - **Scroll Fade** page: the scroll-fade utility (edges, axis, size) drawn as static examples.
+- **Sizing** variable collection (control heights, icon, avatar, checkbox and switch sizes, border and ring width, state opacities in percent) and **States** sheets on 18 interactive component pages (default, hover, focus, pressed, disabled, invalid). Hover, focus and pressed stay CSS states in code. New color tokens `warning-subtle`, `warning-border`, `text-warning` (Alert custom colors).
 - **Icons** page: 2,049 Lucide icons as components named `Icon/<name>` (the lucide-react name in kebab-case).
 
 ## Boundaries for agents
