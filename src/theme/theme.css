@@ -144,6 +144,9 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-full: 999px;
+
+  /* Elevated card shadow (Figma drop shadows, color #0f172a at 10% and 6%) */
+  --shadow-elevated: 0 4px 8px -2px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.06);
 }
 
 /* Spacing scale from Figma: xs 4, sm 8, md 12, lg 16, xl 24, 2xl 32, 3xl 48, 4xl 64 */

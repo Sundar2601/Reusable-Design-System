@@ -34,6 +34,26 @@ Matters most for code now: 3, 5, plus a foreground token for danger buttons (see
 
 Token values are saved in `tokens/figma-tokens.json`.
 
+### New Figma fixes found while building
+11. Rename Button `Type` and Card `Style` to `Variant`. They collide with a native button attribute and a React prop, so code uses `variant` and Code Connect maps it.
+12. Add a text color token for the danger button (white on `danger/default` is about 3.8:1 in light mode, below the 4.5:1 AA minimum) and a destructive Button.
+13. Make the elevated-card shadow an effect style or variable (it is a raw effect today; code defines `--shadow-elevated`).
+14. Give Card real slots (media and action) instead of a hard-wired image and Button.
+15. Add a pressed look for Button (code uses `brand/pressed`, Figma has none) and a focus look for Button.
+16. Add the missing text styles to Figma (Button 16/14/12 Medium, label 14 Medium, caption 12): code names them `text-button-*`, `text-label`, `text-caption`.
+
+## Status
+| Phase | State |
+|---|---|
+| 1 Setup | Done |
+| 2 Tokens, theme (Stop 1 approved) | Done |
+| 3 Button (Stop 2 approved) | Done |
+| 4 Input, Checkbox, Radio, Card, Avatar | Done, each checked against Figma values in light and dark |
+| 5 Agent readiness | CLAUDE.md, `llms.txt`, README written |
+| 6 Ship (Stop 3) | Not started. Nothing has left this computer. |
+
+Not done yet: automated tests, publishing Code Connect (needs the library file key in each `.figma.ts` file), pushing to GitHub, npm package name.
+
 ## Phases and checkpoints
 1. **Setup**: scaffold the project, write this file and CLAUDE.md, commit.
 2. **Tokens**: export Figma variables.

@@ -11,7 +11,7 @@ Vite, React, TypeScript, Tailwind, shadcn/ui (restyled to our tokens), Storybook
 3. **Colors are semantic.** Pick by purpose (`text/primary`, `border/default`, `danger`), not by hue. Do not add new colors; ask the owner to add a token in Figma.
 4. **Text uses the text styles**: Heading H1–H4, Body Large/Medium/Small. They exist as CSS variables like `--font-heading-h2`.
 5. **Dark mode is automatic.** Dark applies when a parent has the `.dark` class. Light is the default. Never write dark-specific colors in components.
-6. **Props match Figma.** Figma property names become camelCase React props, and values are lowercase (`variant="primary"`, `size="lg"`). If a prop isn't in Figma, don't invent it.
+6. **Props match Figma.** Figma property names become camelCase React props, and values are lowercase (`variant="primary"`, `size="lg"`). If a prop isn't in Figma, don't invent it. Exception: when a Figma name collides with a native or React prop, the code uses `variant` (Figma `Type` on Button, Figma `Style` on Card). Code Connect maps them.
 7. **Hover, focus and active are CSS states**, not props. Disabled, error and loading are props.
 8. **Icons come from `lucide-react`.** Do not add other icon libraries.
 9. **Accessibility is not optional**: labels on inputs, visible focus ring (`border/focus`), keyboard support (comes from shadcn/Radix; don't remove it).
@@ -38,8 +38,10 @@ Vite, React, TypeScript, Tailwind, shadcn/ui (restyled to our tokens), Storybook
 | `Radio` + `RadioGroup` | `Selected` -> the group's `value` equals the Radio's `value`, `State=Disabled` -> `disabled`, `Label` -> `label` | A Radio must be inside a `RadioGroup`. |
 
 Label rule: Button's `Label` is its children. For form controls, `Label` is a `label` prop because the label is a separate element.
+| `Card` | `Style` -> `variant` (`outlined` / `elevated`), `Title` -> `title`, `Description` -> `description`; image and button are slots: `media`, `action` | `variant` not `style` (React prop). Fixed 320px wide by default. |
+| `Avatar` | `Size` -> `size` (`sm` 32 / `md` 40 / `lg` 56), `Initials` -> `initials` | Default size is `sm`, matching Figma's default. |
 
-Planned next: Card, Avatar.
+All components are exported from `src/index.ts`. Machine-readable summary: `llms.txt`.
 
 ## Boundaries for agents
 - Do not push to GitHub, publish Code Connect, or publish to npm without the owner's confirmation. Show what will leave the computer first.

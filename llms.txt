@@ -1,0 +1,23 @@
+# @your-scope/ui
+
+React component library for the Figma "Design System". Vite, React, TypeScript, Tailwind, shadcn/ui restyled to Figma tokens.
+Read CLAUDE.md first. Figma values are in tokens/figma-tokens.json. Storybook is the catalog (`npm run storybook`).
+
+## Rules
+- Use components from src/components before writing markup. Import from the package root.
+- No hard-coded colors, sizes or fonts. Use token classes: bg-primary, text-muted-foreground, border-border, rounded-md, gap-md, text-body-medium.
+- Dark mode: add class "dark" to an ancestor. Light is the default.
+- Hover, focus and active are CSS states, not props. Disabled, error are props.
+
+## Components (Figma name -> React prop)
+- Button: Type->variant (primary|secondary|ghost), Size->size (lg|md|sm), State=Disabled->disabled, Label->children
+- Input: Label->label, Placeholder->placeholder, Helper text->helperText, State=Error->error, State=Disabled->disabled
+- Checkbox: Checked->checked/defaultChecked, State=Disabled->disabled, Label->label
+- Radio (inside RadioGroup): Selected->RadioGroup value equals Radio value, State=Disabled->disabled, Label->label
+- Card: Style->variant (outlined|elevated), Title->title, Description->description, slots: media, action
+- Avatar: Size->size (sm|md|lg), Initials->initials
+
+## Tokens
+Colors (light/dark): bg/page bg/surface bg/subtle bg/disabled; text/primary secondary tertiary disabled inverse link; border/default strong focus; brand/default hover pressed subtle on-brand; danger|success|warning default subtle text.
+Radius: sm 4, md 8, lg 12, xl 16, full. Spacing: xs 4, sm 8, md 12, lg 16, xl 24, 2xl 32, 3xl 48, 4xl 64.
+Text styles: text-heading-h1..h4, text-body-large|medium|small, text-button-large|medium|small, text-label, text-caption.
