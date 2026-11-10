@@ -35,7 +35,7 @@ Vite, React, TypeScript, Tailwind v4, shadcn/ui patterns on Radix (restyled to t
 Before committing: `npm test`, `npm run typecheck`, `npm run build`.
 
 ## Component index
-Figma property -> React prop. The Figma file uses the code names and values, so most map one to one. Every Figma component has a description with the same usage.
+Figma property -> React prop. The Figma file uses the code names and values, so most map one to one. The Figma file is for designers and carries no code: descriptions say what a component is for and its options, variable code syntax is cleared, and there are no usage frames. The React usage lives in this file and in Storybook.
 
 | Component | Figma -> React | Code Connect template |
 |---|---|---|
