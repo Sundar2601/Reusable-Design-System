@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Checkbox" />
+
+# Checkbox: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Checkbox** (React) and **Angular / Checkbox**.
+
+## React
+
+```tsx
+import { Checkbox } from '@bounteous/ui'
+```
+
+```tsx
+<Checkbox label="Accept terms" />
+<Checkbox label="Accept terms" description="You agree to our terms." defaultChecked />
+<Checkbox disabled />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardCheckboxComponent, FormsModule]  // from '@/shared/components/checkbox'
+```
+
+```html
+<z-checkbox>Accept terms</z-checkbox>
+<z-checkbox [ngModel]="true">Accept terms</z-checkbox>
+<z-checkbox zDisabled />
+```

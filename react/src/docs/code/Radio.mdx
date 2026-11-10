@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Radio" />
+
+# Radio: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Radio** (React) and **Angular / Radio**.
+
+## React
+
+```tsx
+import { Radio, RadioGroup } from '@bounteous/ui'
+```
+
+```tsx
+<RadioGroup defaultValue="comfortable">
+  <Radio value="default" label="Default" />
+  <Radio value="comfortable" label="Comfortable" description="Slightly more space." />
+  <Radio value="compact" label="Compact" />
+</RadioGroup>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardRadioGroupImports]  // from '@/shared/components/radio-group/radio-group.imports'
+```
+
+```html
+<z-radio-group [(value)]="density">
+  <z-radio value="default">Default</z-radio>
+  <z-radio value="comfortable">Comfortable</z-radio>
+  <z-radio value="compact">Compact</z-radio>
+</z-radio-group>
+```

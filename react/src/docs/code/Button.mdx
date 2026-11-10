@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Button" />
+
+# Button: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Button** (React) and **Angular / Button**.
+
+## React
+
+```tsx
+import { Button } from '@bounteous/ui'
+```
+
+```tsx
+<Button>Default</Button>
+<Button variant="outline" size="sm">Outline</Button>
+<Button variant="destructive" rounded>Delete</Button>
+<Button disabled>Disabled</Button>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardButtonComponent]  // from '@/shared/components/button'
+```
+
+```html
+<button z-button>Default</button>
+<button z-button zType="outline" zSize="sm">Outline</button>
+<button z-button zType="destructive" class="rounded-full">Delete</button>
+<button z-button zDisabled>Disabled</button>
+```

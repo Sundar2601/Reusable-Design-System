@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Input" />
+
+# Input: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Input** (React) and **Angular / Input**.
+
+## React
+
+```tsx
+import { Input } from '@bounteous/ui'
+```
+
+```tsx
+<Input placeholder="Email" />
+<Input defaultValue="Hello" rounded />
+<Input aria-invalid />
+<Input disabled />
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [ZardInputComponent]  // from '@/shared/components/input'
+```
+
+```html
+<input z-input placeholder="Email" />
+<input z-input value="Hello" class="rounded-full" />
+<input z-input aria-invalid="true" />
+<input z-input disabled />
+```

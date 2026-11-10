@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Avatar" />
+
+# Avatar: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Avatar** (React) and **Angular / Avatar**.
+
+## React
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback, AvatarBadge, AvatarGroup, AvatarGroupCount } from '@bounteous/ui'
+```
+
+```tsx
+<Avatar size="lg">
+  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarFallback>CN</AvatarFallback>
+  <AvatarBadge />
+</Avatar>
+
+<AvatarGroup>
+  <Avatar><AvatarFallback>AB</AvatarFallback></Avatar>
+  <AvatarGroupCount>+3</AvatarGroupCount>
+</AvatarGroup>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardAvatarImports]  // from '@/shared/components/avatar/avatar.imports'
+```
+
+```html
+<z-avatar zSize="lg" zSrc="https://github.com/shadcn.png" zAlt="@shadcn" zFallback="CN" zShowBadge />
+
+<z-avatar-group>
+  <z-avatar zFallback="AB" />
+  <z-avatar-group-count>+3</z-avatar-group-count>
+</z-avatar-group>
+```

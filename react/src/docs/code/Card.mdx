@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Card" />
+
+# Card: React and Angular
+
+Same component, both frameworks. Live previews are under **Components / Card** (React) and **Angular / Card**.
+
+## React
+
+```tsx
+import { Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter, Button } from '@bounteous/ui'
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Create project</CardTitle>
+    <CardDescription>Deploy your new project in one click.</CardDescription>
+    <CardAction><Button size="sm">Sign up</Button></CardAction>
+  </CardHeader>
+  <CardContent>Card content goes here.</CardContent>
+  <CardFooter>
+    <Button>Deploy</Button>
+    <Button variant="outline">Cancel</Button>
+  </CardFooter>
+</Card>
+```
+
+## Angular (ZardUI)
+
+```ts
+imports: [...ZardCardImports, ZardButtonComponent]  // from '@/shared/components/card/card.imports'
+```
+
+```html
+<z-card class="w-96">
+  <z-card-header>
+    <z-card-title>Create project</z-card-title>
+    <z-card-description>Deploy your new project in one click.</z-card-description>
+    <z-card-action><button z-button zSize="sm">Sign up</button></z-card-action>
+  </z-card-header>
+  <z-card-content>Card content goes here.</z-card-content>
+  <z-card-footer class="gap-2">
+    <button z-button>Deploy</button>
+    <button z-button zType="outline">Cancel</button>
+  </z-card-footer>
+</z-card>
+```
