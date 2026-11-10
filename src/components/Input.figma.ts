@@ -20,7 +20,7 @@ const state = instance.getEnum('State', {
 
 export default {
   example: figma.code`<Input label="${label}" placeholder="${placeholder}" helperText="${helperText}"${state === 'error' ? ' error' : ''}${state === 'disabled' ? ' disabled' : ''} />`,
-  imports: ['import { Input } from "@your-scope/ui"'],
+  imports: ['import { Input } from "@bounteous/ui"'],
   id: 'input',
   metadata: { nestable: true },
 }

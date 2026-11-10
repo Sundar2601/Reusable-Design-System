@@ -14,7 +14,7 @@ const state = instance.getEnum('State', { Default: 'default', Disabled: 'disable
 
 export default {
   example: figma.code`<RadioGroup defaultValue="${selected ? 'option' : ''}"><Radio value="option" label="${label}"${state === 'disabled' ? ' disabled' : ''} /></RadioGroup>`,
-  imports: ['import { Radio, RadioGroup } from "@your-scope/ui"'],
+  imports: ['import { Radio, RadioGroup } from "@bounteous/ui"'],
   id: 'radio',
   metadata: { nestable: true },
 }

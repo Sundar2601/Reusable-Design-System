@@ -29,7 +29,7 @@ const label = instance.getString('Label')
 
 export default {
   example: figma.code`<Button variant="${variant}" size="${size}"${state === 'disabled' ? ' disabled' : ''}>${label}</Button>`,
-  imports: ['import { Button } from "@your-scope/ui"'],
+  imports: ['import { Button } from "@bounteous/ui"'],
   id: 'button',
   metadata: { nestable: true },
 }

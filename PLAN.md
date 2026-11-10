@@ -12,8 +12,8 @@ Figma source: the file linked first (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") is em
 | Fonts | Inter, loaded with `@fontsource` (bundled, no external request) |
 | Default theme | Light. Dark applies with the `.dark` class on a parent element |
 | Icons | Lucide (`lucide-react`) |
-| Package name | `@your-scope/ui` (placeholder, set in one place) |
-| Repo name | `design-system` (placeholder) |
+| Package name | `@bounteous/ui` |
+| Repo name | `design-system` (private on GitHub) |
 | Build order | Button, then Input, Checkbox, Radio, then Card, Avatar |
 | Prop names | Figma property names become React prop names, in camelCase |
 | Code Connect | One `.figma.tsx` file per component |

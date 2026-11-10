@@ -1,6 +1,6 @@
-# @your-scope/ui
+# @bounteous/ui
 
-React components built from the Figma "Design System" library. Placeholder package and repo names; rename in `package.json`.
+React components built from the Figma "Design System" library. Package name is set in `package.json`.
 
 ```bash
 npm install

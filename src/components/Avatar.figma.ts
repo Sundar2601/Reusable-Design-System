@@ -12,7 +12,7 @@ const size = instance.getEnum('Size', { Small: 'sm', Medium: 'md', Large: 'lg' }
 
 export default {
   example: figma.code`<Avatar size="${size}" initials="${initials}" />`,
-  imports: ['import { Avatar } from "@your-scope/ui"'],
+  imports: ['import { Avatar } from "@bounteous/ui"'],
   id: 'avatar',
   metadata: { nestable: true },
 }

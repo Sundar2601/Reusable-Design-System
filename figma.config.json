@@ -2,6 +2,6 @@
   "codeConnect": {
     "parser": "react",
     "include": ["src/**/*.figma.ts"],
-    "importPaths": { "src/components/*": "@your-scope/ui" }
+    "importPaths": { "src/components/*": "@bounteous/ui" }
   }
 }

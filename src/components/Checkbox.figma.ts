@@ -13,7 +13,7 @@ const state = instance.getEnum('State', { Default: 'default', Disabled: 'disable
 
 export default {
   example: figma.code`<Checkbox label="${label}"${checked ? ' defaultChecked' : ''}${state === 'disabled' ? ' disabled' : ''} />`,
-  imports: ['import { Checkbox } from "@your-scope/ui"'],
+  imports: ['import { Checkbox } from "@bounteous/ui"'],
   id: 'checkbox',
   metadata: { nestable: true },
 }

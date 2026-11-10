@@ -1,4 +1,4 @@
-# @your-scope/ui
+# @bounteous/ui
 
 React component library for the Figma "Design System". Vite, React, TypeScript, Tailwind, shadcn/ui restyled to Figma tokens.
 Read CLAUDE.md first. Figma values are in tokens/figma-tokens.json. Storybook is the catalog (`npm run storybook`).

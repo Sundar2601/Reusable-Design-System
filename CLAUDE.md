@@ -1,6 +1,6 @@
 # CLAUDE.md: how to use this design system
 
-Read this before writing any UI with `@your-scope/ui` (placeholder name; set in `package.json`). The source of truth for design is the Figma library "Design System". The source of truth for code is this repo. See PLAN.md for the roadmap.
+Read this before writing any UI with `@bounteous/ui` . The source of truth for design is the Figma library "Design System". The source of truth for code is this repo. See PLAN.md for the roadmap.
 
 ## Stack
 Vite, React, TypeScript, Tailwind, shadcn/ui (restyled to our tokens), Storybook, Figma Code Connect, Lucide icons, Inter font via `@fontsource`.

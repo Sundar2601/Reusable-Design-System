@@ -21,7 +21,7 @@ if (button && button.type === 'INSTANCE') {
 
 export default {
   example: figma.code`<Card variant="${variant}" title="${title}" description="${description}" action={${buttonCode}} />`,
-  imports: ['import { Card } from "@your-scope/ui"'],
+  imports: ['import { Card } from "@bounteous/ui"'],
   id: 'card',
   metadata: { nestable: true },
 }
