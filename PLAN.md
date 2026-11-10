@@ -3,7 +3,7 @@
 ## Goal
 Turn the Figma library **"Design System"** into a React component library on GitHub that Claude and other agents can read, use and build with correctly.
 
-Figma source: the file linked first (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") is empty. The build reads the published library "Design System". **TODO: add the hosting file's link here before Phase 2.**
+Figma source: the file linked first (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") is empty. The build reads the published library "Design System". Decision: the owner chose to use the empty file as the working file. The library's variables were imported into it by key to read the Light and Dark values. Library: 'Design System'.
 
 ## Decisions (from the interview)
 | Topic | Decision |
@@ -19,8 +19,8 @@ Figma source: the file linked first (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") is em
 | Code Connect | One `.figma.tsx` file per component |
 
 ## Figma fixes to make (by priority)
-1. Light and Dark modes on the Color collection (unverified; confirm they exist).
-2. Surface/background colors and a spacing scale (none found).
+1. ~~Light and Dark modes on the Color collection~~ **Done: both modes exist** (checked 2026-11-10).
+2. ~~Surface/background colors and a spacing scale~~ **Done: `bg/*` and `space/*` exist** (my first search missed them).
 3. Code-safe property values: "Large 48" becomes `Large`, so it maps to `lg`.
 4. Consistent property names: Radio's "Selected" and Checkbox's "Checked" become one boolean name.
 5. Remove Hover and Focus from variants; they are CSS states, not props.
@@ -30,7 +30,9 @@ Figma source: the file linked first (`g6m8PJkzs1l9uW6Kg4GZLk`, "Untitled") is em
 9. Add missing basics: Button destructive, loading and icon-only; Avatar image; an icon set.
 10. Verify auto layout, no hard-coded fills or strokes, meaningful layer names.
 
-Matters most for code: 1, 2, 3, 5. Matters most for agents: 1, 2, 3, 8.
+Matters most for code now: 3, 5, plus a foreground token for danger buttons (see the mapping table). Matters most for agents: 3, 8.
+
+Token values are saved in `tokens/figma-tokens.json`.
 
 ## Phases and checkpoints
 1. **Setup**: scaffold the project, write this file and CLAUDE.md, commit.
