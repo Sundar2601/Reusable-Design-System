@@ -11,7 +11,11 @@
     "test": "vitest run",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "angular:install": "npm --prefix angular install",
+    "storybook:angular": "npm --prefix angular run storybook",
+    "storybook:all": "npm run storybook:angular & npm run storybook",
+    "build-storybook:all": "storybook build && npm --prefix angular run build-storybook -- --output-dir ../storybook-static/angular"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
