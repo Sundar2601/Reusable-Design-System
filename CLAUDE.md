@@ -60,6 +60,9 @@ Also in the Figma file (added 2026-11-10, no React code yet):
 - **More variants** sections at the bottom of 25 component pages (Combobox chips, Select groups, Field choice card, Input File, Input Group block addons, Calendar range ends, Date Picker range, Sidebar floating and inset, Item xs, Button Group parts, Accordion disabled, Alert Dialog destructive, Badge icon and spinner, Button loading, Dialog sticky footer, Drawer handle and snap points, Data Table toolbar and pagination, Message actions, Bubble show more, Marker shimmer, Typography list and table, Popover and Hover Card sides, Context, Menubar and Dropdown checkbox, radio, submenu, shortcut and avatar items). They are token-bound components with a React usage in the description, not variant properties of the main sets.
 - **Icons** page: 2,049 Lucide icons as components named `Icon/<name>` (the lucide-react name in kebab-case).
 
+## Code Connect coverage
+134 Figma nodes in the file AngMCoShsZnEBQ4B1xMObF have a template under `react/src/components/**/*.figma.ts` (UI components, charts, AI elements, iOS, Android). The 45 `Button state / ...` style sheets are CSS-state illustrations and are not mapped. Publishing needs the owner's token: `cd react && FIGMA_ACCESS_TOKEN=... npx figma connect publish`.
+
 ## Boundaries for agents
 - Do not push to GitHub, publish Code Connect, or publish to npm without the owner's confirmation. Show what will leave the computer first.
 - Never ask for, type or store passwords, tokens or API keys. The owner signs in and publishes.
