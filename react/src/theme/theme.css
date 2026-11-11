@@ -1,7 +1,7 @@
 /*
  * Theme: shadcn variables from the Figma "shadcn/ui components with variables" file,
  * collection `mode` (Light / Dark). Names are shadcn's own, so the mapping is 1:1.
- * Source values: tokens/figma-tokens.json. Mapping approved by the owner.
+ * Colors updated 2026-11 to the rebuilt Figma file (AngMCoShsZnEBQ4B1xMObF), collection `Color`.
  * Light is the default. Dark applies when an ancestor has the .dark class.
  */
 
@@ -18,9 +18,9 @@
   --primary: #171717;
   --primary-foreground: #fafafa;
   --secondary: #f5f5f5;
-  --secondary-foreground: #0a0a0a;
+  --secondary-foreground: #171717;
   --muted: #f5f5f5;
-  --muted-foreground: #737373;
+  --muted-foreground: #525252;
   --accent: #f5f5f5;
   --accent-foreground: #171717;
   --destructive: #e7000b;
@@ -31,13 +31,13 @@
   --text-warning: #78350f;
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #737373;
+  --ring: #a3a3a3;
 
-  --chart-1: #5eb1ef;
-  --chart-2: #0090ff;
-  --chart-3: #0588f0;
-  --chart-4: #0d74ce;
-  --chart-5: #113264;
+  --chart-1: #f54900;
+  --chart-2: #009689;
+  --chart-3: #104e64;
+  --chart-4: #ffb900;
+  --chart-5: #fe9a00;
 
   --sidebar: #fafafa;
   --sidebar-foreground: #0a0a0a;
@@ -46,7 +46,12 @@
   --sidebar-accent: #f5f5f5;
   --sidebar-accent-foreground: #171717;
   --sidebar-border: #e5e5e5;
-  --sidebar-ring: #737373;
+  --sidebar-ring: #a3a3a3;
+
+  /* Status colors from the Figma Color collection */
+  --success: #00a63e;
+  --warning: #fe9a00;
+  --info: #0ea5e9;
 }
 
 .dark {
@@ -54,7 +59,7 @@
   --foreground: #fafafa;
   --card: #171717;
   --card-foreground: #fafafa;
-  --popover: #262626;
+  --popover: #171717;
   --popover-foreground: #fafafa;
   --primary: #e5e5e5;
   --primary-foreground: #171717;
@@ -62,32 +67,36 @@
   --secondary-foreground: #fafafa;
   --muted: #262626;
   --muted-foreground: #a3a3a3;
-  --accent: #404040;
+  --accent: #262626;
   --accent-foreground: #fafafa;
-  --destructive: #ff7f6e;
+  --destructive: #ff6467;
   --destructive-subtle: rgb(255 127 110 / 0.2);
   --text-destructive: #ff7f6e;
   --warning-subtle: #451a03;
   --warning-border: #78350f;
   --text-warning: #fde68a;
-  --border: #404040;
-  --input: #171717; /* as in Figma; low contrast on dark cards, see PLAN.md */
+  --border: rgb(255 255 255 / 0.1);
+  --input: rgb(255 255 255 / 0.15); /* as in Figma; low contrast on dark cards, see PLAN.md */
   --ring: #737373;
 
-  --chart-1: #2870bd;
-  --chart-2: #0090ff;
-  --chart-3: #3b9eff;
-  --chart-4: #70b8ff;
-  --chart-5: #c2e6ff;
+  --chart-1: #1447e6;
+  --chart-2: #00bc7d;
+  --chart-3: #fe9a00;
+  --chart-4: #ad46ff;
+  --chart-5: #ff2056;
 
   --sidebar: #171717;
   --sidebar-foreground: #fafafa;
-  --sidebar-primary: #3b9eff;
+  --sidebar-primary: #1447e6;
   --sidebar-primary-foreground: #fafafa;
   --sidebar-accent: #262626;
   --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: #404040;
+  --sidebar-border: rgb(255 255 255 / 0.1);
   --sidebar-ring: #737373;
+
+  --success: #00bc7d;
+  --warning: #ffb900;
+  --info: #0ea5e9;
 }
 
 /* Tailwind utilities: bg-primary, text-muted-foreground, border-border, rounded-md, ... */
@@ -117,6 +126,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
