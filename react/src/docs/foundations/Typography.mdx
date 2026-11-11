@@ -5,26 +5,57 @@ import { Page, Section, TypeRow, Mono } from './_components'
 
 # Typography
 
-Inter for UI, Roboto Mono for code on web. iOS and Android keep their own platform type styles in Figma. Scale below follows Tailwind sizes used by the components (size/line-height in px / weight).
+Text styles read from the Figma file: Inter for UI and Roboto Mono for code on web, Apple HIG sizes for iOS, Material 3 (Roboto) for Android. Each row shows size / line height / weight.
 
 <Page>
-<Section title="UI scale (Inter)">
-<TypeRow s={{ name: 'Display', size: 48, line: 48, weight: 700 }} />
-<TypeRow s={{ name: 'H1', size: 36, line: 40, weight: 700 }} />
-<TypeRow s={{ name: 'H2', size: 30, line: 36, weight: 600 }} />
-<TypeRow s={{ name: 'H3', size: 24, line: 32, weight: 600 }} />
-<TypeRow s={{ name: 'H4', size: 20, line: 28, weight: 600 }} />
-<TypeRow s={{ name: 'Large', size: 18, line: 28, weight: 500 }} />
-<TypeRow s={{ name: 'Body', size: 16, line: 24, weight: 400 }} />
-<TypeRow s={{ name: 'Body small (base)', size: 14, line: 20, weight: 400 }} />
-<TypeRow s={{ name: 'Label', size: 14, line: 20, weight: 500 }} />
-<TypeRow s={{ name: 'Caption', size: 12, line: 16, weight: 400 }} />
+<Section title="Web (Inter)">
+<TypeRow s={{ name: 'text/xs', size: 12, line: 16, weight: 400 }} />
+<TypeRow s={{ name: 'text/xs-medium', size: 12, line: 16, weight: 500 }} />
+<TypeRow s={{ name: 'text/sm', size: 14, line: 20, weight: 400 }} />
+<TypeRow s={{ name: 'text/sm-medium', size: 14, line: 20, weight: 500 }} />
+<TypeRow s={{ name: 'text/sm-semibold', size: 14, line: 20, weight: 600 }} />
+<TypeRow s={{ name: 'text/base', size: 16, line: 24, weight: 400 }} />
+<TypeRow s={{ name: 'text/base-medium', size: 16, line: 24, weight: 500 }} />
+<TypeRow s={{ name: 'text/lg', size: 18, line: 28, weight: 400 }} />
+<TypeRow s={{ name: 'text/lg-semibold', size: 18, line: 28, weight: 600 }} />
+<TypeRow s={{ name: 'text/xl', size: 20, line: 28, weight: 600 }} />
+<TypeRow s={{ name: 'text/2xl', size: 24, line: 32, weight: 600 }} />
+<TypeRow s={{ name: 'text/3xl', size: 30, line: 36, weight: 700 }} />
+<TypeRow s={{ name: 'text/4xl', size: 36, line: 40, weight: 700 }} />
 </Section>
 <Section title="Code (Roboto Mono)">
-<TypeRow mono s={{ name: 'Mono', size: 14, line: 20, weight: 400, sample: 'const theme = useTheme() // 0123456789' }} />
-<TypeRow mono s={{ name: 'Mono small', size: 12, line: 16, weight: 400, sample: 'npm install @bounteous/ui' }} />
+<TypeRow mono s={{ name: 'code/sm', size: 13, line: 20, weight: 400, sample: 'const theme = useTheme() // 0123456789' }} />
+<TypeRow mono s={{ name: 'code/xs', size: 12, line: 18, weight: 400, sample: 'npm install @bounteous/ui' }} />
+</Section>
+<Section title="iOS (Inter, HIG sizes)">
+<TypeRow s={{ name: 'ios/large-title', size: 34, line: 41, weight: 700 }} />
+<TypeRow s={{ name: 'ios/title-1', size: 28, line: 34, weight: 700 }} />
+<TypeRow s={{ name: 'ios/title-2', size: 22, line: 28, weight: 700 }} />
+<TypeRow s={{ name: 'ios/title-3', size: 20, line: 25, weight: 600 }} />
+<TypeRow s={{ name: 'ios/headline', size: 17, line: 22, weight: 600 }} />
+<TypeRow s={{ name: 'ios/body', size: 17, line: 22, weight: 400 }} />
+<TypeRow s={{ name: 'ios/callout', size: 16, line: 21, weight: 400 }} />
+<TypeRow s={{ name: 'ios/subheadline', size: 15, line: 20, weight: 400 }} />
+<TypeRow s={{ name: 'ios/footnote', size: 13, line: 18, weight: 400 }} />
+<TypeRow s={{ name: 'ios/caption-1', size: 12, line: 16, weight: 400 }} />
+<TypeRow s={{ name: 'ios/caption-2', size: 11, line: 13, weight: 400 }} />
+</Section>
+<Section title="Android (Roboto, Material 3)">
+<TypeRow s={{ name: 'android/display-large', size: 57, line: 64, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/headline-large', size: 32, line: 40, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/headline-medium', size: 28, line: 36, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/headline-small', size: 24, line: 32, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/title-large', size: 22, line: 28, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/title-medium', size: 16, line: 24, weight: 500, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/title-small', size: 14, line: 20, weight: 500, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/body-large', size: 16, line: 24, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/body-medium', size: 14, line: 20, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/body-small', size: 12, line: 16, weight: 400, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/label-large', size: 14, line: 20, weight: 500, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/label-medium', size: 12, line: 16, weight: 500, family: 'Roboto, system-ui, sans-serif' }} />
+<TypeRow s={{ name: 'android/label-small', size: 11, line: 16, weight: 500, family: 'Roboto, system-ui, sans-serif' }} />
 </Section>
 <Section title="Notes">
-<p className="text-sm text-muted-foreground">Base body size is 14/20 (<Mono>body</Mono> in theme.css). Font stack: <Mono>Inter Variable, ui-sans-serif, system-ui</Mono>. Exact Figma text-style values should be verified against the Typography section.</p>
+<p className="text-sm text-muted-foreground">Font stack on web: <Mono>Inter Variable, ui-sans-serif, system-ui</Mono>. Roboto and Roboto Mono are not bundled with the catalog, so they fall back to system fonts unless installed.</p>
 </Section>
 </Page>

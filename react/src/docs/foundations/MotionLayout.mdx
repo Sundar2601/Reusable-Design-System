@@ -5,33 +5,86 @@ import { Page, Section, DocTable, Mono, MotionDemo } from './_components'
 
 # Motion and Layout
 
-Duration, easing and breakpoint tokens. Click a track to play the demo. Values are reference defaults; confirm against the Figma Motion/Layout section.
+Tokens read from the Figma Motion, Layout and Mobile variable collections. Click a track to play the demo.
 
 <Page>
 <Section title="Duration">
-<DocTable head={['Token', 'Value', 'Use', 'Demo']} rows={[
-  [<Mono>duration-instant</Mono>, '100ms', 'Hover, press feedback', <MotionDemo duration={100} easing="ease-out" />],
-  [<Mono>duration-fast</Mono>, '150ms', 'Small state changes', <MotionDemo duration={150} easing="ease-out" />],
-  [<Mono>duration-normal</Mono>, '200ms', 'Default transitions', <MotionDemo duration={200} easing="ease-in-out" />],
-  [<Mono>duration-slow</Mono>, '300ms', 'Overlays, sheets', <MotionDemo duration={300} easing="ease-in-out" />],
-  [<Mono>duration-slower</Mono>, '500ms', 'Page-level, large movement', <MotionDemo duration={500} easing="ease-in-out" />],
+<DocTable head={['Token', 'Value', 'Demo']} rows={[
+  [<Mono>duration/instant</Mono>, '75ms', <MotionDemo duration={75} easing="ease-in-out" />],
+  [<Mono>duration/fast</Mono>, '150ms', <MotionDemo duration={150} easing="ease-in-out" />],
+  [<Mono>duration/base</Mono>, '200ms', <MotionDemo duration={200} easing="ease-in-out" />],
+  [<Mono>duration/slow</Mono>, '300ms', <MotionDemo duration={300} easing="ease-in-out" />],
+  [<Mono>duration/slower</Mono>, '500ms', <MotionDemo duration={500} easing="ease-in-out" />],
 ]} />
 </Section>
 <Section title="Easing">
-<DocTable head={['Token', 'Curve', 'Use']} rows={[
-  [<Mono>ease-standard</Mono>, <Mono>cubic-bezier(0.4, 0, 0.2, 1)</Mono>, 'Default'],
-  [<Mono>ease-in</Mono>, <Mono>cubic-bezier(0.4, 0, 1, 1)</Mono>, 'Elements leaving'],
-  [<Mono>ease-out</Mono>, <Mono>cubic-bezier(0, 0, 0.2, 1)</Mono>, 'Elements entering'],
-  [<Mono>linear</Mono>, <Mono>linear</Mono>, 'Progress, loaders'],
+<DocTable head={['Token', 'Curve']} rows={[
+  [<Mono>easing/linear</Mono>, <Mono>linear</Mono>],
+  [<Mono>easing/in</Mono>, <Mono>cubic-bezier(0.4, 0, 1, 1)</Mono>],
+  [<Mono>easing/out</Mono>, <Mono>cubic-bezier(0, 0, 0.2, 1)</Mono>],
+  [<Mono>easing/in-out</Mono>, <Mono>cubic-bezier(0.4, 0, 0.2, 1)</Mono>],
 ]} />
 </Section>
 <Section title="Breakpoints">
-<DocTable head={['Token', 'Min width', 'Device']} rows={[
-  [<Mono>sm</Mono>, '640px', 'Large phone / mobile landscape'],
-  [<Mono>md</Mono>, '768px', 'Tablet portrait'],
-  [<Mono>lg</Mono>, '1024px', 'Tablet landscape / small desktop'],
-  [<Mono>xl</Mono>, '1280px', 'Desktop'],
-  [<Mono>2xl</Mono>, '1536px', 'Large desktop'],
+<DocTable head={['Token', 'Min width']} rows={[
+  [<Mono>breakpoint/sm</Mono>, '640px'],
+  [<Mono>breakpoint/md</Mono>, '768px'],
+  [<Mono>breakpoint/lg</Mono>, '1024px'],
+  [<Mono>breakpoint/xl</Mono>, '1280px'],
+  [<Mono>breakpoint/2xl</Mono>, '1536px'],
+]} />
+</Section>
+<Section title="Containers">
+<DocTable head={['Token', 'Max width']} rows={[
+  [<Mono>container/sm</Mono>, '384px'],
+  [<Mono>container/md</Mono>, '448px'],
+  [<Mono>container/lg</Mono>, '512px'],
+  [<Mono>container/xl</Mono>, '576px'],
+  [<Mono>container/2xl</Mono>, '672px'],
+  [<Mono>container/3xl</Mono>, '768px'],
+  [<Mono>container/4xl</Mono>, '896px'],
+  [<Mono>container/5xl</Mono>, '1024px'],
+  [<Mono>container/6xl</Mono>, '1152px'],
+  [<Mono>container/7xl</Mono>, '1280px'],
+]} />
+</Section>
+<Section title="Grid">
+<DocTable head={['Token', 'Value']} rows={[
+  [<Mono>grid/columns</Mono>, '12'],
+  [<Mono>grid/gutter</Mono>, '24px'],
+  [<Mono>grid/margin-desktop</Mono>, '32px'],
+  [<Mono>grid/margin-mobile</Mono>, '16px'],
+]} />
+</Section>
+<Section title="Z-index">
+<DocTable head={['Token', 'Value']} rows={[
+  [<Mono>z/base</Mono>, '0'],
+  [<Mono>z/raised</Mono>, '10'],
+  [<Mono>z/sticky</Mono>, '20'],
+  [<Mono>z/header</Mono>, '30'],
+  [<Mono>z/overlay</Mono>, '40'],
+  [<Mono>z/modal</Mono>, '50'],
+  [<Mono>z/popover</Mono>, '60'],
+  [<Mono>z/toast</Mono>, '70'],
+  [<Mono>z/tooltip</Mono>, '80'],
+]} />
+</Section>
+<Section title="Mobile">
+<DocTable head={['Token', 'Value']} rows={[
+  [<Mono>mobile/touch-ios</Mono>, '44px'],
+  [<Mono>mobile/touch-android</Mono>, '48px'],
+  [<Mono>mobile/status-bar-ios</Mono>, '54px'],
+  [<Mono>mobile/status-bar-android</Mono>, '24px'],
+  [<Mono>mobile/home-indicator-ios</Mono>, '34px'],
+  [<Mono>mobile/nav-bar-ios</Mono>, '44px'],
+  [<Mono>mobile/tab-bar-ios</Mono>, '49px'],
+  [<Mono>mobile/top-app-bar-android</Mono>, '64px'],
+  [<Mono>mobile/bottom-nav-android</Mono>, '80px'],
+  [<Mono>mobile/screen-ios-width</Mono>, '393px'],
+  [<Mono>mobile/screen-ios-height</Mono>, '852px'],
+  [<Mono>mobile/screen-android-width</Mono>, '412px'],
+  [<Mono>mobile/screen-android-height</Mono>, '915px'],
+  [<Mono>mobile/margin</Mono>, '16px'],
 ]} />
 </Section>
 </Page>

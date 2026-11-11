@@ -105,7 +105,7 @@ export function SwatchGrid({ prefixes }: { prefixes?: string[] }) {
 
 /* ---------- Typography ---------- */
 
-export type TypeStyle = { name: string; size: number; line: number; weight: number; sample?: string }
+export type TypeStyle = { name: string; size: number; line: number; weight: number; sample?: string; family?: string }
 
 export function TypeRow({ s, mono }: { s: TypeStyle; mono?: boolean }) {
   return (
@@ -116,7 +116,7 @@ export function TypeRow({ s, mono }: { s: TypeStyle; mono?: boolean }) {
       </div>
       <div
         className={mono ? 'font-mono' : 'font-sans'}
-        style={{ fontSize: s.size, lineHeight: `${s.line}px`, fontWeight: s.weight }}
+        style={{ fontSize: s.size, lineHeight: `${s.line}px`, fontWeight: s.weight, ...(s.family ? { fontFamily: s.family } : {}) }}
       >
         {s.sample ?? 'The quick brown fox jumps over the lazy dog'}
       </div>
@@ -126,10 +126,10 @@ export function TypeRow({ s, mono }: { s: TypeStyle; mono?: boolean }) {
 
 /* ---------- Spacing / radius / elevation ---------- */
 
-export function SpaceRow({ px }: { px: number }) {
+export function SpaceRow({ px, name }: { px: number; name?: string }) {
   return (
     <div className="flex items-center gap-4 py-1">
-      <div className="w-24 shrink-0 font-mono text-xs text-muted-foreground">{px}px / {px / 4}</div>
+      <div className="w-24 shrink-0 font-mono text-xs text-muted-foreground">{name ?? `${px / 4}`} · {px}px</div>
       <div className="h-4 rounded-xs bg-primary" style={{ width: px }} />
     </div>
   )
