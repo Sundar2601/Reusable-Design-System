@@ -26,5 +26,9 @@ if (!document.getElementById(id)) {
     zIndex: '10',
     pointerEvents: 'none',
   })
+  // On short windows the box would cover sidebar rows, so hide it there.
+  const style = document.createElement('style')
+  style.textContent = `@media (max-height: 800px) { #${id} { display: none !important; } }`
+  document.head.appendChild(style)
   document.body.appendChild(box)
 }

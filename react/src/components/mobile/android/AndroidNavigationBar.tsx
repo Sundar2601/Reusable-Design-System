@@ -52,7 +52,7 @@ function AndroidNavigationBar({ items, value, defaultValue, onValueChange, class
             >
               {item.icon}
               {item.badge !== undefined && item.badge !== false && (
-                <span className="absolute top-0 left-9 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-[11px] leading-none text-white">
+                <span className="absolute top-0 left-9 flex h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-xs leading-none text-white">
                   {typeof item.badge === 'number' ? item.badge : null}
                 </span>
               )}
