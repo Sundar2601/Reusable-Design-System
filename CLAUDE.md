@@ -73,3 +73,10 @@ The earlier kit file had no component descriptions; the current Figma file has o
 
 ## Figma page order
 Cover, Getting started, FOUNDATIONS (Colors, Themes, Text styles, Typeset, Radius spacing and shadows, Icons), COMPONENTS (A to Z, with Chart examples, Scroll Fade (utility) and Shimmer (utility)), AI ELEMENTS, BLOCKS. Separator pages are named with dashes.
+
+## Utilities, forms and templates (added 2026-11-13)
+Figma file `AngMCoShsZnEBQ4B1xMObF` has a **Utilities** page (after Patterns): Scroll Fade, Shimmer and Direction (LTR/RTL) specimens, token-bound. In code and Storybook:
+- **Utilities** (React `src/components/utilities/`, Angular `src/stories/utilities-*.stories.ts`): `scroll-fade` and `shimmer` are optional Tailwind `@utility` classes from `src/theme/utilities.css` (React) and `src/utilities.css` (Angular). Direction is `dir="rtl"` on an ancestor; components use logical properties.
+- **Forms** (React `src/components/forms/FormLibraries.stories.tsx`): the same sign-up form on React Hook Form, TanStack Form and Formisch. Angular: `forms-reactive-forms.stories.ts`. Errors go to `aria-invalid` and a message in `FieldDescription`. The three form libraries and `valibot` are devDependencies, used by stories only.
+- **Helpers** (React docs `src/docs/code/helpers/`): AI SDK and TanStack AI snippets for the chat components. Not run by Storybook; check them against the installed library version.
+- **Templates / Dashboard** (React `patterns/DashboardTemplate.stories.tsx`, Angular `templates-dashboard.stories.ts`): the Figma Templates page at desktop 1440, tablet 834/1194 and mobile 390/844, with menu-open states.

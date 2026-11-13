@@ -27,3 +27,9 @@ Colors (light/dark): background foreground card card-foreground popover popover-
 Radius: xs 2, sm 6, md 8, lg 10, xl 14, 2xl 18, 3xl 22, 4xl 26, full.
 Shadows: shadow-2xs, shadow-xs, shadow-sm, shadow-md, shadow-lg, shadow-focus-ring, shadow-destructive-ring.
 Text: Tailwind scale in Inter. text-xs 12/16, text-sm 14/20, text-base 16/24, text-lg 18/28, text-xl 20/28; weights font-normal/medium/semibold.
+
+## Utilities, forms, templates
+- Utilities (optional Tailwind classes, theme/utilities.css): scroll-fade (scroll-fade-y|x|t|b|s|e, scroll-fade-<n>, scroll-fade-none); shimmer (shimmer-once|reverse|none, shimmer-color-*, shimmer-duration-<ms>, shimmer-spread-<n>, shimmer-angle-<deg>). Direction: set dir="rtl" on an ancestor.
+- Forms: Field + FieldLabel + Input + FieldDescription work with any library. Invalid -> aria-invalid on Input, message in FieldDescription. Storybook "Forms / Libraries" (React Hook Form, TanStack Form, Formisch).
+- Chat helpers: PromptInputSubmit `status` accepts the AI SDK statuses (ready|submitted|streaming|error). See docs "Code / Helpers".
+- Templates: Storybook "Templates / Dashboard" at the Figma template sizes.

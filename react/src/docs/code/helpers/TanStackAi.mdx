@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Helpers/TanStack AI" />
+
+# TanStack AI
+
+The chat components are presentational, so they work with any chat hook. This page shows them wired to TanStack AI (`@tanstack/ai-react`). Live previews are under **AI Elements**.
+
+> These snippets are not run by Storybook, and TanStack AI is young, so its API may change. Check the TanStack AI docs for the version you install.
+
+## React
+
+```tsx
+import { fetchServerSentEvents, useChat } from '@tanstack/ai-react'
+import {
+  Bubble,
+  ChatThread,
+  Message,
+  MessageContent,
+  MessageScroller,
+  PromptInput,
+  PromptInputSubmit,
+  PromptInputTextarea,
+  PromptInputToolbar,
+} from '@bounteous/ui'
+
+export function Chat() {
+  const { messages, sendMessage, isLoading, stop } = useChat({
+    connection: fetchServerSentEvents('/api/chat'),
+  })
+
+  return (
+    <div className="flex h-[32rem] w-120 flex-col gap-3">
+      <MessageScroller className="flex-1">
+        <ChatThread>
+          {messages.map((m) => (
+            <Message key={m.id} align={m.role === 'user' ? 'end' : 'start'}>
+              <MessageContent>
+                <Bubble variant={m.role === 'user' ? 'default' : 'secondary'}>
+                  {m.parts.map((p, i) => (p.type === 'text' ? <span key={i}>{p.content}</span> : null))}
+                </Bubble>
+              </MessageContent>
+            </Message>
+          ))}
+        </ChatThread>
+      </MessageScroller>
+      <PromptInput onSubmit={(text) => sendMessage(text)}>
+        <PromptInputTextarea placeholder="Ask anything" />
+        <PromptInputToolbar>
+          <PromptInputSubmit status={isLoading ? 'streaming' : 'ready'} onStop={stop} />
+        </PromptInputToolbar>
+      </PromptInput>
+    </div>
+  )
+}
+```

@@ -1,0 +1,58 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Code/Helpers/AI SDK" />
+
+# AI SDK
+
+The chat components are presentational, so they work with any chat hook. This page shows them wired to the Vercel AI SDK (`@ai-sdk/react`). Live previews are under **AI Elements**.
+
+`PromptInputSubmit` takes the same `status` values the AI SDK reports (`ready`, `submitted`, `streaming`, `error`), so you can pass `status` straight through.
+
+> These snippets are not run by Storybook, and the AI SDK API changes between major versions. Check the AI SDK docs for the version you install.
+
+## React
+
+```tsx
+import { useChat } from '@ai-sdk/react'
+import {
+  Bubble,
+  ChatThread,
+  Message,
+  MessageContent,
+  MessageScroller,
+  PromptInput,
+  PromptInputSubmit,
+  PromptInputTextarea,
+  PromptInputToolbar,
+} from '@bounteous/ui'
+
+export function Chat() {
+  const { messages, sendMessage, status, stop } = useChat()
+
+  return (
+    <div className="flex h-[32rem] w-120 flex-col gap-3">
+      <MessageScroller className="flex-1">
+        <ChatThread>
+          {messages.map((m) => (
+            <Message key={m.id} align={m.role === 'user' ? 'end' : 'start'}>
+              <MessageContent>
+                <Bubble variant={m.role === 'user' ? 'default' : 'secondary'}>
+                  {m.parts.map((p, i) => (p.type === 'text' ? <span key={i}>{p.text}</span> : null))}
+                </Bubble>
+              </MessageContent>
+            </Message>
+          ))}
+        </ChatThread>
+      </MessageScroller>
+      <PromptInput onSubmit={(text) => sendMessage({ text })}>
+        <PromptInputTextarea placeholder="Ask anything" />
+        <PromptInputToolbar>
+          <PromptInputSubmit status={status} onStop={stop} />
+        </PromptInputToolbar>
+      </PromptInput>
+    </div>
+  )
+}
+```
+
+Tool calls arrive as message parts; render them with `Tool`, `ToolHeader`, `ToolInput` and `ToolOutput`, and reasoning with `Reasoning`.
