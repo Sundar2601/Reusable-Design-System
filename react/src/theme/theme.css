@@ -57,6 +57,10 @@
   --success-foreground: #0a0a0a;
   --warning-foreground: #0a0a0a;
   --info-foreground: #0a0a0a;
+  --status-online: var(--success);
+  --status-away: var(--warning);
+  --status-busy: var(--destructive);
+  --status-offline: var(--muted-foreground);
 
   /* Figma `Sizing` collection (px). Values here are reference tokens; components use Tailwind sizes. */
   --size-control-xs: 24px;
@@ -170,6 +174,10 @@
   --color-success-foreground: var(--success-foreground);
   --color-warning-foreground: var(--warning-foreground);
   --color-info-foreground: var(--info-foreground);
+  --color-status-online: var(--status-online);
+  --color-status-away: var(--status-away);
+  --color-status-busy: var(--status-busy);
+  --color-status-offline: var(--status-offline);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -205,6 +213,19 @@
   --shadow-lg: 0 4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1);
   --shadow-focus-ring: 0 0 0 3px rgb(161 161 161 / 0.5);
   --shadow-destructive-ring: 0 0 0 3px rgb(220 38 38 / 0.2);
+}
+
+/* Reduced motion: when the user asks for it, end transitions and animations at once.
+   Status indicators (role="status", for example Spinner) keep spinning so loading stays visible. */
+@media (prefers-reduced-motion: reduce) {
+  *:not([role='status']),
+  *:not([role='status'])::before,
+  *:not([role='status'])::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @layer base {

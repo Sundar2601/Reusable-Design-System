@@ -32,7 +32,7 @@ Vite, React, TypeScript, Tailwind v4, shadcn/ui patterns on Radix (restyled to t
 5. Write the Code Connect template `Name.figma.ts` (its `// url=` points at the component set in the Figma file above) (a template file, never `.figma.tsx`) and run `npx figma connect parse`.
 6. Export it from `src/index.ts`, add it to the index below, and commit.
 
-Before committing: `npm test`, `npm run typecheck`, `npm run build`.
+Before committing: `npm test` (includes the axe accessibility test), `npm run typecheck`, `npm run build`, and `npm run tokens:check` if you touched `theme.css` or a Figma variable.
 
 ## Component index
 Figma property -> React prop. The Figma file uses the code names and values, so most map one to one. The Figma file is for designers and carries no code: descriptions say what a component is for and its options, variable code syntax is cleared, and there are no usage frames. The React usage lives in this file and in Storybook.
@@ -80,3 +80,14 @@ Figma file `AngMCoShsZnEBQ4B1xMObF` has a **Utilities** page (after Patterns): S
 - **Forms** (React `src/components/forms/FormLibraries.stories.tsx`): the same sign-up form on React Hook Form, TanStack Form and Formisch. Angular: `forms-reactive-forms.stories.ts`. Errors go to `aria-invalid` and a message in `FieldDescription`. The three form libraries and `valibot` are devDependencies, used by stories only.
 - **Helpers** (React docs `src/docs/code/helpers/`): AI SDK and TanStack AI snippets for the chat components. Not run by Storybook; check them against the installed library version.
 - **Templates / Dashboard** (React `patterns/DashboardTemplate.stories.tsx`, Angular `templates-dashboard.stories.ts`): the Figma Templates page at desktop 1440, tablet 834/1194 and mobile 390/844, with menu-open states.
+
+## Process docs (added 2026-11-13)
+For the design system to serve every future project, these live in `docs/`:
+- `GOVERNANCE.md`: owners, where to ask, how to request a change, what makes a component Stable.
+- `RELEASING.md`: semver, release steps, and the one-time work to make the package installable (it is still `private`).
+- `THEMING.md`: re-theme or brand for a project through the semantic Color tokens, with a contrast checklist.
+- `MIGRATION.md`: adopt the system in an existing app, step by step.
+- `COMPONENT-STATUS.md`: Stable, Beta, Planned, Deprecated, by tier.
+- `MOTION.md`: motion rules and per-component targets.
+- Tooling: `npm run tokens:check` compares `react/tokens/figma-tokens.json` (a Figma export) with `src/theme/theme.css`; `src/test/a11y.test.tsx` runs axe-core on core components. `control-border` is the token for form-control outlines (3:1); `border` is for dividers.
+

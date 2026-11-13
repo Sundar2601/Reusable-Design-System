@@ -15,7 +15,8 @@
     "angular:install": "npm --prefix ../angular install",
     "storybook:angular": "npm --prefix ../angular run storybook:composed",
     "storybook:all": "npm run storybook:angular & npm run storybook",
-    "build-storybook:all": "storybook build && npm --prefix ../angular run build-storybook -- --output-dir ../react/storybook-static/angular"
+    "build-storybook:all": "storybook build && npm --prefix ../angular run build-storybook -- --output-dir ../react/storybook-static/angular",
+    "tokens:check": "node scripts/check-tokens.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -59,6 +60,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
+    "axe-core": "^4.14.0",
     "jsdom": "^31.0.0",
     "oxlint": "^1.90.0",
     "playwright": "latest",

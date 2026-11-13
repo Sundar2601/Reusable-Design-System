@@ -10,3 +10,7 @@ npm run build       # type-check and build
 ```
 
 Agents and contributors: read [CLAUDE.md](CLAUDE.md). Roadmap, decisions and Figma fixes: [PLAN.md](PLAN.md).
+
+## Docs
+`docs/` has the process guides: `GOVERNANCE.md`, `RELEASING.md`, `THEMING.md`, `MIGRATION.md`, `COMPONENT-STATUS.md` and `MOTION.md`. Rules for building with the system are in `CLAUDE.md`. Token drift check: `cd react && npm run tokens:check`.
+
