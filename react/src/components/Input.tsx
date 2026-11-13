@@ -23,7 +23,7 @@ function Input({ className, rounded = false, type = 'text', ...props }: InputPro
       className={cn(
         // Figma: 320 x 32, padding 10 / 4, radius lg, 1px border drawn inside the box
         'h-8 w-80 min-w-0 rounded-lg bg-background px-2.5 py-1 text-sm text-foreground',
-        'inset-ring-1 inset-ring-border outline-none transition-[color,box-shadow]',
+        'inset-ring-1 inset-ring-control-border outline-none transition-[color,box-shadow]',
         'placeholder:text-muted-foreground',
         'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
         'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',

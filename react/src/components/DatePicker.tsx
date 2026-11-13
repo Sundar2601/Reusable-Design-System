@@ -53,7 +53,7 @@ function DatePicker({
           data-empty={!value}
           className={cn(
             'flex h-8 w-64 cursor-pointer items-center justify-start gap-2 rounded-lg bg-background px-2.5 text-sm font-normal text-foreground',
-            'inset-ring-1 inset-ring-border outline-none transition-[color,box-shadow]',
+            'inset-ring-1 inset-ring-control-border outline-none transition-[color,box-shadow]',
             'data-[empty=true]:text-muted-foreground hover:bg-muted',
             'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
             'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',

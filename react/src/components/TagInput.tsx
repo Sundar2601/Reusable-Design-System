@@ -49,7 +49,7 @@ function TagInput({
       data-slot="tag-input"
       className={cn(
         'flex min-h-8 w-80 flex-wrap items-center gap-1 rounded-lg bg-background px-1.5 py-1 text-sm text-foreground',
-        'inset-ring-1 inset-ring-border transition-[color,box-shadow]',
+        'inset-ring-1 inset-ring-control-border transition-[color,box-shadow]',
         'focus-within:inset-ring-ring focus-within:shadow-focus-ring',
         'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',
         disabled && 'pointer-events-none opacity-50',

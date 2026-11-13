@@ -46,7 +46,7 @@ function NumberInput({
       data-slot="number-input"
       className={cn(
         'flex h-8 w-32 items-center overflow-hidden rounded-lg bg-background text-sm text-foreground',
-        'inset-ring-1 inset-ring-border transition-[color,box-shadow]',
+        'inset-ring-1 inset-ring-control-border transition-[color,box-shadow]',
         'focus-within:inset-ring-ring focus-within:shadow-focus-ring',
         'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',
         disabled && 'pointer-events-none opacity-50',

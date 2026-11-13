@@ -13,7 +13,7 @@ function Textarea({ className, ...props }: TextareaProps) {
       data-slot="textarea"
       className={cn(
         'flex min-h-16 w-80 rounded-lg bg-background px-2.5 py-2 text-sm text-foreground',
-        'inset-ring-1 inset-ring-border outline-none transition-[color,box-shadow] field-sizing-content',
+        'inset-ring-1 inset-ring-control-border outline-none transition-[color,box-shadow] field-sizing-content',
         'placeholder:text-muted-foreground',
         'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
         'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',

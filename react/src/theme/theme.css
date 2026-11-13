@@ -32,6 +32,7 @@
   --border: #e5e5e5;
   --input: #e5e5e5;
   --ring: #a3a3a3;
+  --control-border: #737373; /* form-control boundaries: 4.7:1 on white (WCAG 1.4.11) */
 
   --chart-1: #f54900;
   --chart-2: #009689;
@@ -108,6 +109,7 @@
   --border: rgb(255 255 255 / 0.1);
   --input: rgb(255 255 255 / 0.15); /* as in Figma; low contrast on dark cards, see PLAN.md */
   --ring: #737373;
+  --control-border: #737373; /* 4.2:1 on the dark background */
 
   --chart-1: #1447e6;
   --chart-2: #00bc7d;
@@ -160,6 +162,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-control-border: var(--control-border);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-info: var(--info);

@@ -28,7 +28,7 @@ function Checkbox({ className, label, description, id, ...props }: CheckboxProps
       data-slot="checkbox"
       className={cn(
         // Figma: 16px box, radius 4, 1px border drawn inside
-        'size-4 shrink-0 cursor-pointer rounded-[4px] bg-background inset-ring-1 inset-ring-border outline-none transition-shadow',
+        'size-4 shrink-0 cursor-pointer rounded-[4px] bg-background inset-ring-1 inset-ring-control-border outline-none transition-shadow',
         'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
         'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',
         'data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:inset-ring-primary',

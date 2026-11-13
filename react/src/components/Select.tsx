@@ -32,7 +32,7 @@ function SelectTrigger({ className, size = 'default', children, ...props }: Sele
       data-size={size}
       className={cn(
         'flex w-fit min-w-48 cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-background py-1 ps-2.5 pe-2 text-sm whitespace-nowrap text-foreground',
-        'inset-ring-1 inset-ring-border outline-none transition-[color,box-shadow] select-none',
+        'inset-ring-1 inset-ring-control-border outline-none transition-[color,box-shadow] select-none',
         'data-[size=default]:h-8 data-[size=sm]:h-7',
         'data-[placeholder]:text-muted-foreground',
         'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',

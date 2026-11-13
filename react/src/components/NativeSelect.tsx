@@ -22,7 +22,7 @@ function NativeSelect({ className, size = 'default', ...props }: NativeSelectPro
         data-size={size}
         className={cn(
           'w-full min-w-48 cursor-pointer appearance-none rounded-lg bg-background ps-2.5 pe-8 text-sm text-foreground',
-          'inset-ring-1 inset-ring-border outline-none transition-[color,box-shadow] select-none',
+          'inset-ring-1 inset-ring-control-border outline-none transition-[color,box-shadow] select-none',
           'h-8 data-[size=sm]:h-7',
           'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
           'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',

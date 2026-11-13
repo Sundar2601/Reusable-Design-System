@@ -42,7 +42,7 @@ function InputOTPSlot({
       className={cn(
         // 32px slots, joined: only the outer corners are rounded
         'relative flex size-8 items-center justify-center bg-background text-sm text-foreground',
-        'inset-ring-1 inset-ring-border transition-[color,box-shadow] outline-none',
+        'inset-ring-1 inset-ring-control-border transition-[color,box-shadow] outline-none',
         'first:rounded-s-lg last:rounded-e-lg',
         'aria-invalid:inset-ring-text-destructive',
         'data-[active=true]:z-10 data-[active=true]:inset-ring-ring data-[active=true]:shadow-focus-ring',

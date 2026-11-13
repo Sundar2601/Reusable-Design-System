@@ -32,7 +32,7 @@ function Radio({ className, label, description, id, ...props }: RadioProps) {
       data-slot="radio"
       className={cn(
         // Figma: 16px circle, 1px border drawn inside
-        'flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full bg-background inset-ring-1 inset-ring-border outline-none transition-shadow',
+        'flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full bg-background inset-ring-1 inset-ring-control-border outline-none transition-shadow',
         'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
         'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',
         'data-[state=checked]:bg-primary data-[state=checked]:inset-ring-primary',

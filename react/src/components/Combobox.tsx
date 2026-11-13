@@ -64,7 +64,7 @@ function Combobox({
           data-placeholder={selected ? undefined : ''}
           className={cn(
             'flex h-8 w-64 cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-background ps-2.5 pe-2 text-sm text-foreground',
-            'inset-ring-1 inset-ring-border outline-none transition-[color,box-shadow]',
+            'inset-ring-1 inset-ring-control-border outline-none transition-[color,box-shadow]',
             'data-[placeholder]:text-muted-foreground',
             'focus-visible:inset-ring-ring focus-visible:shadow-focus-ring',
             'aria-invalid:inset-ring-text-destructive aria-invalid:shadow-destructive-ring',
