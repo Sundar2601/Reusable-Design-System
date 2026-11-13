@@ -89,5 +89,6 @@ For the design system to serve every future project, these live in `docs/`:
 - `MIGRATION.md`: adopt the system in an existing app, step by step.
 - `COMPONENT-STATUS.md`: Stable, Beta, Planned, Deprecated, by tier.
 - `MOTION.md`: motion rules and per-component targets.
+- `PLATFORMS.md`: smartwatch, TV, AR/VR/XR, car and voice. Researched rules, sourced numbers (some marked UNVERIFIED), and the components to build. All Planned.
 - Tooling: `npm run tokens:check` compares `react/tokens/figma-tokens.json` (a Figma export) with `src/theme/theme.css`; `src/test/a11y.test.tsx` runs axe-core on core components. `control-border` is the token for form-control outlines (3:1); `border` is for dividers.
 
