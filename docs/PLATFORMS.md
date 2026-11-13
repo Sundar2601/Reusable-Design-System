@@ -1,6 +1,6 @@
 # Platforms and modalities beyond web and phone
 
-Smartwatch, TV, AR/VR (spatial), car and voice. All of these are **Planned**: the rules and tokens exist, the components are not built. The numbers live as the `Surfaces` variable collection in the new Figma file (`Bounteous Design System`). Values marked **UNVERIFIED** need a check with the platform owner before you rely on them.
+Smartwatch, TV, AR/VR (spatial), car and voice. All of these are **Planned**: the rules and tokens exist, the components are not built. The per-surface numbers live in the `Surface` variable collection (one mode per device class) in the new Figma file (`Bounteous Design System`). Values marked **UNVERIFIED** need a check with the platform owner before you rely on them.
 
 Researched 2026-11-13. Most figures come from official developer pages; secondary sources are named.
 
@@ -62,6 +62,21 @@ Sources: [Apple Human Interface Guidelines](https://developer.apple.com/design/h
 | Components | List template, Grid template, Message template, Large button, Media controls, Map overlay | |
 
 Sources: [Android Auto sizing](https://developers.google.com/cars/design/android-auto/design-system/sizing), [Android for Cars UX requirements](https://developer.android.com/design/ui/cars/guides/ux-requirements/overview), [Driving UX design principles](https://docs.partner.android.com/drivingux/foundations/design-principles).
+
+## Smart displays and IoT (home hubs, appliance and wall panels, companion apps)
+
+IoT apps are two things. The **companion app** on a phone or tablet uses the Phone and Tablet modes. The **screen on the device** (a smart display, a thermostat or appliance panel) uses the Smart display mode.
+
+| Topic | Finding |
+|---|---|
+| Standards | Matter standardizes how devices communicate (discovery, commissioning, control). It does not define any UI, so each ecosystem designs its own. |
+| Smart displays | Voice-first, stationary, often far from the user. Use large type and one focus at a time (Google Interactive Canvas guidance). Amazon's multimodal guide ties layout density to viewing distance (about 2 ft, 2 to 4 ft and 6 to 8 ft device classes). |
+| Reserved header | Google Interactive Canvas reserves a header of 56 dp on mobile, 96 dp on Home Hub and 120 dp on Smart Display; keep content out of it. |
+| Numeric minimums | **None found** for touch targets on Alexa or Nest Hub. The Smart display mode uses design defaults (target 56, control height 56, body 22, minimum text 18) and needs device testing. |
+| Smart-device apps | The app is an extension of the physical product. Users switch between app, voice and on-device controls, and each needs its own interaction pattern (Nielsen Norman Group). |
+| Components (planned) | Device card (state, offline, pending), Room and scene tile, Slider and dial control (large), Schedule row, Pairing and setup flow, Notification and alert banner, Voice-confirm toast, Energy and status chart |
+
+Sources: [Google Interactive Canvas design guidelines](https://developers.google.cn/assistant/df-asdk/interactivecanvas/design/guidelines), [Amazon multimodal display guide](https://www.developer.amazon.com/docs/alexa-voice-service/ux-design-display.html), [Amazon APL density, grids and spacing](https://developer.amazon.com/en-US/alexa/alexa-haus/visual-design/apl-style-guide/density-grid-spacing), [NN/g smart device best practices](https://www.nngroup.com/articles/smart-device-best-practices/), [Matter brand guidelines](https://csa-iot.org/wp-content/uploads/2022/11/Matter_Brand-Guidelines_v1.6.pdf).
 
 ## Voice and multimodal
 

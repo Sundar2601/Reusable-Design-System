@@ -20,7 +20,7 @@ Every component has a status so a project knows what it can rely on. The Figma f
 | Charts | **Stable** for basic (bar, line, area, pie, radar, radial); **Beta** for advanced (scatter, sparkline, gauge, funnel, heatmap, treemap, sankey) | |
 | AI elements | **Beta** | Chat thread, Message, Bubble, Prompt Input, Reasoning, Chain of Thought, Tool, Plan, Queue, Sources, Terminal, Test Results, Stack Trace and the rest |
 | Mobile (iOS and Android) | **Beta** | The iOS (HIG) and Android (Material 3) component sets |
-| Smartwatch, TV, spatial (AR/VR/XR), car, voice | **Planned** | Rules, numbers and component lists are in `PLATFORMS.md`. The `Surfaces` tokens are in the new Figma file. No components built. |
+| Smartwatch, TV, spatial (AR/VR/XR), smart display and IoT, car, voice | **Planned** | Rules, numbers and component lists are in `PLATFORMS.md`. The `Surface` modes (Web, Tablet, Phone, Watch, TV, Spatial, Smart display) are in the new Figma file. No components built. |
 
 These tiers are a starting proposal. The owner confirms them, and a component moves up when it meets the Stable checklist in `GOVERNANCE.md`.
 
