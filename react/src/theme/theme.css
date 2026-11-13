@@ -56,6 +56,32 @@
   --success-foreground: #ffffff;
   --warning-foreground: #0a0a0a;
   --info-foreground: #0a0a0a;
+
+  /* Figma `Sizing` collection (px). Values here are reference tokens; components use Tailwind sizes. */
+  --size-control-xs: 24px;
+  --size-control-sm: 28px;
+  --size-control-default: 32px;
+  --size-control-lg: 36px;
+  --size-icon-default: 16px;
+  --size-avatar-sm: 24px;
+  --size-avatar-default: 32px;
+  --size-avatar-lg: 40px;
+  --size-checkbox: 16px;
+  --size-switch-width: 32px;
+  --size-switch-height: 18px;
+  --size-border-width: 1px;
+  --size-ring-width: 3px;
+  --opacity-disabled: 0.5;
+  --opacity-focus-ring: 0.5;
+  --opacity-invalid-ring: 0.2;
+
+  /* Figma `Typeset` collection: size / leading / flow per preset (px). */
+  --typeset-base-size: 14px;     --typeset-base-leading: 20px;     --typeset-base-flow: 12px;
+  --typeset-compact-size: 12px;  --typeset-compact-leading: 16px;  --typeset-compact-flow: 8px;
+  --typeset-chat-size: 14px;     --typeset-chat-leading: 24px;     --typeset-chat-flow: 8px;
+  --typeset-docs-size: 16px;     --typeset-docs-leading: 28px;     --typeset-docs-flow: 20px;
+  --typeset-reading-size: 18px;  --typeset-reading-leading: 32px;  --typeset-reading-flow: 24px;
+  --typeset-large-size: 20px;    --typeset-large-leading: 28px;    --typeset-large-flow: 16px;
 }
 
 .dark {

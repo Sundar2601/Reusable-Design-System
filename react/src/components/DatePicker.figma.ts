@@ -2,11 +2,14 @@
 // source=src/components/DatePicker.tsx
 // component=DatePicker
 //
-// State empty/filled follows the value prop.
+// State empty/filled follows the value prop; error and disabled are props.
 import figma from 'figma'
+const instance = figma.selectedInstance
+
+const state = instance.getEnum('State', { empty: '', filled: '', error: ' aria-invalid', disabled: ' disabled' })
 
 export default {
-  example: figma.code`<DatePicker />`,
+  example: figma.code`<DatePicker${state} />`,
   imports: ["import { DatePicker } from \"@bounteous/ui\""],
   id: "datepicker",
   metadata: { nestable: true },

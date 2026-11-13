@@ -4,7 +4,7 @@
 import figma from 'figma'
 const instance = figma.selectedInstance
 
-const state = instance.getEnum('State', { default: '', open: '', disabled: ' disabled' })
+const state = instance.getEnum('State', { default: '', open: '', disabled: ' disabled', error: ' aria-invalid' })
 const placeholder = instance.getString('Placeholder')
 
 export default {
