@@ -2,7 +2,6 @@
 // source=src/components/Breadcrumb.tsx
 // component=Breadcrumb
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Breadcrumb>

@@ -4,7 +4,6 @@
 //
 // Figma AI element has no properties yet; the example shows typical usage.
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<StackTrace name="Error" message="Something failed" frames={[]} />`,

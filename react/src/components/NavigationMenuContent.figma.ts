@@ -2,7 +2,6 @@
 // source=src/components/NavigationMenu.tsx
 // component=NavigationMenuContent
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<NavigationMenu>

@@ -2,7 +2,6 @@
 // source=src/components/Table.tsx
 // component=Table
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Table>

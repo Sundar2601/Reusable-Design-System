@@ -2,7 +2,6 @@
 // source=src/components/Sonner.tsx
 // component=Toaster
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Toaster />

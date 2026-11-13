@@ -2,7 +2,6 @@
 // source=src/components/Select.tsx
 // component=SelectContent
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<SelectContent>

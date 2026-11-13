@@ -4,7 +4,6 @@
 //
 // State empty/filled follows the value prop.
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<DatePicker />`,

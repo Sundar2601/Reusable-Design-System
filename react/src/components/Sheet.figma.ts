@@ -2,7 +2,6 @@
 // source=src/components/Sheet.tsx
 // component=Sheet
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Sheet>

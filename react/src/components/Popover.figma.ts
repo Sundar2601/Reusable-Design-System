@@ -2,7 +2,6 @@
 // source=src/components/Popover.tsx
 // component=Popover
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Popover>

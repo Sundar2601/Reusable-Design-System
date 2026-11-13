@@ -4,7 +4,6 @@
 //
 // A day is one cell of Calendar; state today/selected/outside/range/disabled comes from props.
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Calendar mode="single" />`,

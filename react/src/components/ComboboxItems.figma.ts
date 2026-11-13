@@ -2,7 +2,6 @@
 // source=src/components/Combobox.tsx
 // component=Combobox
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Combobox options={[{ value: "one", label: "One" }]} />`,

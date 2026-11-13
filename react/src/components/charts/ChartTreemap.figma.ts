@@ -4,7 +4,6 @@
 //
 // Figma chart is an example card without properties; the Advanced charts ship default data.
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<ChartTreemap />`,

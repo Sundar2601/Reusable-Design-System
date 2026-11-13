@@ -2,7 +2,6 @@
 // source=src/components/AvatarStack.tsx
 // component=AvatarStack
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<AvatarStack />`,

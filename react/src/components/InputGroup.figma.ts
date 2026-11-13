@@ -2,7 +2,6 @@
 // source=src/components/InputGroup.tsx
 // component=InputGroup
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<InputGroup>

@@ -4,7 +4,6 @@
 //
 // Figma Android element sheet; props follow the component.
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<AndroidTopAppBar title="Title" />`,

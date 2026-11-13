@@ -2,7 +2,6 @@
 // source=src/components/Menubar.tsx
 // component=Menubar
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Menubar>

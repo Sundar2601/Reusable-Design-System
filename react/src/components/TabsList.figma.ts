@@ -2,7 +2,6 @@
 // source=src/components/Tabs.tsx
 // component=TabsList
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Tabs defaultValue="a">

@@ -2,7 +2,6 @@
 // source=src/components/ButtonGroup.tsx
 // component=ButtonGroup
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<ButtonGroup>

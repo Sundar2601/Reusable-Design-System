@@ -2,7 +2,6 @@
 // source=src/components/DataTable.tsx
 // component=DataTable
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<DataTable columns={columns} data={data} />`,

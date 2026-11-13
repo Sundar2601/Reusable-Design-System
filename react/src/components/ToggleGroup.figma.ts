@@ -2,7 +2,6 @@
 // source=src/components/ToggleGroup.tsx
 // component=ToggleGroup
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<ToggleGroup type="single">

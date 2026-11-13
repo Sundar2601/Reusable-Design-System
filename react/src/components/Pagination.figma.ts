@@ -2,7 +2,6 @@
 // source=src/components/Pagination.tsx
 // component=Pagination
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Pagination>

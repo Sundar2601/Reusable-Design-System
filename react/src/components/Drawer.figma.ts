@@ -2,7 +2,6 @@
 // source=src/components/Drawer.tsx
 // component=Drawer
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Drawer>

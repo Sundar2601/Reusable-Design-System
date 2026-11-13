@@ -2,7 +2,6 @@
 // source=src/components/InputOtp.tsx
 // component=InputOTPSlot
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<InputOTP maxLength={6}>

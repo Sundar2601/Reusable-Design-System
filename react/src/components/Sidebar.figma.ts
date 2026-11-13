@@ -2,7 +2,6 @@
 // source=src/components/Sidebar.tsx
 // component=Sidebar
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<SidebarProvider>

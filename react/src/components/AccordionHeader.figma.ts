@@ -2,7 +2,6 @@
 // source=src/components/Accordion.tsx
 // component=Accordion
 import figma from 'figma'
-const instance = figma.selectedInstance
 
 export default {
   example: figma.code`<Accordion type="single" collapsible>
