@@ -84,7 +84,7 @@ Figma file `AngMCoShsZnEBQ4B1xMObF` has a **Utilities** page (after Patterns): S
 ## Process docs (added 2026-11-13)
 For the design system to serve every future project, these live in `docs/`:
 - `GOVERNANCE.md`: owners, where to ask, how to request a change, what makes a component Stable.
-- `RELEASING.md`: semver, release steps, and the one-time work to make the package installable (it is still `private`).
+- `RELEASING.md`: semver, release steps, and how the package is built (`npm run build:lib` in `react/` makes `dist-lib/`; verified with `npm pack` and a test install). The owner still chooses the registry and first version.
 - `THEMING.md`: re-theme or brand for a project through the semantic Color tokens, with a contrast checklist.
 - `MIGRATION.md`: adopt the system in an existing app, step by step.
 - `COMPONENT-STATUS.md`: Stable, Beta, Planned, Deprecated, by tier.

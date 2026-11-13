@@ -30,3 +30,5 @@ storybook-static
 *.log
 
 .angular
+
+dist-lib

@@ -5,10 +5,19 @@ A plan for moving a project onto `@bounteous/ui` (React) or the Angular componen
 ## 1. Set up
 
 **React**
-1. Get the code. `@bounteous/ui` is not published to a registry yet (see `RELEASING.md`, "Before the first release"). Until it is, either add this repo as a git or workspace dependency, or copy `react/src/components`, `react/src/lib/utils.ts` and `react/src/theme` into your app (the shadcn way).
-2. Import the theme once, at the app root: `src/theme/theme.css` (it defines every token and the Light and Dark modes). Also import `src/theme/utilities.css` if you use Scroll Fade or Shimmer.
-3. Make sure Tailwind v4 is on.
-4. Load Inter (`@fontsource-variable/inter`). The theme expects it.
+1. Install `@bounteous/ui` (`npm i @bounteous/ui`; the owner gives you registry access). It is built and tested as a package, but check with the owner that the first version has been published. Until then, install the tarball (`npm pack` in `react/`) or add the repo as a git or workspace dependency, or copy `react/src/components`, `react/src/lib/utils.ts` and `react/src/theme` into your app (the shadcn way).
+2. Install what the styles need: `tailwindcss` v4, `tw-animate-css`, `@fontsource-variable/inter`. React 19 is a peer dependency.
+3. In your main CSS file, in this order (this is the repo's own `src/index.css`):
+   ```css
+   @import 'tailwindcss';
+   @import 'tw-animate-css';
+   @import '@fontsource-variable/inter';
+   @import '@bounteous/ui/theme.css';
+   @import '@bounteous/ui/utilities.css'; /* optional: Scroll Fade, Shimmer */
+   @source '../node_modules/@bounteous/ui/dist-lib'; /* so Tailwind generates the classes the components use */
+   ```
+   Adjust the `@source` path to where your CSS file sits.
+4. Import components: `import { Button, Input } from '@bounteous/ui'`. Types are included.
 
 **Angular**
 1. Copy the components from `angular/src/app/shared/components` (and `app/shared/extended` for the extra ones).

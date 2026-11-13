@@ -15,17 +15,17 @@ Semantic versioning: `MAJOR.MINOR.PATCH`.
 
 The package is at `0.0.0`. Treat `0.x` as unstable until the owner sets `1.0.0`.
 
-## Before the first release: make the package installable
+## The package (set up)
 
-`react/package.json` is currently `"private": true` with no `main`, `module`, `types`, `exports` or `files`, so `npm publish` would refuse and nothing could be installed from it. One-time work:
+`@bounteous/ui` is a real library package. `npm run build:lib` (in `react/`) builds it:
 
-1. Add a library build (Vite library mode with `src/index.ts` as the entry, React as a peer dependency) and emit type declarations (`vite-plugin-dts` or `tsc --emitDeclarationOnly`).
-2. Set `main`, `module`, `types`, `exports` (the components and `./theme.css` pointing at `src/theme/theme.css`) and `files`.
-3. Set `"private": false`, a real scope and registry (`publishConfig`), and `peerDependencies` for `react` and `react-dom`.
-4. Test with `npm pack` and install the tarball in a throwaway app.
-5. Do the same for Angular if you ship it as a package; today it is consumed from source.
+- `vite.lib.config.ts` bundles `src/index.ts` to `dist-lib/index.js` (ESM). All dependencies stay external; React and React DOM are peer dependencies.
+- `tsconfig.lib.json` plus `tsc-alias` emit `dist-lib/**/*.d.ts` with the `@/` path alias rewritten to relative paths.
+- `package.json` has `main`, `module`, `types`, `exports` (`.`, `./theme.css`, `./utilities.css`), `files` and `publishConfig.access = restricted` (a private scoped package). `prepack` runs the build.
 
-Until then, projects consume the system by copying (see `MIGRATION.md`) or by a workspace or git dependency.
+Verified on 2026-11-13: `npm pack`, then installing the tarball into a new project, importing 435 exports, rendering a Button, resolving both CSS files, and compiling a TypeScript app against the declarations (a wrong `variant` is rejected).
+
+**Still the owner's decision before the first publish:** which registry and scope (the package name is `@bounteous/ui`; `restricted` assumes npm), and the first version number (it is `0.0.0`). Angular is still consumed from source.
 
 ## Release steps
 
@@ -35,7 +35,7 @@ Until then, projects consume the system by copying (see `MIGRATION.md`) or by a 
 4. **Changelog.** Add an entry on the Figma Documentation page (newest first) with the version and date.
 5. **Version.** Set the new version in `react/package.json`. Commit: `Release vX.Y.Z`.
 6. **Tag.** `git tag vX.Y.Z` and push the tag.
-7. **Publish to npm.** `cd react && npm publish` (the owner runs this; it needs the npm login). Check the package contents first with `npm pack --dry-run`.
+7. **Publish to npm.** `cd react && npm publish` (the owner runs this; it needs the npm login). `prepack` builds the library. Check the contents first with `npm pack --dry-run`.
 8. **Publish Code Connect.** `cd react && FIGMA_ACCESS_TOKEN=... npx figma connect publish` (the owner runs this; it needs the Figma token). It replaces existing mappings.
 9. **Announce.** Post the changelog entry in the team channel.
 
