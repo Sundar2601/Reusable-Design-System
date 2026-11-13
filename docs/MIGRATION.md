@@ -19,9 +19,21 @@ A plan for moving a project onto `@bounteous/ui` (React) or the Angular componen
    Adjust the `@source` path to where your CSS file sits.
 4. Import components: `import { Button, Input } from '@bounteous/ui'`. Types are included.
 
-**Angular**
-1. Copy the components from `angular/src/app/shared/components` (and `app/shared/extended` for the extra ones).
-2. Import `src/styles.css`. It already pulls in the shared `theme.css` from the React folder, plus `typeset.css` and `utilities.css`.
+**Angular** (copy-in, like Zard UI and shadcn: you own the code you copy)
+1. Copy from `angular/src/app/shared` into your app: `core/` (always), `utils/` and `services/` (always), and `components/<name>/` for each component you need. `extended/` has the extra components (Banner, Stepper, Tag Input, Stat Card, Notification Item, Menubar, Label, AI, charts, iOS and Android sets).
+2. Add the path alias `"@/*": ["./src/app/*"]` to your `tsconfig.json`. The components import each other as `@/shared/...` (about 400 imports), so the alias is required.
+3. Install the packages: `@angular/core`, `@angular/common`, `@angular/forms`, `@angular/cdk`, `@ng-icons/core`, `@ng-icons/lucide`, `clsx`, `class-variance-authority`, `tailwind-merge`, `rxjs`. Only for the components that need them: `echarts` and `ngx-echarts` (charts), `ngx-sonner` (Sonner), `embla-carousel-angular` (Carousel), `ng-mapcn` and `maplibre-gl` (maps).
+4. Styles: Tailwind v4 with the `tailwindcss-animate` plugin. Copy `react/src/theme/theme.css` (the same tokens as React) and import it as the repo's `angular/src/styles.css` does:
+   ```css
+   @import 'tailwindcss';
+   @import './app/shared/core/css/zard.css';
+   @plugin "tailwindcss-animate";
+   @import './theme.css';
+   @import './typeset.css';
+   @import './utilities.css';
+   @source './';
+   ```
+5. In your app config, register `provideZard()` (from `core/provider/providezard.ts`; it starts dark mode and the event plugins). Add `provideZardI18n()`, `provideZardCharts()` or `provideZardMap()` only if you use those parts.
 
 ## 2. Map what you have
 

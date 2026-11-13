@@ -25,7 +25,7 @@ The package is at `0.0.0`. Treat `0.x` as unstable until the owner sets `1.0.0`.
 
 Verified on 2026-11-13: `npm pack`, then installing the tarball into a new project, importing 435 exports, rendering a Button, resolving both CSS files, and compiling a TypeScript app against the declarations (a wrong `variant` is rejected).
 
-**Still the owner's decision before the first publish:** which registry and scope (the package name is `@bounteous/ui`; `restricted` assumes npm), and the first version number (it is `0.0.0`). Angular is still consumed from source.
+**Still the owner's decision before the first publish:** which registry and scope (the package name is `@bounteous/ui`; `restricted` assumes npm), and the first version number (it is `0.0.0`). Angular is deliberately not packaged. Its roughly 130 components are copy-in (the Zard pattern) and import each other through an `@/` alias and a shared `core/` folder, so an `ng-packagr` library would mean restructuring the whole project. `MIGRATION.md` lists exactly what to copy and what to install. If you later want an npm package for Angular, treat it as its own project: one secondary entry point per component, no `@/` alias, and a test install in a new Angular app.
 
 ## Release steps
 
